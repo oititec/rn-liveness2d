@@ -12,7 +12,7 @@ Em primeiro lugar, com o NPM você pode gerenciar dependências do seu projeto, 
 
 As instruções de uso, integração, implementação e customização do **Liveness Oiti** podem ser acessadas através das etapas abaixo:
 
-### 3.1 Instalação
+## 3.1 Instalação
 
 Usando NPM:
 
@@ -26,7 +26,7 @@ ou usando YARN
 yarn add @oiti/liveness3d-react-native
 ```
 
-### 3.2 iOS Configuração (PASSO 2)
+## 3.2 iOS Configuração
 
 Adicionar o Pod do FaceCaptcha no seu Podfile
 
@@ -34,7 +34,7 @@ Adicionar o Pod do FaceCaptcha no seu Podfile
 pod 'FaceCaptcha', '~> 4.0.1', :source => 'https://github.com/oititec/liveness-ios-specs.git'
 ```
 
-# 4. Uso no Javascript (PASSO 3)
+# 4. Uso no Javascript (PASSO 2)
 
 Primeiro devemos chamar a função desejada da biblioteca '@oiti/rn-liveness2d'
 
@@ -89,7 +89,7 @@ export default function App() {
 }
 ```
 
-# 5. Estilização
+# 5. Estilização (PASSO 3)
 
 #### Liveness2D
 
@@ -101,7 +101,7 @@ export default function App() {
 - [(ANDROID)Guia de estilização da Documentoscopia](Documentation/liveness3DThemeiOSCUSTOMIZATION.md);
 - [(iOS)Guia de estilização da Documentoscopia](Documentation/liveness3DThemeiOSCUSTOMIZATION.md);
 
-# 4. Como executar o clone do Repositório?
+# 6. Como executar o clone do Repositório?
 
 Execute o clone do repositório abaixo para clonar o código:
 
@@ -109,17 +109,17 @@ Execute o clone do repositório abaixo para clonar o código:
 git clone https://github.com/oititec/liveness3d-bridge-rn
 ```
 
-# 5. Como rodar o Script?
+# 7. Como rodar o Script?
 
 Para rodar o script desse repositório você deve instalar as dependências do projeto, então na pasta root do projeto clonado rodar o comando.
 
-## 5.1 Yarn
+## 7.1 Yarn
 
 ```sh
 yarn
 ```
 
-## 4.2 Executar Projeto
+## 7.2 Executar Projeto
 
 > Executar sempre em dispositivos físicos e não no simulador do iOS e Android
 
