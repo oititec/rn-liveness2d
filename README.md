@@ -34,7 +34,7 @@ Adicionar o Pod do FaceCaptcha no seu Podfile
 pod 'FaceCaptcha', '~> 4.0.1', :source => 'https://github.com/oititec/liveness-ios-specs.git'
 ```
 
-# 4. Uso no Javascript
+# 4. Uso no Javascript (PASSO 3)
 
 Primeiro devemos chamar a função desejada da biblioteca '@oiti/rn-liveness2d'
 
@@ -44,7 +44,13 @@ import { FUNÇÕES DESEJADAS } from '@oiti/rn-liveness2d';
 
 ## 4.1 Funções
 
-![Funções](https://github.com/oititec/oiti-react-native/blob/develop/Documentation/imgs/oiti-react-native.jpg)
+#### Diagrama E2E Liveness2d
+
+![Funções](https://github.com/oititec/rn-liveness2d/blob/develop/Documentation/assets/E2Eliveness2d.png)
+
+#### Diagrama E2E Documentoscopia
+
+![Funções](https://github.com/oititec/rn-liveness2d/blob/develop/Documentation/assets/E2Edocumentscopy.png)
 
 AppKey: gerada na etapa 2 da [documentação CertifaceID](https://certifaceid.readme.io/docs/integra%C3%A7%C3%A3o-atualizada 'Guia de Integração API v1.2')
 
