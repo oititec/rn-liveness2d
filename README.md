@@ -46,11 +46,11 @@ import { FUNÇÕES DESEJADAS } from '@oiti/rn-liveness2d';
 
 #### Diagrama E2E Liveness2d
 
-![Funções](https://github.com/oititec/rn-liveness2d/blob/develop/Documentation/assets/E2Eliveness2d.png)
+![Funções](Documentation/assets/E2Eliveness2d.png)
 
 #### Diagrama E2E Documentoscopia
 
-![Funções](https://github.com/oititec/rn-liveness2d/blob/develop/Documentation/assets/E2Edocumentscopy.png)
+![Funções](Documentation/assets/E2Edocumentscopy.png)
 
 AppKey: gerada na etapa 2 da [documentação CertifaceID](https://certifaceid.readme.io/docs/integra%C3%A7%C3%A3o-atualizada 'Guia de Integração API v1.2')
 
