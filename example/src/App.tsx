@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import { StyleSheet, View, Text, Button, Alert } from 'react-native';
 
-import { startDocumentscopy, startFaceCaptcha } from '@oiti/oiti-react-native';
+import { startDocumentscopy, startFaceCaptcha } from '@oiti/rn-liveness2d';
 
 export default function App() {
   const appKey =
-    'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiNkFBRkI5MTNFNzZBRDc4Mjc5NkNFMzcwNjU3N0Q0Q0E0NjZDfHNhZnJhLmVwZi5obWwiLCJlbXBDb2QiOiIwMDAwMDAwNTc2IiwiZmlsQ29kIjoiMDAwMDAwMjY2MiIsImNwZiI6IjU0MjczOTY2MDg1Iiwibm9tZSI6IjI5RTcxQkU5OTU4ODUwNzIyRkYyMUNBNEZEMDEzQTYzN0UyRjJFQUQzMTE4QzQ5NUUxMjQ2QUQzOEY3OENFQUU5Q0FFQTY0NkM2Rjk2M0I5MzFERUNDQ0QxNDE4RjI5RUE2N0YyQzc4NzlCNTlENTAxOTUxMEFCNDZEQzVBNTgxfEFTSEFVQVMgQVNVSEFTSFUgQVNVSCIsIm5hc2NpbWVudG8iOiIwOC8xMC8xOTkxIiwiZWFzeS1pbmRleCI6IkFBQUFFazVITFVVcTFUY2lHdFJjNU4zMENIVDNvcUl5NlVKdDEweGRZYTczWnorUkpVOXFiMlVOU3lHYU1BPT0iLCJrZXkiOiJRV3hzYjNkaGJtTmxJSEpsY0hWc2MybDJaU0J6WlhnZ2JXRjVJR052Ym5SaGFXND0iLCJleHAiOjE2Njk5OTA4ODQsImlhdCI6MTY2OTk4OTA4NH0.dK6-L0GxQocDX7aQOqZ-m-VU2dA2KasHjriXV6Pn63A';
+    'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiMTlBMEY4NTczNzZGNzU0MTk4MzY1QTlEMDZFM0Q5QzM4NEIzfHNhZnJhLmVwZi5obWwiLCJlbXBDb2QiOiIwMDAwMDAwNTc2IiwiZmlsQ29kIjoiMDAwMDAwMjY2MiIsImNwZiI6IjU0MjczOTY2MDg1Iiwibm9tZSI6IjI4OTY3QjJGQzZDOTFBRDY2M0VGOUUzREZERjZGN0MzOTg2ODRBODEzRUNEOUExMjc2Nzc0MUQ3NUFCMkNGQ0E2OUY1NTBENjQzMjk1Rjg4MjkyQzJBRkFEQTYyQTYzMEUxMDg2MjlDQkMxNEQ1NjJBQ0E4NzBDNjg5MzZDMUJGfEFTSEFVQVMgQVNVSEFTSFUgQVNVSCIsIm5hc2NpbWVudG8iOiIwOC8xMC8xOTkxIiwiZWFzeS1pbmRleCI6IkFBQUFFaEova3k5N2lKcGZmYkNQTG0wRXFid3dCYVlOZjVkYjNYTzVIVHYva2NVRDJxb1V1d1ZWdnR6TWdRPT0iLCJrZXkiOiJRV3hzYjNkaGJtTmxJSEpsY0hWc2MybDJaU0J6WlhnZ2JXRjVJR052Ym5SaGFXND0iLCJleHAiOjE2NzEwMzEyMDYsImlhdCI6MTY3MTAyOTQwNn0.iZ0MzeWFTrjQ11EB0I5wHBVy_PerFVldU27rvnovxRM';
 
   return (
     <View style={styles.container}>
@@ -15,10 +15,10 @@ export default function App() {
         <Button
           onPress={() => {
             startFaceCaptcha(appKey).then(
-              (result) => {
-                result && Alert.alert('RESULT OK');
+              (result: string) => {
+                result && Alert.alert(result);
               },
-              (error) => {
+              (error: string) => {
                 console.log(error);
               }
             );
@@ -30,10 +30,10 @@ export default function App() {
         <Button
           onPress={() => {
             startDocumentscopy(appKey).then(
-              (result) => {
-                result && Alert.alert('RESULT OK');
+              (result: string) => {
+                result && Alert.alert(result);
               },
-              (error) => {
+              (error: string) => {
                 console.log(error);
               }
             );
