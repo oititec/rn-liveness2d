@@ -8,11 +8,11 @@ O NPM (node package manager) é o gerenciador de pacotes do node.js (runtime de 
 
 Em primeiro lugar, com o NPM você pode gerenciar dependências do seu projeto, acessar o repositório do NPM e ter acesso a inúmeras bibliotecas e frameworks JavaScript, permite a instalação/desinstalação dos mesmos assim como a criação de seus próprios módulos públicos ou privados.
 
-# 3. Uso
+# 3. Uso (PASSO 1)
 
 As instruções de uso, integração, implementação e customização do **Liveness Oiti** podem ser acessadas através das etapas abaixo:
 
-### 3.1 Instalação (PASSO 1)
+### 3.1 Instalação
 
 Usando NPM:
 
@@ -89,7 +89,7 @@ export default function App() {
 }
 ```
 
-## 5. Estilização
+# 5. Estilização
 
 #### Liveness2D
 
