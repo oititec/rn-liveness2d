@@ -17,13 +17,13 @@ As instruções de uso, integração, implementação e customização do **Live
 Usando NPM:
 
 ```sh
-npm install @oiti/liveness3d-react-native
+npm install @oiti/rn-liveness2d
 ```
 
 ou usando YARN
 
 ```sh
-yarn add @oiti/liveness3d-react-native
+yarn add @oiti/rn-liveness2d
 ```
 
 ## 3.2 iOS Configuração
