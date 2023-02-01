@@ -1,16 +1,23 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text, Button, Alert } from 'react-native';
+import { StyleSheet, View, Text, Button, Alert, TextInput } from 'react-native';
 
 import { startDocumentscopy, startFaceCaptcha } from '@oiti/rn-liveness2d';
 
 export default function App() {
-  const appKey =
-    'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiMTlBMEY4NTczNzZGNzU0MTk4MzY1QTlEMDZFM0Q5QzM4NEIzfHNhZnJhLmVwZi5obWwiLCJlbXBDb2QiOiIwMDAwMDAwNTc2IiwiZmlsQ29kIjoiMDAwMDAwMjY2MiIsImNwZiI6IjU0MjczOTY2MDg1Iiwibm9tZSI6IjI4OTY3QjJGQzZDOTFBRDY2M0VGOUUzREZERjZGN0MzOTg2ODRBODEzRUNEOUExMjc2Nzc0MUQ3NUFCMkNGQ0E2OUY1NTBENjQzMjk1Rjg4MjkyQzJBRkFEQTYyQTYzMEUxMDg2MjlDQkMxNEQ1NjJBQ0E4NzBDNjg5MzZDMUJGfEFTSEFVQVMgQVNVSEFTSFUgQVNVSCIsIm5hc2NpbWVudG8iOiIwOC8xMC8xOTkxIiwiZWFzeS1pbmRleCI6IkFBQUFFaEova3k5N2lKcGZmYkNQTG0wRXFid3dCYVlOZjVkYjNYTzVIVHYva2NVRDJxb1V1d1ZWdnR6TWdRPT0iLCJrZXkiOiJRV3hzYjNkaGJtTmxJSEpsY0hWc2MybDJaU0J6WlhnZ2JXRjVJR052Ym5SaGFXND0iLCJleHAiOjE2NzEwMzEyMDYsImlhdCI6MTY3MTAyOTQwNn0.iZ0MzeWFTrjQ11EB0I5wHBVy_PerFVldU27rvnovxRM';
+  const [appKey, setAppkey] = React.useState('');
 
   return (
     <View style={styles.container}>
       <Text style={styles.box}>Exemplo Oiti - React Native</Text>
+      <View style={styles.box2}>
+        <TextInput
+          style={styles.input}
+          onChangeText={setAppkey}
+          value={appKey}
+          placeholder="APP KEY"
+        />
+      </View>
       <View style={styles.button}>
         <Button
           onPress={() => {
@@ -51,8 +58,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+    height: 40,
+    width: '70%',
+    fluz: 1,
+    borderRadius: 7,
+    margin: 5,
+    backgroundColor: '#e3e3e3',
+    borderColor: '#c3c3c3',
+    borderWidth: 1,
+    padding: 10,
+  },
   box: {
     marginVertical: 20,
+  },
+  box2: {
+    marginVertical: 8,
+    width: '100%',
+    textAlign: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
   },
   button: {
     marginVertical: 5,
