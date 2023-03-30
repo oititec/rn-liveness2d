@@ -6,23 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		VjhjehvTNcaEhkaKAGjTGV3MDfE=
-		</data>
-		<key>BottomSheetController.nib/objects-11.0+.nib</key>
-		<data>
-		EEjI7TZVIaDkcBlzus56NeGDG9M=
-		</data>
-		<key>BottomSheetController.nib/runtime.nib</key>
-		<data>
-		laF03JMKfgm5p8vJ0wt1QfWv1Es=
-		</data>
-		<key>CheckCameraPermissionViewController.nib/objects-11.0+.nib</key>
-		<data>
-		Km2bz2NFANF0R6CTkmNsN109mlo=
-		</data>
-		<key>CheckCameraPermissionViewController.nib/runtime.nib</key>
-		<data>
-		XEwHmWKq2/pDcZ6Q7UX8SDw+Uec=
+		D+d3FeiqdGVBjYib0eU6P9MxSoU=
 		</data>
 		<key>FaceCaptchaDefaultView.nib/objects-11.0+.nib</key>
 		<data>
@@ -34,11 +18,11 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Assets.car</key>
 		<data>
-		PKJs8QwN96bh6W6SFxIkjjSVLIM=
+		7Bv80NejFQRAgYgMp96947Gwgj0=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<data>
-		lKLzW2d1e5zX0GAxQbViJ9Cldy0=
+		8ULmYz8oLq5oPz5ftCZ8tsIKbkk=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
 		<data>
@@ -46,7 +30,7 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Info.plist</key>
 		<data>
-		WddYBwjEE2x1KROvMaiix7YM484=
+		/3vf5UCDRazfl7ZUKSlAGxIG+7U=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/ReadyScreenGuidanceContentLayout.nib</key>
 		<data>
@@ -58,19 +42,23 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/SharedGuidanceLayout.nib</key>
 		<data>
-		p//88BFPbLo5PjlWbINPALBWlGY=
+		CO8iTVo93yuN52FYiBWySv41++8=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/9Uo-4b-JiE-view-Ae0-rb-UqS.nib</key>
 		<data>
-		xOYpSBAhHiHLzW/l6Q+1Ha20imo=
+		TRbdLcRo7nwSZDABEpv8J5kQ93A=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/CJ6-MX-bJp-view-8JL-Rc-0g1.nib</key>
 		<data>
-		nECc78HkUlenUEzy7JsboVpu7YI=
+		qBSIhxzgu5yIUkdD7JLKglfShuE=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/FaceScanViewController.nib</key>
 		<data>
 		b3yOamO0q/qY3KbNrlHFXHMrkcg=
+		</data>
+		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/FaceTecAdditionalReviewViewController.nib</key>
+		<data>
+		QxMlALQFSJBDCQgX5mIaE1ZnjDA=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/FaceTecOCRConfirmationViewController.nib</key>
 		<data>
@@ -86,19 +74,23 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/Info.plist</key>
 		<data>
-		HSQy9MTJQWGP4jy3SPWLFwCIAa8=
+		0xZl9aViHb8YcbAxcexNLLvl4B0=
+		</data>
+		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/Pyw-6G-JSY-view-Zue-Eo-Q2U.nib</key>
+		<data>
+		bmW2YOqNGR3X3P1kQWf+zInlI6E=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/alz-Ia-X3d-view-IKu-EI-Hug.nib</key>
 		<data>
-		d25aknkrbg3v1Fh5aY5Ds83e9Vk=
+		bhrHKBTo20RQ1I4wEh+lOUoeKxc=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/l2Q-cc-kD8-view-UUy-6c-meu.nib</key>
 		<data>
-		6OX98tZ6qtttj5+YJdSv45MyN+g=
+		P9/iSs2p177VVjb8KExCC6jbIYI=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		dn7xAISRLZCc0KpRH8Ri44uzgRw=
+		4P7tNld35lL+osfchyuTYIltkY8=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/attributions.txt</key>
 		<data>
@@ -106,104 +98,88 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/1f5b84f51ce0fcfbb76e904b7bcaa7560f601e1394a0b29367a09385312287eb</key>
 		<data>
-		umIsj7fK7LbJHUrOSEUDtrulRfA=
+		svwG/BSoOLySM6zeW1vun9tH2oM=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/2b075ac1a6132b5b8a4c9ef0ba6b0cd84db7838aca9a000e50d907f40770a4ab</key>
 		<data>
-		60O3MNQ8pBt8Y5GFKMWVmiNO8Ko=
+		X3X0jiv9+vqfSsThL4j1zQRw86s=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/4c4774668f9b9333977fc891e7695420a0b4c27cc2c1cd3920ce9e0870e3c0e8</key>
 		<data>
-		N5iRzNoWW8xujxoTKXvYmTUhNp0=
+		e3FyIYWZj760rkEv6djH+Supi4E=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/59cc2a9af81aaca2376702c2490650f4da2775fa673274db98aad41b7ef101c0</key>
 		<data>
-		9aghmReBADmN+6k4aOAi0uW9Taw=
+		sIT8MzsmDr597dyOefp5ufqPAYY=
+		</data>
+		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/5b63e98b991aedabb60665503384f30bffd939decf9433883b30b78011ee501a</key>
+		<data>
+		Ns6FaHQY5xgzM1n3bom1UTpOqZQ=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/66388dc76dc16bc6b76b682edd218a575bf45b9b</key>
 		<data>
-		N7jao7Ti1Lqh5LCHliWV/9Ju4n8=
+		3v5VAQWvfCg5zOcGkmYtGmryMcg=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/6b3133f0f39ff89a2a169d61176ee17cafacc5e288f334e2b64ee82892d11ccd</key>
 		<data>
-		C+y5wWNJV2+TaiOZpB7cB9hoWyA=
+		rvakLBDGl6rfpn7oSJtpB4UC+sQ=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/9077d16225f9314163ef1e7db6fc7d4088bb903d134bd95f23d5591ca4dfbfca</key>
 		<data>
-		OmwsuUoqIIc82Muowxvletk4znM=
+		rQTVmqrLghxJGmqslqXXIplykl4=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/Ys4TQh4aewlf1CpyzWLi</key>
 		<data>
-		ePHBTJgIfsYDVyvtY88bkvOLIKM=
+		vRQcuPJRlAwTaLMpByqmWfIP2bg=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/a74f2afb9d20f2375ccbd14e67c094b85c89ceb608f7cf8ae04f3f646a6c5672</key>
 		<data>
-		AkwsWqPnuS/qmmmCg0vPSWkm4nc=
+		4XyyGknNXwiU55mQOE6kSeMmKPw=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/b501893e75f62ee1707643e35b21109927b07ed5b202321c961b424cbc2e4695</key>
 		<data>
-		k28++WmMQ/656FKst9BczX4nxyo=
+		bGeR7pq7J1h2mtx/IvMIEpCkZXE=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/b82962a4847bcf6d1bf89ea7543f83e184a1df7c4e7e3c343dd3e3e17cb9a645</key>
 		<data>
-		qgNfCJL4Z1PD3J0HDcaIInusqYo=
+		7a0YuW02dnnkCIcc4Qa28JU3zqQ=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/dbd7a353f0130bb983d6ba05917e9be991d70e8f028df4b74e30bc6497ef7f71</key>
 		<data>
-		uLIjvHvm3V45MqB/UQhdvWvcov8=
+		RBnFxuLD7ZH8kcupbpJH8rWGR3w=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/f2.xml</key>
 		<data>
-		M3FXSwydt6QO1y1/ECUBboW5/TU=
+		6pUozRIzDLqHEFPkjzsBNboYQJo=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/fd6d368a5658496536e2bfae170d1b823a3629b242cafc09784bfba4e56d8c80</key>
 		<data>
-		GVwO86TL2qNEzFn95/f+wPDU0xU=
+		NGkplARnE9GAisuFYplKtMNV4II=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/marker</key>
 		<data>
 		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
 		</data>
+		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/vu0ilin6we3lrzo5f83f7qs2jul4aq7v4aoynrmch8zfvpi8ezrfyafa4t0fx87l</key>
+		<data>
+		frY6wa9qEvzWANlZzpnu5dV0enk=
+		</data>
 		<key>Frameworks/FaceTecSDK.framework/en.lproj/FaceTec.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CBL/CjdgYqlAWJ/jEOEBose3fBk=
+			x5fsRDl/DGb93yR+ZR26j8te7xw=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_facescan_successful_sound_file.mp3</key>
-		<data>
-		HIB+yvUWqHn/GKgZK2F/+DygqSY=
-		</data>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_please_frame_your_face_sound_file.mp3</key>
-		<data>
-		kfz51x6UDyMsAnWVvpbaeRrA/Gw=
-		</data>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_please_move_closer_sound_file.mp3</key>
-		<data>
-		GmUK7NeFNggO0xdWI42rodFMTfo=
-		</data>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_please_press_button_sound_file.mp3</key>
-		<data>
-		0sbSRyISDdaHKrmoJZ5dMgugnfA=
-		</data>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_please_retry_sound_file.mp3</key>
-		<data>
-		lmbXVQnj/GHVuF6FevNCoKIP/aU=
-		</data>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_uploading_sound_file.mp3</key>
-		<data>
-		wRAwwOpzICCEIkPe5cgxFI2BdjI=
-		</data>
 		<key>Frameworks/FaceTecSDK.framework/strip-unused-architectures-from-target.sh</key>
 		<data>
 		8GHP1TOUMs+FMYrV872D99/JZQA=
 		</data>
 		<key>Headers/FaceCaptcha-Swift.h</key>
 		<data>
-		FejNXFTcez3rxRDrbzA2Y8o3xcQ=
+		9XRgV1juOma1U3ypL+6wLt0hDdY=
 		</data>
 		<key>Headers/FaceCaptcha.h</key>
 		<data>
@@ -211,7 +187,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4ADIv5hjqnsNbuPWRW4vHjBg5gA=
+		6BZYeHy0+jVUTSrTV7pGTLu3rOQ=
 		</data>
 		<key>Inter-Bold.otf</key>
 		<data>
@@ -241,37 +217,29 @@
 		<data>
 		pl39d1tk6fl5SxH7kJx+uuYy3Qw=
 		</data>
-		<key>Liveness3DViewController.nib/objects-11.0+.nib</key>
-		<data>
-		11984cIz0nkG/la2k4TrUXrzcDo=
-		</data>
-		<key>Liveness3DViewController.nib/runtime.nib</key>
-		<data>
-		ef6D4eAf2HIyrvSxzu6nht9UCw8=
-		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		Ky1UuTD4FBbR58PPJbN8w4wFM8M=
+		vqI9DSTTmKZV3SL04e1a4gsVh94=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		tolAUWkB+G0ZVz8f+V64oVx5/zw=
+		6WVDKv3IRXuw7cvaVWN28irTb0w=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		36+tbmNuMcOAsVx06YzhbLyxaNM=
+		MhhPqkJN9zu3+By4AIKGuscX2/U=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		tJHLRl0SpctxitQ1y0pHMD3TsRY=
+		sS4zN/QN+6lnppnGjL38P8XboDg=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		oEcbiebex+aWLRk3cIFwSADGWW8=
+		j/XjiKbG9VNZXt4lxpV7La5KAls=
 		</data>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		Ms8hZYDR0va9LxwaORuVhmkN9fY=
+		EO0vnJxB5QEGwBYE7Zt+VUCoJcY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -312,55 +280,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VjhjehvTNcaEhkaKAGjTGV3MDfE=
+			D+d3FeiqdGVBjYib0eU6P9MxSoU=
 			</data>
 			<key>hash2</key>
 			<data>
-			6tNHXQLNCWKhwA89c/Lnpqvk/VoKQllhjx349WaK090=
-			</data>
-		</dict>
-		<key>BottomSheetController.nib/objects-11.0+.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			EEjI7TZVIaDkcBlzus56NeGDG9M=
-			</data>
-			<key>hash2</key>
-			<data>
-			4jQKfvKLflVVu3GStupnglxOhKAxSS5qlCVZJDTYHcI=
-			</data>
-		</dict>
-		<key>BottomSheetController.nib/runtime.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			laF03JMKfgm5p8vJ0wt1QfWv1Es=
-			</data>
-			<key>hash2</key>
-			<data>
-			2BcaXx8OcIobsOLExM+guym+2Gb2DSrLomP/0KPVGQs=
-			</data>
-		</dict>
-		<key>CheckCameraPermissionViewController.nib/objects-11.0+.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Km2bz2NFANF0R6CTkmNsN109mlo=
-			</data>
-			<key>hash2</key>
-			<data>
-			MuEzjdqeB5mH6zsC+jrGSW8ZdY0BbAl8IpLVWEckQL0=
-			</data>
-		</dict>
-		<key>CheckCameraPermissionViewController.nib/runtime.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			XEwHmWKq2/pDcZ6Q7UX8SDw+Uec=
-			</data>
-			<key>hash2</key>
-			<data>
-			Lvlt9uLG13REiT75qkq9U1tUm627YOkSwM3KWgz17AY=
+			Kby0df4icXGfrBNlsblhQBF93jieUvX47Em1zKkC10Y=
 			</data>
 		</dict>
 		<key>FaceCaptchaDefaultView.nib/objects-11.0+.nib</key>
@@ -389,22 +313,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PKJs8QwN96bh6W6SFxIkjjSVLIM=
+			7Bv80NejFQRAgYgMp96947Gwgj0=
 			</data>
 			<key>hash2</key>
 			<data>
-			T6zbr4XL55AFH5X3GoYb/YIPuNlExO2lxVlNXgaP1og=
+			a54Qt09s0vQ3G5h/M970SCDvXIM7wqt/LndY4JZCJ+0=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lKLzW2d1e5zX0GAxQbViJ9Cldy0=
+			8ULmYz8oLq5oPz5ftCZ8tsIKbkk=
 			</data>
 			<key>hash2</key>
 			<data>
-			5/mg6zsyQjz12RNkKvyePllgnPURjoznJf7Acennu2s=
+			0DJg1N+KnoSHA7hrvqGbJA9X8Wrwa0RE9bVaSFzTLys=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
@@ -422,11 +346,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WddYBwjEE2x1KROvMaiix7YM484=
+			/3vf5UCDRazfl7ZUKSlAGxIG+7U=
 			</data>
 			<key>hash2</key>
 			<data>
-			DssLBdjZY9zHbWCOHxE8aPayYs02cNPZzZme5agFATY=
+			Hn7sWhjfVMJDzsT2IjAgJzEMctqreMXEFVHYe/lYHdU=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/ReadyScreenGuidanceContentLayout.nib</key>
@@ -455,33 +379,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			p//88BFPbLo5PjlWbINPALBWlGY=
+			CO8iTVo93yuN52FYiBWySv41++8=
 			</data>
 			<key>hash2</key>
 			<data>
-			/rZSQA6SdqpYpVeLifijr6OqdIACmt09DIBecsHErO4=
+			S2xpd8idEv7N7Dc5PEb6o7cDga1jVWIhsby6SaT7yPU=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/9Uo-4b-JiE-view-Ae0-rb-UqS.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xOYpSBAhHiHLzW/l6Q+1Ha20imo=
+			TRbdLcRo7nwSZDABEpv8J5kQ93A=
 			</data>
 			<key>hash2</key>
 			<data>
-			RI63bIXyRVRuoOEJelsM7/07nM5i0yxB6zO1KOf0sA8=
+			hBYF/GoSE0idIf6aFWzevQty7QwU/JRz2mcStOFv5AE=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/CJ6-MX-bJp-view-8JL-Rc-0g1.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nECc78HkUlenUEzy7JsboVpu7YI=
+			qBSIhxzgu5yIUkdD7JLKglfShuE=
 			</data>
 			<key>hash2</key>
 			<data>
-			jhZlg38s/oIVN4mLHQnkilRT5qz/uDoeZgiOhkLxl9o=
+			eUo0IP6Li3UW/5AuatcynjZVKhAMFtNt1QVIDMYo1D4=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/FaceScanViewController.nib</key>
@@ -493,6 +417,17 @@
 			<key>hash2</key>
 			<data>
 			lgYmq+1jTdejYibTM5b4sbQEQX86EMC5JfqYV3LWxPY=
+			</data>
+		</dict>
+		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/FaceTecAdditionalReviewViewController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QxMlALQFSJBDCQgX5mIaE1ZnjDA=
+			</data>
+			<key>hash2</key>
+			<data>
+			z1Rjqkf7CmOSk0gXlOJhHXQyHhKowm42+pX16oqr950=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/FaceTecOCRConfirmationViewController.nib</key>
@@ -532,44 +467,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HSQy9MTJQWGP4jy3SPWLFwCIAa8=
+			0xZl9aViHb8YcbAxcexNLLvl4B0=
 			</data>
 			<key>hash2</key>
 			<data>
-			hbBCzFBd3oL1DDKAjykFj4xm8YRLsdEpogjptX3ZaSU=
+			1DubT0cN9sMcF2eRg2ZXX1vxdD3z7VrUKTOoY2RRk3c=
+			</data>
+		</dict>
+		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/Pyw-6G-JSY-view-Zue-Eo-Q2U.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bmW2YOqNGR3X3P1kQWf+zInlI6E=
+			</data>
+			<key>hash2</key>
+			<data>
+			LmsbDakStprbW0c0TsJb28jVnKj+pVBIdUbHWiJJnxQ=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/alz-Ia-X3d-view-IKu-EI-Hug.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d25aknkrbg3v1Fh5aY5Ds83e9Vk=
+			bhrHKBTo20RQ1I4wEh+lOUoeKxc=
 			</data>
 			<key>hash2</key>
 			<data>
-			aG9NO5D1eApTbiOevgYpYHOMSc6lq4kgTzGczf83gs0=
+			pYAGvHtaOvPm/3z7d6HFmeqHJnnQGo+eNQHgug6LSRY=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Storyboard.storyboardc/l2Q-cc-kD8-view-UUy-6c-meu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6OX98tZ6qtttj5+YJdSv45MyN+g=
+			P9/iSs2p177VVjb8KExCC6jbIYI=
 			</data>
 			<key>hash2</key>
 			<data>
-			s88fMv6ielNFQdVKOl6xnmR7IkZkXV7v2wB3npi25LY=
+			MOOr8g8TX/iYmAxywrgVECvTelftk8G6C1VJKEzWsAE=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dn7xAISRLZCc0KpRH8Ri44uzgRw=
+			4P7tNld35lL+osfchyuTYIltkY8=
 			</data>
 			<key>hash2</key>
 			<data>
-			m2CTHoVGbTgKkr7avGIZd4oVGcCK55OfeeHCNtiBOxo=
+			3awdB13RhbCJkq1pvuOs7UZ5l89BLxlsUC/kgYQurAw=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/attributions.txt</key>
@@ -587,154 +533,165 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			umIsj7fK7LbJHUrOSEUDtrulRfA=
+			svwG/BSoOLySM6zeW1vun9tH2oM=
 			</data>
 			<key>hash2</key>
 			<data>
-			QdADboVATldY5V6i/PMZfBeQB4W0Ke1mXB+Bmm1v2o8=
+			qa5nQDil1Tc1lAhG64nB7da2Npk8OSLpg3ntm0TcVZo=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/2b075ac1a6132b5b8a4c9ef0ba6b0cd84db7838aca9a000e50d907f40770a4ab</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			60O3MNQ8pBt8Y5GFKMWVmiNO8Ko=
+			X3X0jiv9+vqfSsThL4j1zQRw86s=
 			</data>
 			<key>hash2</key>
 			<data>
-			OgRmsJ4BRtxM4lPbnIV2LTg+LvI4h6TgA91LZZqGzUc=
+			lp4O0CpZ32xcalTrlFrolwsOgHh7xK1D+OybrHUy3d4=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/4c4774668f9b9333977fc891e7695420a0b4c27cc2c1cd3920ce9e0870e3c0e8</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			N5iRzNoWW8xujxoTKXvYmTUhNp0=
+			e3FyIYWZj760rkEv6djH+Supi4E=
 			</data>
 			<key>hash2</key>
 			<data>
-			fw1PttF50whxtcQS3CBoNqsQvyhFwD0dScQAlOW0aLE=
+			FvXd5UB2nimuc2DXElkc/3u1U+4NT5o2xtwL4N64uE0=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/59cc2a9af81aaca2376702c2490650f4da2775fa673274db98aad41b7ef101c0</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9aghmReBADmN+6k4aOAi0uW9Taw=
+			sIT8MzsmDr597dyOefp5ufqPAYY=
 			</data>
 			<key>hash2</key>
 			<data>
-			c6Jq9phbXTF18jJta/618AHJ4wgeVA3+OEz0XMW/vho=
+			hWbyKK1Th6Y+yWThtOr6krQeYeiSIj8Q+kMmMfzaseo=
+			</data>
+		</dict>
+		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/5b63e98b991aedabb60665503384f30bffd939decf9433883b30b78011ee501a</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ns6FaHQY5xgzM1n3bom1UTpOqZQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			AqGhR8/PULFESZO2/9BbEeQlCskp4NZeMAmH4j7VRE8=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/66388dc76dc16bc6b76b682edd218a575bf45b9b</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			N7jao7Ti1Lqh5LCHliWV/9Ju4n8=
+			3v5VAQWvfCg5zOcGkmYtGmryMcg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Cc6ub0OYGMjrQ+3GqVcPelBQhLZzEJdu6f79gNTa7j8=
+			OY+NG5OzSRwwGt9YOilEHURbhi00n9BR9LPImZtahIs=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/6b3133f0f39ff89a2a169d61176ee17cafacc5e288f334e2b64ee82892d11ccd</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			C+y5wWNJV2+TaiOZpB7cB9hoWyA=
+			rvakLBDGl6rfpn7oSJtpB4UC+sQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			uJ76CDeFPH/+pjHq8B2vivbSrRppf6OmTqFFRka3iTI=
+			GBIxgEDX+zFJ9U3XYS+dR3BJxMjV6VLA9qDrctuQ9H4=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/9077d16225f9314163ef1e7db6fc7d4088bb903d134bd95f23d5591ca4dfbfca</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OmwsuUoqIIc82Muowxvletk4znM=
+			rQTVmqrLghxJGmqslqXXIplykl4=
 			</data>
 			<key>hash2</key>
 			<data>
-			sXkqPoCQUx58shIjfneBdd+ChVJdHTOz/1HzZyxaa70=
+			GwjxMjNsiWrlcsV65Tk5+xgvOqlRz07GxJCnV2XKaWM=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/Ys4TQh4aewlf1CpyzWLi</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ePHBTJgIfsYDVyvtY88bkvOLIKM=
+			vRQcuPJRlAwTaLMpByqmWfIP2bg=
 			</data>
 			<key>hash2</key>
 			<data>
-			+aCDMDSmfGgzMzcfUTZ9IMlCGMXsE9lfVwuAxJBr3kg=
+			H/44hvp1Glv+wKWaYj3F9JiginnThWZ2LUopPu8G1XY=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/a74f2afb9d20f2375ccbd14e67c094b85c89ceb608f7cf8ae04f3f646a6c5672</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AkwsWqPnuS/qmmmCg0vPSWkm4nc=
+			4XyyGknNXwiU55mQOE6kSeMmKPw=
 			</data>
 			<key>hash2</key>
 			<data>
-			q2viT5x3pIq2TIWb6BAL1BgrN+oRsfQtCfgZhdNUQ9k=
+			hWj2pDho+1FtS79uK9NoCllpKDTjfgP0/EKDhbsnY8U=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/b501893e75f62ee1707643e35b21109927b07ed5b202321c961b424cbc2e4695</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			k28++WmMQ/656FKst9BczX4nxyo=
+			bGeR7pq7J1h2mtx/IvMIEpCkZXE=
 			</data>
 			<key>hash2</key>
 			<data>
-			GJJg/YrobMtk7xRq+KAbbV0/KEjpbM/9ca1JKlMleEc=
+			7USPtNn4W9XDAXBVYq+Suvh0x71zcxCpW0zHmSql+oE=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/b82962a4847bcf6d1bf89ea7543f83e184a1df7c4e7e3c343dd3e3e17cb9a645</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qgNfCJL4Z1PD3J0HDcaIInusqYo=
+			7a0YuW02dnnkCIcc4Qa28JU3zqQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			EvX3SlzkSqz2BzKiw6ObLXLJJxzfKsaHJ3sXzknIALc=
+			FTtLAUNm2nbShcRyYuZdR3htKrUZPadyguQ/O6noK/I=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/dbd7a353f0130bb983d6ba05917e9be991d70e8f028df4b74e30bc6497ef7f71</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uLIjvHvm3V45MqB/UQhdvWvcov8=
+			RBnFxuLD7ZH8kcupbpJH8rWGR3w=
 			</data>
 			<key>hash2</key>
 			<data>
-			8cssgNd8WIIDvzxk1Zew2Txmla/zEq/drmYWqkzEk6E=
+			0TK7mS/bTXStALrthpZOAfYdeR2A+HV7Edfw6GWuPSw=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/f2.xml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			M3FXSwydt6QO1y1/ECUBboW5/TU=
+			6pUozRIzDLqHEFPkjzsBNboYQJo=
 			</data>
 			<key>hash2</key>
 			<data>
-			3VO3oeI29Uge3m2tfcXYFd7zi0vN5oWggBwoNAQGvsE=
+			+8Df0QbCVN/9/FUe9JkiC/9butI4zrmwHssvI507psA=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/fd6d368a5658496536e2bfae170d1b823a3629b242cafc09784bfba4e56d8c80</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GVwO86TL2qNEzFn95/f+wPDU0xU=
+			NGkplARnE9GAisuFYplKtMNV4II=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Rk2pQqdr+MZCFoeOytqvhntRD31pJLHbCotHoKBLL4=
+			QjQ5/CxkexU8xgRbrzNCUY5J9EKBayPC4mrJ68RsVDg=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/marker</key>
@@ -748,84 +705,29 @@
 			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 			</data>
 		</dict>
+		<key>Frameworks/FaceTecSDK.framework/cache_uyertuazlkxcjrlwkejr/39bb748b334003e3fa/vu0ilin6we3lrzo5f83f7qs2jul4aq7v4aoynrmch8zfvpi8ezrfyafa4t0fx87l</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			frY6wa9qEvzWANlZzpnu5dV0enk=
+			</data>
+			<key>hash2</key>
+			<data>
+			w1WQfQKUQLxSsFp1OmViKQkIKDH9j6kCg/th3Ov8ojo=
+			</data>
+		</dict>
 		<key>Frameworks/FaceTecSDK.framework/en.lproj/FaceTec.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CBL/CjdgYqlAWJ/jEOEBose3fBk=
+			x5fsRDl/DGb93yR+ZR26j8te7xw=
 			</data>
 			<key>hash2</key>
 			<data>
-			y5dvkrKVuOQcz4R6geDEIArt1GR9eNW/u3lWCz5qT+s=
+			scJ4z3lJQoQgSsNzUvV+f/SMqa17PS3NhXkZJHFNrlU=
 			</data>
 			<key>optional</key>
 			<true/>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_facescan_successful_sound_file.mp3</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HIB+yvUWqHn/GKgZK2F/+DygqSY=
-			</data>
-			<key>hash2</key>
-			<data>
-			N2JbNIoYeg7Nl2ubNbl8AjlgZPFSSwiW+rVk+J8WXXg=
-			</data>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_please_frame_your_face_sound_file.mp3</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			kfz51x6UDyMsAnWVvpbaeRrA/Gw=
-			</data>
-			<key>hash2</key>
-			<data>
-			57ibLhN4QW2AZF0khD8acXm4R0cnXVdxzJlLAksvaYQ=
-			</data>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_please_move_closer_sound_file.mp3</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			GmUK7NeFNggO0xdWI42rodFMTfo=
-			</data>
-			<key>hash2</key>
-			<data>
-			VVdDTdd+ritgrgaLaR3hV/C7C5Egec9oYO8IcT6z+78=
-			</data>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_please_press_button_sound_file.mp3</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0sbSRyISDdaHKrmoJZ5dMgugnfA=
-			</data>
-			<key>hash2</key>
-			<data>
-			dqMCxJZ4UnXcHnU5n1fxZWDjonqzLMqBHucjlmkWIDQ=
-			</data>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_please_retry_sound_file.mp3</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			lmbXVQnj/GHVuF6FevNCoKIP/aU=
-			</data>
-			<key>hash2</key>
-			<data>
-			0FHhAL1CTAzIvqpJ/9aIi6HqQVRC4bjlLhZAbZKogao=
-			</data>
-		</dict>
-		<key>Frameworks/FaceTecSDK.framework/facetec_internal_uploading_sound_file.mp3</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			wRAwwOpzICCEIkPe5cgxFI2BdjI=
-			</data>
-			<key>hash2</key>
-			<data>
-			bD6ErGCnNZNg9kpm1WFMtv29LA0uaYebQRiUu8r2kWc=
-			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/strip-unused-architectures-from-target.sh</key>
 		<dict>
@@ -842,11 +744,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FejNXFTcez3rxRDrbzA2Y8o3xcQ=
+			9XRgV1juOma1U3ypL+6wLt0hDdY=
 			</data>
 			<key>hash2</key>
 			<data>
-			S83s29xKcvMPRsvf0LlAXXX3LlNZHhuGohEjsPYayN8=
+			6OMgNUghSfjZUwGtgZQ+EPIG8m/uDHo+1myiCKgAUsI=
 			</data>
 		</dict>
 		<key>Headers/FaceCaptcha.h</key>
@@ -937,92 +839,70 @@
 			6wK9WYygGzwdvJpGqwLB55zs5Z6DRazrjphLZz+0sIc=
 			</data>
 		</dict>
-		<key>Liveness3DViewController.nib/objects-11.0+.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			11984cIz0nkG/la2k4TrUXrzcDo=
-			</data>
-			<key>hash2</key>
-			<data>
-			n3gtHI5sx09xPCgzv4mJArqc1gX9o3dHFGsD+rG0xiY=
-			</data>
-		</dict>
-		<key>Liveness3DViewController.nib/runtime.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ef6D4eAf2HIyrvSxzu6nht9UCw8=
-			</data>
-			<key>hash2</key>
-			<data>
-			fW4FRP9+nzKua1g7eeNlMsl4yDOk+pUnk7SGw6qGfko=
-			</data>
-		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ky1UuTD4FBbR58PPJbN8w4wFM8M=
+			vqI9DSTTmKZV3SL04e1a4gsVh94=
 			</data>
 			<key>hash2</key>
 			<data>
-			ET3CBhsPSMBHfNumwN39YWx/Ufa9zX5lKMQspKdNp1I=
+			FEff1Ay/9t7Ga86R5z4GGWEU67gG7HzufUA2hfSjJUo=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tolAUWkB+G0ZVz8f+V64oVx5/zw=
+			6WVDKv3IRXuw7cvaVWN28irTb0w=
 			</data>
 			<key>hash2</key>
 			<data>
-			aY0r2cq8c4Dk2lTvmb6IJfpI1y9NrPjp4ggrZexTwwQ=
+			DYsW9X68To5+qU9jjCKvDcoRpMOR4feG4nPiiXHANbc=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			36+tbmNuMcOAsVx06YzhbLyxaNM=
+			MhhPqkJN9zu3+By4AIKGuscX2/U=
 			</data>
 			<key>hash2</key>
 			<data>
-			N1ZbbvENe712wrNNyJWG+h/tTpDxq7VHwq/FQcff6wE=
+			4rkNYJ7//1MXZo4Kh7yVpVmyWOEvAuL9gbvzxtoPvMc=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tJHLRl0SpctxitQ1y0pHMD3TsRY=
+			sS4zN/QN+6lnppnGjL38P8XboDg=
 			</data>
 			<key>hash2</key>
 			<data>
-			mMTrNa5giyrQpV6T1cZypaqHRRIYKSE5fGHjqAzEzG0=
+			AElXw3kHdqWlbWvypmyaZEsMmIR0pHqR/Sx7ZovzCY0=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oEcbiebex+aWLRk3cIFwSADGWW8=
+			j/XjiKbG9VNZXt4lxpV7La5KAls=
 			</data>
 			<key>hash2</key>
 			<data>
-			VbdDx8Rk/kGq+Al0+wdgSCn3mvLKrTCPPNGgyVECm00=
+			UFTCScEEF4VTe7LjjZ/Q2+uLljpwzIU7pAZghnGM+JA=
 			</data>
 		</dict>
 		<key>Modules/FaceCaptcha.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ms8hZYDR0va9LxwaORuVhmkN9fY=
+			EO0vnJxB5QEGwBYE7Zt+VUCoJcY=
 			</data>
 			<key>hash2</key>
 			<data>
-			gB7/zAMlwallwB40LiEcvuO+nYNHaawTv0Pqq4B6Bsc=
+			36QTrjBfCN0AFQXJ5eWmz0Q4e5eA5AJeY+AS/0z5KRE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
