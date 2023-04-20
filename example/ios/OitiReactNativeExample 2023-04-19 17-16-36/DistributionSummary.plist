@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>OitiReactNativeExample.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>450362B164BB49C65FF73FE79DD6FCF3EB70D6CD</string>
+				<key>dateExpires</key>
+				<string>12/04/24</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>30</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>450362B164BB49C65FF73FE79DD6FCF3EB70D6CD</string>
+						<key>dateExpires</key>
+						<string>12/04/24</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>FaceCaptcha.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>KRCZ6X7U8S</string>
+						<key>name</key>
+						<string>NETI SOLUCOES TECNOLOGICAS LTDA</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>4.0.9</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>9.6.10</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>450362B164BB49C65FF73FE79DD6FCF3EB70D6CD</string>
+						<key>dateExpires</key>
+						<string>12/04/24</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>FaceTecSDK.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>KRCZ6X7U8S</string>
+						<key>name</key>
+						<string>NETI SOLUCOES TECNOLOGICAS LTDA</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>9.6.10</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>0.11.0</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>450362B164BB49C65FF73FE79DD6FCF3EB70D6CD</string>
+						<key>dateExpires</key>
+						<string>12/04/24</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>hermes.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>KRCZ6X7U8S</string>
+						<key>name</key>
+						<string>NETI SOLUCOES TECNOLOGICAS LTDA</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>0.11.0</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>KRCZ6X7U8S.org.reactjs.native.example.OitiReactNativeExample</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>KRCZ6X7U8S</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>OitiReactNativeExample.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>9ba57f4e-0bcb-4ffe-acf2-52b7aa263647</string>
+				<key>dateExpires</key>
+				<string>12/04/24</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: org.reactjs.native.example.OitiReactNativeExample</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>KRCZ6X7U8S</string>
+				<key>name</key>
+				<string>NETI SOLUCOES TECNOLOGICAS LTDA</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>

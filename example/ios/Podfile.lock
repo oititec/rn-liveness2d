@@ -78,7 +78,7 @@ PODS:
   - hermes-engine (0.70.6)
   - libevent (2.1.12)
   - OILiveness3D_FT (9.6.10)
-  - oiti-oiti-react-native (1.0.4):
+  - oiti-oiti-react-native (1.0.5):
     - FaceCaptcha (~> 4.0.9-beta)
     - React-Core
   - OpenSSL-Universal (1.1.1100)
@@ -576,7 +576,7 @@ SPEC CHECKSUMS:
   hermes-engine: 2af7b7a59128f250adfd86f15aa1d5a2ecd39995
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OILiveness3D_FT: c2b3b70fbd86e2fd5efc58f47d32b0aead995ae1
-  oiti-oiti-react-native: c9894a2dd4dcfbe36acd6944e2064265a72aefa7
+  oiti-oiti-react-native: a14b3f3ff1753e83c8c7d513dfd93af52d3572bb
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: e1866f61af7049eb3d8e08e8b133abd38bc1ca7a
@@ -606,12 +606,12 @@ SPEC CHECKSUMS:
   React-RCTVibration: c75ceef7aa60a33b2d5731ebe5800ddde40cefc4
   React-runtimeexecutor: 15437b576139df27635400de0599d9844f1ab817
   ReactCommon: 349be31adeecffc7986a0de875d7fb0dcf4e251c
-  RNPermissions: 06845210af313594dc3fe5e8ae6afc820d791409
+  RNPermissions: 215c54462104b3925b412b0fb3c9c497b21c358b
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 99caf8d5ab45e9d637ee6e0174ec16fbbb01bcfc
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: df5f6e484e3626db7f58231ba497444af7f6ad5c
+PODFILE CHECKSUM: e2c2fcfda18f42104d093bae19de12578669e0fe
 
 COCOAPODS: 1.12.0

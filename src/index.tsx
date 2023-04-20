@@ -9,7 +9,7 @@ import PermissionView from './screens/PermissionView';
 import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 
 const LINKING_ERROR =
-  `The package '@oiti/oiti-react-native' doesn't seem to be linked. Make sure: \n\n` +
+  `The package '@oiti/rn-liveness2d' doesn't seem to be linked. Make sure: \n\n` +
   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
@@ -40,7 +40,7 @@ const SCREEN = Object.freeze({
 } as const);
 
 export function startFaceCaptcha(options: ArgsType): Promise<any> {
-  const args: ArgsType = {
+  let args: ArgsType = {
     appkey: options?.appkey === undefined ? '' : options?.appkey,
     environment:
       options?.environment === undefined ? '.HML' : options?.environment,
@@ -56,6 +56,10 @@ export function startFaceCaptcha(options: ArgsType): Promise<any> {
           : options?.apparence?.loadingColor,
     },
   };
+
+  if (Platform.OS === 'android') {
+    return OitiReactNative.startfacecaptcha(args.appkey);
+  }
 
   return OitiReactNative.startfacecaptcha(args);
 }
@@ -77,6 +81,11 @@ export function startDocumentscopy(options?: ArgsType): Promise<string> {
           : options?.apparence?.loadingColor,
     },
   };
+
+  if (Platform.OS === 'android') {
+    return OitiReactNative.startdocumentscopy(args.appkey, args.baseUrl);
+  }
+
   return OitiReactNative.startdocumentscopy(args);
 }
 
@@ -132,22 +141,42 @@ export function GetIntructionView2d({
   }
 
   function verifyPermission() {
-    check(PERMISSIONS.IOS.CAMERA)
-      .then((result) => {
-        switch (result) {
-          case RESULTS.UNAVAILABLE:
-            console.log(
-              'This feature is not available (on this device / in this context)'
-            );
-            break;
-          case RESULTS.DENIED:
-            console.log(
-              'The permission has not been requested / is denied but requestable'
-            );
-            if (screen === 1) {
-              setScreen(2);
-            } else {
-              request(PERMISSIONS.IOS.CAMERA).then(() => {
+    Platform.OS === 'ios'
+      ? check(PERMISSIONS.IOS.CAMERA)
+          .then((result) => {
+            switch (result) {
+              case RESULTS.UNAVAILABLE:
+                console.log(
+                  'This feature is not available (on this device / in this context)'
+                );
+                break;
+              case RESULTS.DENIED:
+                console.log(
+                  'The permission has not been requested / is denied but requestable'
+                );
+                if (screen === 1) {
+                  setScreen(2);
+                } else {
+                  request(PERMISSIONS.IOS.CAMERA).then(() => {
+                    startFaceCaptcha(options).then(
+                      (result: string) => {
+                        console.log(result);
+                        navigation.navigate(callBackView);
+                      },
+                      (error: string) => {
+                        console.log(error);
+                        navigation.navigate(callBackView);
+                      }
+                    );
+                  });
+                }
+                break;
+              case RESULTS.LIMITED:
+                console.log(
+                  'The permission is limited: some actions are possible'
+                );
+                break;
+              case RESULTS.GRANTED:
                 startFaceCaptcha(options).then(
                   (result: string) => {
                     console.log(result);
@@ -155,37 +184,81 @@ export function GetIntructionView2d({
                   },
                   (error: string) => {
                     console.log(error);
+                    navigation.navigate(callBackView);
                   }
                 );
-              });
+                break;
+              case RESULTS.BLOCKED:
+                console.log(
+                  'The permission is denied and not requestable anymore'
+                );
+                setScreen(2);
+                break;
             }
-            /* request(PERMISSIONS.IOS.CAMERA).then(() => {
+          })
+          .catch((error) => {
+            console.log('Error: ' + error);
+          })
+      : check(PERMISSIONS.ANDROID.CAMERA)
+          .then((result) => {
+            switch (result) {
+              case RESULTS.UNAVAILABLE:
+                console.log(
+                  'This feature is not available (on this device / in this context)'
+                );
+                break;
+              case RESULTS.DENIED:
+                console.log(
+                  'The permission has not been requested / is denied but requestable'
+                );
+                if (screen === 1) {
+                  setScreen(2);
+                } else {
+                  request(PERMISSIONS.ANDROID.CAMERA).then(() => {
+                    startFaceCaptcha(options).then(
+                      (result: string) => {
+                        console.log(result);
+                        navigation.navigate(callBackView);
+                      },
+                      (error: string) => {
+                        console.log(error);
+                        navigation.navigate(callBackView);
+                      }
+                    );
+                  });
+                }
+                /* request(PERMISSIONS.IOS.CAMERA).then(() => {
               'The permission has enabled' + options?.appkey;
             }); */
-            break;
-          case RESULTS.LIMITED:
-            console.log('The permission is limited: some actions are possible');
-            break;
-          case RESULTS.GRANTED:
-            startFaceCaptcha(options).then(
-              (result: string) => {
-                console.log(result);
-                navigation.navigate(callBackView);
-              },
-              (error: string) => {
-                console.log(error);
-              }
-            );
-            break;
-          case RESULTS.BLOCKED:
-            console.log('The permission is denied and not requestable anymore');
-            setScreen(2);
-            break;
-        }
-      })
-      .catch((error) => {
-        console.log('Error: ' + error);
-      });
+                break;
+              case RESULTS.LIMITED:
+                console.log(
+                  'The permission is limited: some actions are possible'
+                );
+                break;
+              case RESULTS.GRANTED:
+                startFaceCaptcha(options).then(
+                  (result: string) => {
+                    console.log(result);
+                    navigation.navigate(callBackView);
+                  },
+                  (error: string) => {
+                    console.log(error);
+                    navigation.navigate(callBackView);
+                  }
+                );
+                break;
+              case RESULTS.BLOCKED:
+                console.log(
+                  'The permission is denied and not requestable anymore'
+                );
+                setScreen(2);
+                break;
+            }
+          })
+          .catch((error) => {
+            console.log('Error: ' + error);
+          });
   }
 
   return (
@@ -259,22 +332,41 @@ export function GetIntructionViewDoc({
   }
 
   function verifyPermission() {
-    check(PERMISSIONS.IOS.CAMERA)
-      .then((result) => {
-        switch (result) {
-          case RESULTS.UNAVAILABLE:
-            console.log(
-              'This feature is not available (on this device / in this context)'
-            );
-            break;
-          case RESULTS.DENIED:
-            console.log(
-              'The permission has not been requested / is denied but requestable'
-            );
-            if (screen === 1) {
-              setScreen(2);
-            } else {
-              request(PERMISSIONS.IOS.CAMERA).then(() => {
+    Platform.OS === 'ios'
+      ? check(PERMISSIONS.IOS.CAMERA)
+          .then((result) => {
+            switch (result) {
+              case RESULTS.UNAVAILABLE:
+                console.log(
+                  'This 22 feature is not available (on this device / in this context)'
+                );
+                break;
+              case RESULTS.DENIED:
+                console.log(
+                  'The permission has not been requested / is denied but requestable'
+                );
+                if (screen === 1) {
+                  setScreen(2);
+                } else {
+                  request(PERMISSIONS.IOS.CAMERA).then(() => {
+                    startDocumentscopy(options).then(
+                      (result: string) => {
+                        console.log(result);
+                        navigation.navigate(callBackView);
+                      },
+                      (error: string) => {
+                        console.log(error);
+                      }
+                    );
+                  });
+                }
+                break;
+              case RESULTS.LIMITED:
+                console.log(
+                  'The permission is limited: some actions are possible'
+                );
+                break;
+              case RESULTS.GRANTED:
                 startDocumentscopy(options).then(
                   (result: string) => {
                     console.log(result);
@@ -284,35 +376,73 @@ export function GetIntructionViewDoc({
                     console.log(error);
                   }
                 );
-              });
+                break;
+              case RESULTS.BLOCKED:
+                console.log(
+                  'The permission is denied and not requestable anymore'
+                );
+                setScreen(2);
+                break;
             }
-            /* request(PERMISSIONS.IOS.CAMERA).then(() => {
-              'The permission has enabled' + options?.appkey;
-            }); */
-            break;
-          case RESULTS.LIMITED:
-            console.log('The permission is limited: some actions are possible');
-            break;
-          case RESULTS.GRANTED:
-            startDocumentscopy(options).then(
-              (result: string) => {
-                console.log(result);
-                navigation.navigate(callBackView);
-              },
-              (error: string) => {
-                console.log(error);
-              }
-            );
-            break;
-          case RESULTS.BLOCKED:
-            console.log('The permission is denied and not requestable anymore');
-            setScreen(2);
-            break;
-        }
-      })
-      .catch((error) => {
-        console.log('Error: ' + error);
-      });
+          })
+          .catch((error) => {
+            console.log('Error: ' + error);
+          })
+      : check(PERMISSIONS.ANDROID.CAMERA)
+          .then((result) => {
+            switch (result) {
+              case RESULTS.UNAVAILABLE:
+                console.log(
+                  'This is not available (on this device / in this context)'
+                );
+                break;
+              case RESULTS.DENIED:
+                console.log(
+                  'The permission has not been requested / is denied but requestable'
+                );
+                if (screen === 1) {
+                  setScreen(2);
+                } else {
+                  request(PERMISSIONS.ANDROID.CAMERA).then(() => {
+                    startDocumentscopy(options).then(
+                      (result: string) => {
+                        console.log(result);
+                        navigation.navigate(callBackView);
+                      },
+                      (error: string) => {
+                        console.log(error);
+                      }
+                    );
+                  });
+                }
+                break;
+              case RESULTS.LIMITED:
+                console.log(
+                  'The permission is limited: some actions are possible'
+                );
+                break;
+              case RESULTS.GRANTED:
+                startDocumentscopy(options).then(
+                  (result: string) => {
+                    console.log(result);
+                    navigation.navigate(callBackView);
+                  },
+                  (error: string) => {
+                    console.log(error);
+                  }
+                );
+                break;
+              case RESULTS.BLOCKED:
+                console.log(
+                  'The permission is denied and not requestable anymore'
+                );
+                setScreen(2);
+                break;
+            }
+          })
+          .catch((error) => {
+            console.log('Error: ' + error);
+          });
   }
 
   return (

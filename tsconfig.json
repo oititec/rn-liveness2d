@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@oiti/oiti-react-native": ["./src/index"]
+      "@oiti/rn-liveness2d": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

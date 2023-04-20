@@ -1,6 +1,20 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+  Platform,
+} from 'react-native';
+import { normalize } from '../../utils/normalize';
+
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+
+const scaleW = SCREEN_WIDTH / 320;
+const scaleH = SCREEN_HEIGHT / 920;
 
 export default function InstructionsView({
   onVerify,
@@ -11,17 +25,19 @@ export default function InstructionsView({
 }) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => onBack()} style={styles.navigationBar}>
-        <Image
-          source={require('../../assets/images/left-arrow.png')}
-          style={styles.leftArrow}
-        />
-      </TouchableOpacity>
-      <View style={styles.imgContainer}>
-        <Image
-          source={require('../../assets/images/img_face.png')}
-          style={styles.imgFace}
-        />
+      <View style={styles.boxImg}>
+        <TouchableOpacity onPress={() => onBack()} style={styles.navigationBar}>
+          <Image
+            source={require('../../assets/images/left-arrow.png')}
+            style={styles.leftArrow}
+          />
+        </TouchableOpacity>
+        <View style={styles.imgContainer}>
+          <Image
+            source={require('../../assets/images/img_face.png')}
+            style={styles.imgFace}
+          />
+        </View>
       </View>
 
       <View style={styles.boxBtn}>
@@ -83,7 +99,7 @@ const styles = StyleSheet.create({
   },
   intructions: {
     width: '90%',
-    flex: 1,
+    flex: 1.5,
   },
   boxIcon: {
     width: 64,
@@ -99,7 +115,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     width: '75%',
     color: '#000000',
-    fontSize: 25,
+    fontSize: normalize(25, scaleW),
   },
   imgContainer: {
     flex: 1,
@@ -111,7 +127,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginLeft: 20,
     width: '90%',
-    fontSize: 29,
+    fontSize: normalize(29, scaleW),
     fontWeight: 'bold',
     /* fontFamily: 'Ubuntu-Bold', */
     color: '#1E1E1E',
@@ -126,8 +142,9 @@ const styles = StyleSheet.create({
   },
   nextText: {
     /* fontFamily: 'Ubuntu-Medium', */
-    fontSize: 25,
+    fontSize: normalize(25, scaleW),
     margin: 13,
+    color: '#000000',
   },
   description_one: {
     textAlign: 'center',
@@ -146,16 +163,22 @@ const styles = StyleSheet.create({
   },
   boxBtn: {
     width: '100%',
-    flex: 1,
+    flex: Platform.OS === 'ios' ? 1 : 1.3,
     borderTopLeftRadius: 35,
     borderTopRightRadius: 35,
     height: '100%',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
   },
+  boxImg: {
+    width: '100%',
+    flex: 1,
+    height: '100%',
+    alignItems: 'center',
+  },
   subtitle: {
     /* fontFamily: 'Ubuntu-Regular', */
-    fontSize: 20,
+    fontSize: normalize(20, scaleW),
     marginLeft: 20,
     width: '90%',
     color: '#666666',
@@ -168,12 +191,16 @@ const styles = StyleSheet.create({
     height: 55,
   },
   leftArrow: {
-    marginTop: 70,
+    marginTop: normalize(70, scaleH),
     marginLeft: 20,
     width: 25,
     height: 25,
   },
-  imgFace: {},
+  imgFace: {
+    height: '100%',
+    flex: 1,
+    aspectRatio: 4 / 4.4,
+  },
   waveTop: {
     flex: 1,
     width: '100%',

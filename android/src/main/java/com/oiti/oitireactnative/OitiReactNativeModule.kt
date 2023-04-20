@@ -45,28 +45,32 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
   }
 
   try {
+
     val userData = UserData(appKey = appKey)
     val intent =  Intent(getCurrentActivity(), FaceCaptchaActivity::class.java).apply{
       putExtra(FaceCaptchaActivity.PARAM_ENDPOINT, ENDPOINT)
       putExtra(FaceCaptchaActivity.PARAM_USER_DATA, userData)
+      putExtra(FaceCaptchaActivity.PARAM_SHOW_INSTRUCTIONS, false)
     }
     getCurrentActivity()?.startActivityForResult(intent, FACECAPTCHA_RESULT_REQUEST)
+
     } catch (e: Exception) {
     }
   }
 
     @ReactMethod
-    fun startdocumentoscopy(appKey: String, promise: Promise) {
+    fun startdocumentscopy(appKey: String, baseUrl: String, promise: Promise) {
 
     val intent = Intent(getCurrentActivity(), DocumentscopyActivity::class.java).apply{
-        putExtra(DocumentscopyActivity.PARAM_ENDPOINT, ENDPOINT)
+        putExtra(DocumentscopyActivity.PARAM_ENDPOINT, baseUrl)
         putExtra(DocumentscopyActivity.PARAM_APP_KEY, appKey)
+        putExtra(DocumentscopyActivity.PARAM_HYBRID, true)
         putExtra(
                     DocumentscopyActivity.PARAM_DEBUG_ON,
                     false
       )
     }
-        getCurrentActivity()?.startActivityForResult(intent, DOCUMENTSCOPY_RESULT_REQUEST)
+    getCurrentActivity()?.startActivityForResult(intent, DOCUMENTSCOPY_RESULT_REQUEST)
   }
 
   companion object {

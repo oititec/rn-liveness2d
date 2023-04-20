@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { Liveness2dView } from '@oiti/rn-liveness2d';
 import InstructionsView from '../InstructionsView';
+import PermissionView from '../PermissionView';
 
 export default function Liveness2D({ navigation }: { navigation: any }) {
   const appKey =
@@ -18,7 +19,7 @@ export default function Liveness2D({ navigation }: { navigation: any }) {
       navigation={navigation}
       callbackView="Home"
       CustomInstructionView={<InstructionsView navigation={navigation} />}
-      /* CustomPermissionView={CustomPermissionView} */
+      /* CustomPermissionView={<PermissionView navigation={navigation} />} */
     />
   );
 }
