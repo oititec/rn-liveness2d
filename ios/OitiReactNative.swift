@@ -52,7 +52,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
     func startdocumentscopy(args: Dictionary<String,Any>?, resolve:@escaping RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock) -> Void {
         self.resolve = resolve
         
-        print(args)
+        
         
         let appKey = args?["appkey"] as? String ?? ""
         let baseURL = args?["baseUrl"] as? String ?? certifaceURL
