@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { DocumentsCopyView } from '@oiti/rn-liveness2d';
+import InstructionsView from '../InstructionsView';
 
 export default function Documentscopy({ navigation }: { navigation: any }) {
   const appKey =
@@ -59,8 +60,8 @@ export default function Documentscopy({ navigation }: { navigation: any }) {
       options={options}
       navigation={navigation}
       callbackView="Home"
-      /* CustomInstructionView={CustomInstructionView}
-      CustomPermissionView={CustomPermissionView} */
+      CustomInstructionView={<InstructionsView navigation={navigation} />}
+      /* CustomPermissionView={CustomPermissionView} */
     />
   );
 }

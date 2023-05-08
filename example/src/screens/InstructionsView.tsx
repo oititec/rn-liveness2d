@@ -7,7 +7,15 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
+
+import { normalize } from '../utils/normalize';
+
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+
+const scaleW = SCREEN_WIDTH / 320;
+const scaleH = SCREEN_HEIGHT / 920;
 
 import { startFaceCaptcha } from '@oiti/rn-liveness2d';
 
@@ -89,25 +97,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
     borderRadius: 5,
-    marginTop: 30,
+    marginTop: normalize(30, scaleH),
   },
   nextText: {
     /* fontFamily: 'Ubuntu-Medium', */
-    fontSize: 25,
-    margin: 13,
+    fontSize: normalize(25, scaleW),
+    margin: normalize(13, scaleW),
   },
   imgInstructions: {
-    width: '100%',
-    height: 450,
+    height: '100%',
+    flex: 1,
+    aspectRatio: 4 / 4.4,
   },
   description_one: {
     textAlign: 'center',
     color: '#FFFFFF',
     /* fontFamily: 'Ubuntu-Bold', */
-    fontSize: 30,
+    fontSize: normalize(20, scaleW),
     marginLeft: 60,
     marginRight: 60,
-    marginTop: 10,
+    marginTop: normalize(10, scaleH),
   },
   boxInfo: {
     width: '100%',
@@ -129,16 +138,17 @@ const styles = StyleSheet.create({
   },
   instruction_one: {
     width: '100%',
-    height: 530,
+    height: normalize(530, scaleH),
   },
   iconTop: {
-    marginTop: 60,
+    marginTop: normalize(60, scaleH),
     marginLeft: 20,
-    width: 55,
-    height: 55,
+    width: normalize(50, scaleW),
+    height: normalize(50, scaleH),
+    aspectRatio: 4 / 4.4,
   },
   leftArrow: {
-    marginTop: 70,
+    marginTop: normalize(70, scaleH),
     marginLeft: 20,
     width: 25,
     height: 25,
