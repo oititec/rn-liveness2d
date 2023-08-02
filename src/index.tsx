@@ -42,9 +42,9 @@ const SCREEN = Object.freeze({
 export function startFaceCaptcha(options: ArgsType): Promise<any> {
   let args: ArgsType = {
     appkey: options?.appkey === undefined ? '' : options?.appkey,
+    ticket: options?.appkey === undefined ? '' : options?.ticket,
     environment:
       options?.environment === undefined ? '.HML' : options?.environment,
-    baseUrl: options?.baseUrl === undefined ? '' : options?.baseUrl,
     apparence: {
       backgroundColor:
         options?.apparence?.backgroundColor === ''
@@ -67,9 +67,9 @@ export function startFaceCaptcha(options: ArgsType): Promise<any> {
 export function startDocumentscopy(options?: ArgsType): Promise<string> {
   const args: ArgsType = {
     appkey: options?.appkey === undefined ? '' : options?.appkey,
+    ticket: options?.appkey === undefined ? '' : options?.ticket,
     environment:
       options?.environment === undefined ? '.HML' : options?.environment,
-    baseUrl: options?.baseUrl === undefined ? '' : options?.baseUrl,
     apparence: {
       backgroundColor:
         options?.apparence?.backgroundColor === ''
@@ -83,7 +83,7 @@ export function startDocumentscopy(options?: ArgsType): Promise<string> {
   };
 
   if (Platform.OS === 'android') {
-    return OitiReactNative.startdocumentscopy(args.appkey, args.baseUrl);
+    return OitiReactNative.startdocumentscopy(args.appkey, args.ticket);
   }
 
   return OitiReactNative.startdocumentscopy(args);
@@ -96,8 +96,8 @@ export function GetIntructionView2d({
   navigation,
   callBackView,
 }: {
-  CustomInstructionView: any | null;
-  CustomPermissionView: any | null;
+  CustomInstructionView?: any | null;
+  CustomPermissionView?: any | null;
   options: ArgsType;
   navigation: any;
   callBackView: string;
@@ -287,8 +287,8 @@ export function GetIntructionViewDoc({
   navigation,
   callBackView,
 }: {
-  CustomInstructionView: any | null;
-  CustomPermissionView: any | null;
+  CustomInstructionView?: any | null;
+  CustomPermissionView?: any | null;
   options: ArgsType;
   navigation: any;
   callBackView: string;
@@ -471,8 +471,8 @@ export function Liveness2dView({
   navigation,
   callbackView,
 }: {
-  CustomInstructionView: any | null;
-  CustomPermissionView: any | null;
+  CustomInstructionView?: any | null;
+  CustomPermissionView?: any | null;
   options: any;
   navigation: any;
   callbackView: string;
@@ -495,8 +495,8 @@ export function DocumentsCopyView({
   navigation,
   callbackView,
 }: {
-  CustomInstructionView: any | null;
-  CustomPermissionView: any | null;
+  CustomInstructionView?: any | null;
+  CustomPermissionView?: any | null;
   options: any;
   navigation: any;
   callbackView: string;
