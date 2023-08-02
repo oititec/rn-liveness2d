@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Liveness2dView } from '@oiti/rn-liveness2d';
-import InstructionsView from '../InstructionsView';
+// import InstructionsView from '../InstructionsView';
 
 export default function Liveness2D({
   route,
@@ -16,7 +16,7 @@ export default function Liveness2D({
       options={options}
       navigation={navigation}
       callbackView="Home"
-      CustomInstructionView={<InstructionsView navigation={navigation} />}
+      /* CustomInstructionView={<InstructionsView navigation={navigation} />} */
       /* CustomPermissionView={<PermissionView navigation={navigation} />} */
     />
   );
