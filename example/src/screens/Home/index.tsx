@@ -18,7 +18,11 @@ export default function Home({ navigation }: { navigation: any }) {
       <Text style={styles.box}>Exemplo Oiti - Hibridos</Text>
       <View style={styles.button}>
         <Button
-          onPress={() => navigation.navigate('Liveness2D')}
+          onPress={() =>
+            navigation.navigate('Liveness2D', {
+              options: options,
+            })
+          }
           title="FaceCaptcha"
         />
       </View>
