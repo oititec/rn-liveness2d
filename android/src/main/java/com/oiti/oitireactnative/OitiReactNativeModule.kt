@@ -61,7 +61,7 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
     fun startdocumentscopy(appKey: String, ticket: String, promise: Promise) {
 
     val intent = Intent(getCurrentActivity(), DocumentscopyActivity::class.java).apply{
-        putExtra(DocumentscopyActivity.PARAM_ENDPOINT, baseUrl)
+        putExtra(DocumentscopyActivity.PARAM_ENDPOINT, ENDPOINT)
         putExtra(DocumentscopyActivity.PARAM_APP_KEY, appKey)
         putExtra(DocumentscopyActivity.PARAM_TICKET,ticket )
         putExtra(DocumentscopyActivity.PARAM_HYBRID, true)
