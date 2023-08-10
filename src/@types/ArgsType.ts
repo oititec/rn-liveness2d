@@ -1,7 +1,7 @@
 export type ArgsType = {
   appkey: string;
+  ticket: string;
   environment: '.HML' | '.PRD';
-  baseUrl: string;
   apparence: ApparenceType;
 };
 

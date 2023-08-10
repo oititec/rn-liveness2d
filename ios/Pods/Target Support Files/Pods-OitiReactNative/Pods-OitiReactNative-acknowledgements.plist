@@ -14,12 +14,41 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright © 2020 Oiti.
-</string>
+			<string>Copyright © 2022 Oiti. All rights reserved.</string>
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
-			<string>FaceCaptcha</string>
+			<string>OICommons</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright © 2022 Oiti. All rights reserved.</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>OIComponents</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright © 2022 Oiti. All rights reserved.</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>OILiveness2D</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright © 2022-2023 Oiti. All rights reserved.</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>OINetwork</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

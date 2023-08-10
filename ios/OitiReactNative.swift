@@ -1,51 +1,55 @@
 import UIKit
 //import Foundation
 
-import FaceCaptcha
+import OILiveness2D
+import OICommons
+import OIComponents
 
 @objc(OitiReactNative)
 class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
     
     var resolve:RCTPromiseResolveBlock!
     
-    public func handleDocumentscopyCompleted() {
-        resolve("handleDocumentscopyCompleted")
-    }
-    
-    /// Callback chamada em caso de erro durante execução da Documentoscopia.
-    /// - Parameters:
-    ///   - error: Erro ocorrido
-    public func handleDocumentscopyError(error: DocumentscopyError) {
-        debugPrint("handleDocumentscopyError: \(error)")
-        resolve("handleDocumentscopyError: \(error)")
-    }
-    
-    /// Callback chamada ao clicar no botão de cancelar/fechar.
-    public func handleDocumentscopyCanceled() {
-        resolve("handleDocumentscopyCanceled")
-    }
-    
-    public func handleFaceCaptchaValidation(validateModel: FCValidCaptchaModel) {
+    public func handleSuccess(model: FaceCaptchaSuccessModel){
+        debugPrint("handleSuccess: \(model)")
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
         resolve("RESULT_OK")
     }
-    
-    /// Callback chamada em caso de erro durante execução do FaceCaptcha.
-    /// - Parameters:
-    /// - error: Erro ocorrido
-    public func handleFaceCaptchaError(error: FaceCaptchaError) {
+
+    public func handleError(error: FaceCaptchaError){
+        debugPrint("handleError: \(error)")
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
         resolve("\(error)")
-        
     }
-    
-    /// Callback chamada ao clicar no botão de cancelar/fechar.
-    public func handleFaceCaptchaCanceled() {
+
+    /// Método que lida com o cancelamento do fluxo de reconhecimento facial por parte do usuário.
+    public func handleCanceled() {
+        debugPrint("handleCaptureCanceled")
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
-        resolve("RESULT_CANCELED")
-        
+        resolve("RESUL_CANCELED")
     }
     
+    func handleDocumentscopyCompleted(){
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
+        resolve("RESULT_OK")
+    }
+
+    /// Lidar com o erro que ocorreu durante o processo de Documentoscopia.
+    /// - Parameter error: Erro capturado no processo.
+    func handleDocumentscopyError(error: DocumentscopyError){
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
+        resolve("\(error)")
+    }
+
+    /// Lidar com o processo de Documentoscopia que foi cancelado.
+    func handleDocumentscopyCanceled(){
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
+        resolve("RESUL_CANCELED")
+    }
+    
+    
+    
+   
     private let certifaceURL = "https://comercial.certiface.com.br:8443/"
     
     @objc(startdocumentscopy:withResolver:withRejecter:)
@@ -53,7 +57,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         self.resolve = resolve
         
         
-        
+        let ticket = args?["ticket"] as? String ?? ""
         let appKey = args?["appkey"] as? String ?? ""
         let baseURL = args?["baseUrl"] as? String ?? certifaceURL
         let environment = args?["environment"] as? String ?? ""
@@ -64,11 +68,8 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         let loadingColor = apparence?["loadingColor"] as? String ?? ""
         
         DispatchQueue.main.async {
-            let initTheme = HybridViewAppearance(
-                backgroundColor: .init(hex: backgroundColor),
-                loadingColor:.init(hex: loadingColor)
-            )
-            let vc = HybridDocumentscopyViewController(appKey: appKey, baseURL: baseURL, delegate: self, customAppearance: initTheme)
+        
+            let vc = HybridDocumentscopyViewController(ticket: ticket, appKey: appKey, environment: Environment.HML, delegate: self)
             vc.modalPresentationStyle = .fullScreen
             RCTPresentedViewController()?.present(vc, animated: true)
         }
@@ -82,11 +83,9 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         let appKey = args?["appkey"] as? String ?? ""
         let baseURL = args?["baseUrl"] as? String ?? certifaceURL
         
-       
+        
         DispatchQueue.main.async {
-            let vc = FaceCaptchaViewController(appKey: appKey,
-                                               baseURL: baseURL,
-                                               delegate: self)
+            let vc = HybridFaceCaptchaViewController(appKey: appKey, environment: Environment.HML, delegate: self)
             vc.modalPresentationStyle = .fullScreen
             RCTPresentedViewController()?.present(vc, animated: true)
         }

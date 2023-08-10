@@ -25,15 +25,6 @@ const OitiReactNative = NativeModules.OitiReactNative
       }
     );
 
-/* const ERRORS = Object.freeze({
-  INVALID_APP_KEY: '0',
-  NO_CAMERA_PERMISSION: '1',
-  NO_INTERNET_CONNECTION: '2',
-  LIVENESS_NOT_COMPLETED: '3',
-  LIVENESS_NOT_INITIALIZED: '4',
-  RESULT_OK: 'RESULT_OK',
-} as const); */
-
 const SCREEN = Object.freeze({
   INSTRUCTION_VIEW: 1,
   PERMISSION_VIEW: 2,
@@ -42,9 +33,9 @@ const SCREEN = Object.freeze({
 export function startFaceCaptcha(options: ArgsType): Promise<any> {
   let args: ArgsType = {
     appkey: options?.appkey === undefined ? '' : options?.appkey,
+    ticket: options?.appkey === undefined ? '' : options?.ticket,
     environment:
       options?.environment === undefined ? '.HML' : options?.environment,
-    baseUrl: options?.baseUrl === undefined ? '' : options?.baseUrl,
     apparence: {
       backgroundColor:
         options?.apparence?.backgroundColor === ''
@@ -67,9 +58,9 @@ export function startFaceCaptcha(options: ArgsType): Promise<any> {
 export function startDocumentscopy(options?: ArgsType): Promise<string> {
   const args: ArgsType = {
     appkey: options?.appkey === undefined ? '' : options?.appkey,
+    ticket: options?.appkey === undefined ? '' : options?.ticket,
     environment:
       options?.environment === undefined ? '.HML' : options?.environment,
-    baseUrl: options?.baseUrl === undefined ? '' : options?.baseUrl,
     apparence: {
       backgroundColor:
         options?.apparence?.backgroundColor === ''
@@ -83,7 +74,7 @@ export function startDocumentscopy(options?: ArgsType): Promise<string> {
   };
 
   if (Platform.OS === 'android') {
-    return OitiReactNative.startdocumentscopy(args.appkey, args.baseUrl);
+    return OitiReactNative.startdocumentscopy(args.appkey, args.ticket);
   }
 
   return OitiReactNative.startdocumentscopy(args);
@@ -96,38 +87,13 @@ export function GetIntructionView2d({
   navigation,
   callBackView,
 }: {
-  CustomInstructionView: any | null;
-  CustomPermissionView: any | null;
+  CustomInstructionView?: any | null;
+  CustomPermissionView?: any | null;
   options: ArgsType;
   navigation: any;
   callBackView: string;
 }) {
   const [screen, setScreen] = useState(1);
-  /* 
-  function startLiveness() {
-    startFaceCaptcha(options).then((result) => {
-      switch (result) {
-        case ERRORS.INVALID_APP_KEY:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.NO_CAMERA_PERMISSION:
-          navigation.navigate('PermissionView');
-          break;
-        case ERRORS.NO_INTERNET_CONNECTION:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.LIVENESS_NOT_COMPLETED:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.LIVENESS_NOT_INITIALIZED:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.RESULT_OK:
-          navigation.navigate('InstructionsView');
-          break;
-      }
-    });
-  } */
 
   function onBack() {
     switch (screen) {
@@ -287,38 +253,13 @@ export function GetIntructionViewDoc({
   navigation,
   callBackView,
 }: {
-  CustomInstructionView: any | null;
-  CustomPermissionView: any | null;
+  CustomInstructionView?: any | null;
+  CustomPermissionView?: any | null;
   options: ArgsType;
   navigation: any;
   callBackView: string;
 }) {
   const [screen, setScreen] = useState(1);
-  /* 
-  function startLiveness() {
-    startFaceCaptcha(options).then((result) => {
-      switch (result) {
-        case ERRORS.INVALID_APP_KEY:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.NO_CAMERA_PERMISSION:
-          navigation.navigate('PermissionView');
-          break;
-        case ERRORS.NO_INTERNET_CONNECTION:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.LIVENESS_NOT_COMPLETED:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.LIVENESS_NOT_INITIALIZED:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.RESULT_OK:
-          navigation.navigate('InstructionsView');
-          break;
-      }
-    });
-  } */
 
   function onBack() {
     switch (screen) {
@@ -471,8 +412,8 @@ export function Liveness2dView({
   navigation,
   callbackView,
 }: {
-  CustomInstructionView: any | null;
-  CustomPermissionView: any | null;
+  CustomInstructionView?: any | null;
+  CustomPermissionView?: any | null;
   options: any;
   navigation: any;
   callbackView: string;
@@ -495,8 +436,8 @@ export function DocumentsCopyView({
   navigation,
   callbackView,
 }: {
-  CustomInstructionView: any | null;
-  CustomPermissionView: any | null;
+  CustomInstructionView?: any | null;
+  CustomPermissionView?: any | null;
   options: any;
   navigation: any;
   callbackView: string;

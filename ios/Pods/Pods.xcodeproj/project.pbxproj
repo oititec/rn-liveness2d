@@ -7,122 +7,184 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		1E2E843BEB5FDC71DDCCF52C06A9113F /* OILiveness3D_FT */ = {
+		6A70B9AE4EAA93546EB8F26CE42953CC /* OILiveness2D */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 1F0CBBFA62864211E7D1BF2F736CB8FA /* Build configuration list for PBXAggregateTarget "OILiveness3D_FT" */;
+			buildConfigurationList = 13755BFF4F91A6738D1EA0D65E77E8A3 /* Build configuration list for PBXAggregateTarget "OILiveness2D" */;
 			buildPhases = (
-				C079C2511CD1E340DA15D4F75F0396B9 /* [CP] Copy XCFrameworks */,
+				893412FA956DA33466AD62DD0E4CD3F2 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
+				7134919E9DB28725B77AADA08A86D5A1 /* PBXTargetDependency */,
+				DD5CBE8DD5701FF142B58F75A8A3A0AD /* PBXTargetDependency */,
+				BE2833D3CD27625373134ECB73245F1C /* PBXTargetDependency */,
 			);
-			name = OILiveness3D_FT;
+			name = OILiveness2D;
 		};
-		B3547F0AB41F319358DA25DED105E5C8 /* FaceCaptcha */ = {
+		C803281F06AD29D83614AB8CE6228DD8 /* OIComponents */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 6A64BBC9827BAE2A859097434F80FBAB /* Build configuration list for PBXAggregateTarget "FaceCaptcha" */;
+			buildConfigurationList = 1236B211CBE4D183BD5D85F7C51CFBE7 /* Build configuration list for PBXAggregateTarget "OIComponents" */;
 			buildPhases = (
-				2B82B35593DC42761F31C2CD4A18E8FF /* [CP] Copy XCFrameworks */,
+				0E1BA45F8B0FFBB0D770FB0FA1127773 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				4FE788C075D7138CB04E75548A5A8D0A /* PBXTargetDependency */,
+				246A0DDB39F14999208ADC63FF864F15 /* PBXTargetDependency */,
 			);
-			name = FaceCaptcha;
+			name = OIComponents;
+		};
+		D2C4ECC520D5BF1EA895F6C928B5373C /* OINetwork */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2B300948C296D2FC21E411AE81315301 /* Build configuration list for PBXAggregateTarget "OINetwork" */;
+			buildPhases = (
+				8C644652F37950100D14C370DF5ED881 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+				BA2839384EEB270475C6243F258893C4 /* PBXTargetDependency */,
+			);
+			name = OINetwork;
+		};
+		D3F6432D69E9E4C1D6D9CF583693B6F4 /* OICommons */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AA9DA7DAB4641F57A75D2EF8F498AF5A /* Build configuration list for PBXAggregateTarget "OICommons" */;
+			buildPhases = (
+				2582A727080A93DFEAA6B9BE2C59D224 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+			);
+			name = OICommons;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1F1B8422229D38F278C18895D56191CA /* Pods-OitiReactNative-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EE3E390068D776104ABA404F46932 /* Pods-OitiReactNative-dummy.m */; };
-		93EDF6724B0697C05E6E7997A986492E /* Pods-OitiReactNative-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C5DFD5FBD89997285A81E0D79F7CC5 /* Pods-OitiReactNative-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B9AFF8D9D1B9FD8410CB9A0176E6A05D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		14366974475986F89498B1AAFA2E516B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3AAD4E66EF7BD96BBB2B8E13F376FB4F /* Pods-OitiReactNative-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C5DFD5FBD89997285A81E0D79F7CC5 /* Pods-OitiReactNative-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		632DF1C4D8BE333BAAC534A6F456F38D /* Pods-OitiReactNative-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EE3E390068D776104ABA404F46932 /* Pods-OitiReactNative-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5FD6AE2A633B28EF9AF943E5E37489A8 /* PBXContainerItemProxy */ = {
+		1A2C1100438B74A51235D965D8078A37 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E2E843BEB5FDC71DDCCF52C06A9113F;
-			remoteInfo = OILiveness3D_FT;
+			remoteGlobalIDString = D3F6432D69E9E4C1D6D9CF583693B6F4;
+			remoteInfo = OICommons;
 		};
-		91490F0784F8813EA4324C65AD68FC6E /* PBXContainerItemProxy */ = {
+		2E527DB12F3EC8C29F96046FCEFF76A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E2E843BEB5FDC71DDCCF52C06A9113F;
-			remoteInfo = OILiveness3D_FT;
+			remoteGlobalIDString = C803281F06AD29D83614AB8CE6228DD8;
+			remoteInfo = OIComponents;
 		};
-		C42E5AE18D89346D397E0803B87BAB8B /* PBXContainerItemProxy */ = {
+		33A336C7D24BD796D732094F83E4B84A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B3547F0AB41F319358DA25DED105E5C8;
-			remoteInfo = FaceCaptcha;
+			remoteGlobalIDString = D2C4ECC520D5BF1EA895F6C928B5373C;
+			remoteInfo = OINetwork;
+		};
+		444A3A78456B97509A35EFD3DB410B85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3F6432D69E9E4C1D6D9CF583693B6F4;
+			remoteInfo = OICommons;
+		};
+		61194E3313250BB8CC16D7F5FD880BF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C803281F06AD29D83614AB8CE6228DD8;
+			remoteInfo = OIComponents;
+		};
+		6E869A63083270869E15EE45EF26373F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2C4ECC520D5BF1EA895F6C928B5373C;
+			remoteInfo = OINetwork;
+		};
+		A387EBF68B1B72815CABE136C07E3D1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3F6432D69E9E4C1D6D9CF583693B6F4;
+			remoteInfo = OICommons;
+		};
+		AB3B264D40564E3D21087776F381BDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3F6432D69E9E4C1D6D9CF583693B6F4;
+			remoteInfo = OICommons;
+		};
+		F2E9725FF94C71F83FAB4EF8B438F525 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A70B9AE4EAA93546EB8F26CE42953CC;
+			remoteInfo = OILiveness2D;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A75789C40D814432AD05F9E4FEF427A /* FaceCaptcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaceCaptcha.debug.xcconfig; sourceTree = "<group>"; };
+		06E4F0D082640115CF59E3F7DA326E2C /* OINetwork-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OINetwork-xcframeworks.sh"; sourceTree = "<group>"; };
 		1A6EE3E390068D776104ABA404F46932 /* Pods-OitiReactNative-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OitiReactNative-dummy.m"; sourceTree = "<group>"; };
 		1F5AF8017BA773E3D91342956DBAA649 /* Pods-OitiReactNative-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OitiReactNative-Info.plist"; sourceTree = "<group>"; };
+		1F615EE0C3C14615489D6616B4EAA9A6 /* OIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OIComponents.release.xcconfig; sourceTree = "<group>"; };
 		2FE7F700ED282749A62AB82DF59EB0E4 /* Pods-OitiReactNative */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OitiReactNative"; path = Pods_OitiReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C5DFD5FBD89997285A81E0D79F7CC5 /* Pods-OitiReactNative-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OitiReactNative-umbrella.h"; sourceTree = "<group>"; };
-		3BBC5DD830EA6632026254741D2A4141 /* FaceCaptcha.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = FaceCaptcha.xcframework; path = Framework/FaceCaptcha.xcframework; sourceTree = "<group>"; };
+		33597B0CDAFE65A5208D99E7CD039F63 /* OIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OIComponents.debug.xcconfig; sourceTree = "<group>"; };
+		3849DCF9465B771829EB22AD0E892699 /* OIComponents-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OIComponents-xcframeworks.sh"; sourceTree = "<group>"; };
+		3D3A416C0018EE9CB73CDCE234D62DAA /* OILiveness2D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OILiveness2D.debug.xcconfig; sourceTree = "<group>"; };
 		41DA7F1328D78732EAA32556E7C1F20F /* Pods-OitiReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OitiReactNative.debug.xcconfig"; sourceTree = "<group>"; };
-		4ECF98D5CED0C8FDFEB92DFF45E6DC43 /* FaceTecSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = FaceTecSDK.xcframework; path = Framework/FaceTecSDK.xcframework; sourceTree = "<group>"; };
-		5AC2C43AAB7E953427AFFEE26876C503 /* FaceCaptcha-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "FaceCaptcha-xcframeworks.sh"; sourceTree = "<group>"; };
-		6FAD95CDF2CE5BC5437793EFB972ADC3 /* FaceCaptcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaceCaptcha.release.xcconfig; sourceTree = "<group>"; };
+		43B79AA28382E573B2FC4B0572AC28A9 /* OILiveness2D-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OILiveness2D-xcframeworks.sh"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7BAD8458DC647ACA9178644A5DA3A92D /* OILiveness3D_FT-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OILiveness3D_FT-xcframeworks.sh"; sourceTree = "<group>"; };
+		81F8F3AE44FE4D95D8876FA1DDD22D83 /* OICommons-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OICommons-xcframeworks.sh"; sourceTree = "<group>"; };
+		8237F18CADC4432A4DB24D271F2F0688 /* OICommons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OICommons.release.xcconfig; sourceTree = "<group>"; };
+		8689F270EB4D024AACD2429B9A0A6997 /* OINetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OINetwork.release.xcconfig; sourceTree = "<group>"; };
+		884177FCC81D32A36F80E5AD4D895FD3 /* OICommons.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OICommons.xcframework; path = Framework/Output/OICommons.xcframework; sourceTree = "<group>"; };
 		8B60BB01D50764F048B92CEE400727A8 /* Pods-OitiReactNative.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OitiReactNative.modulemap"; sourceTree = "<group>"; };
 		9D90771D2825AAC48B50F7DDC5193781 /* Pods-OitiReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OitiReactNative.release.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AA5C895DA4F3AC1A1E581EA10CF5D15F /* OILiveness3D_FT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OILiveness3D_FT.release.xcconfig; sourceTree = "<group>"; };
+		ACB2BE248493EC25F66379710F836D49 /* OINetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OINetwork.debug.xcconfig; sourceTree = "<group>"; };
+		B1197160F27F74B269ADAEB0DC67B3FE /* OIComponents.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OIComponents.xcframework; path = Framework/Output/OIComponents.xcframework; sourceTree = "<group>"; };
 		B835D4D774DC99DAC5259B96C79DBA1F /* Pods-OitiReactNative-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OitiReactNative-acknowledgements.plist"; sourceTree = "<group>"; };
 		C44C2BAF18EF2F455F5B16CFD7F8BAE6 /* Pods-OitiReactNative-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OitiReactNative-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DE16B927156E718E243467C6A4B6349D /* OILiveness3D_FT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OILiveness3D_FT.debug.xcconfig; sourceTree = "<group>"; };
+		C6FE0F2A7B7AB6A82EB053F4DEE54920 /* OICommons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OICommons.debug.xcconfig; sourceTree = "<group>"; };
+		D6384850CA4F7BAA9DB623C23018779B /* OINetwork.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OINetwork.xcframework; path = Framework/Output/OINetwork.xcframework; sourceTree = "<group>"; };
+		DD69E863E68BC8BA05B8A09DA9E0BF6E /* OILiveness2D.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OILiveness2D.xcframework; path = Framework/Output/OILiveness2D.xcframework; sourceTree = "<group>"; };
+		ED95A400A5DF28CE98793D9CA78D93D9 /* OILiveness2D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OILiveness2D.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		684BB4DEB6BB45D57AD539116FFEC4DA /* Frameworks */ = {
+		742384BF28B7C48A53CA367E07B4B796 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9AFF8D9D1B9FD8410CB9A0176E6A05D /* Foundation.framework in Frameworks */,
+				14366974475986F89498B1AAFA2E516B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02C957875BF72145B2146890FFA8641D /* Support Files */ = {
+		18212970D20CBFCD67952272AE986FE1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5AC2C43AAB7E953427AFFEE26876C503 /* FaceCaptcha-xcframeworks.sh */,
-				0A75789C40D814432AD05F9E4FEF427A /* FaceCaptcha.debug.xcconfig */,
-				6FAD95CDF2CE5BC5437793EFB972ADC3 /* FaceCaptcha.release.xcconfig */,
+				06E4F0D082640115CF59E3F7DA326E2C /* OINetwork-xcframeworks.sh */,
+				ACB2BE248493EC25F66379710F836D49 /* OINetwork.debug.xcconfig */,
+				8689F270EB4D024AACD2429B9A0A6997 /* OINetwork.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/FaceCaptcha";
+			path = "../Target Support Files/OINetwork";
 			sourceTree = "<group>";
 		};
-		2CFE2604F4A2EA33152F7B4718DC615D /* Pods */ = {
+		2DCA2A1D5230B71BEA34A439D31F24ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F048464CCCF62C152DFB43DA44F156E7 /* FaceCaptcha */,
-				F26A9BB7EAB1EFA99FDAFA27A25E8196 /* OILiveness3D_FT */,
+				DD69E863E68BC8BA05B8A09DA9E0BF6E /* OILiveness2D.xcframework */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		33AAA3D604E93FD7291EE7C62D2A0B0B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7BAD8458DC647ACA9178644A5DA3A92D /* OILiveness3D_FT-xcframeworks.sh */,
-				DE16B927156E718E243467C6A4B6349D /* OILiveness3D_FT.debug.xcconfig */,
-				AA5C895DA4F3AC1A1E581EA10CF5D15F /* OILiveness3D_FT.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/OILiveness3D_FT";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -131,6 +193,16 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		5FC94C00A8D59F2B01ED3F74A41B893C /* OIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				6A44E077A040A73E9C2177FE49E05FF1 /* Frameworks */,
+				D07AD4442EBBC1A4473335863F0B04EB /* Support Files */,
+			);
+			name = OIComponents;
+			path = OIComponents;
 			sourceTree = "<group>";
 		};
 		5FEF6DB1D27B97B2D8EECFE2A6C79B56 /* Pods-OitiReactNative */ = {
@@ -157,6 +229,46 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6A44E077A040A73E9C2177FE49E05FF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1197160F27F74B269ADAEB0DC67B3FE /* OIComponents.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7496436F4A456120673FB98BC26F7ECE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD22D7DC196384E7473BA43429D2997D /* OICommons */,
+				5FC94C00A8D59F2B01ED3F74A41B893C /* OIComponents */,
+				A8D06997376502CC7E5A0D1F91AC883B /* OILiveness2D */,
+				CEC875783ED73C03A1C01CDE3FFEFED0 /* OINetwork */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A8D06997376502CC7E5A0D1F91AC883B /* OILiveness2D */ = {
+			isa = PBXGroup;
+			children = (
+				2DCA2A1D5230B71BEA34A439D31F24ED /* Frameworks */,
+				ABE2B8842B34488B9FEDD0A479442F97 /* Support Files */,
+			);
+			name = OILiveness2D;
+			path = OILiveness2D;
+			sourceTree = "<group>";
+		};
+		ABE2B8842B34488B9FEDD0A479442F97 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				43B79AA28382E573B2FC4B0572AC28A9 /* OILiveness2D-xcframeworks.sh */,
+				3D3A416C0018EE9CB73CDCE234D62DAA /* OILiveness2D.debug.xcconfig */,
+				ED95A400A5DF28CE98793D9CA78D93D9 /* OILiveness2D.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OILiveness2D";
+			sourceTree = "<group>";
+		};
 		BE03A071239A4240E13BE8993EB1DDE0 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,15 +277,46 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		CD22D7DC196384E7473BA43429D2997D /* OICommons */ = {
+			isa = PBXGroup;
+			children = (
+				EA8EE4B43ED409288805102BCD7B3060 /* Frameworks */,
+				E2D081F31489314EF347FD03B8907592 /* Support Files */,
+			);
+			name = OICommons;
+			path = OICommons;
+			sourceTree = "<group>";
+		};
+		CEC875783ED73C03A1C01CDE3FFEFED0 /* OINetwork */ = {
+			isa = PBXGroup;
+			children = (
+				DBEDA32A7A1CE038383E9507B39A298E /* Frameworks */,
+				18212970D20CBFCD67952272AE986FE1 /* Support Files */,
+			);
+			name = OINetwork;
+			path = OINetwork;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				2CFE2604F4A2EA33152F7B4718DC615D /* Pods */,
+				7496436F4A456120673FB98BC26F7ECE /* Pods */,
 				697FFB7C18B3A9877A615388D6234EA6 /* Products */,
 				BE03A071239A4240E13BE8993EB1DDE0 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D07AD4442EBBC1A4473335863F0B04EB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3849DCF9465B771829EB22AD0E892699 /* OIComponents-xcframeworks.sh */,
+				33597B0CDAFE65A5208D99E7CD039F63 /* OIComponents.debug.xcconfig */,
+				1F615EE0C3C14615489D6616B4EAA9A6 /* OIComponents.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OIComponents";
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -184,50 +327,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D72EB01B412D897F5200A2E02DA052D9 /* Frameworks */ = {
+		DBEDA32A7A1CE038383E9507B39A298E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4ECF98D5CED0C8FDFEB92DFF45E6DC43 /* FaceTecSDK.xcframework */,
+				D6384850CA4F7BAA9DB623C23018779B /* OINetwork.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC2C74AFF82055D1E9F5F79FD8AB8EBD /* Frameworks */ = {
+		E2D081F31489314EF347FD03B8907592 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3BBC5DD830EA6632026254741D2A4141 /* FaceCaptcha.xcframework */,
+				81F8F3AE44FE4D95D8876FA1DDD22D83 /* OICommons-xcframeworks.sh */,
+				C6FE0F2A7B7AB6A82EB053F4DEE54920 /* OICommons.debug.xcconfig */,
+				8237F18CADC4432A4DB24D271F2F0688 /* OICommons.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OICommons";
+			sourceTree = "<group>";
+		};
+		EA8EE4B43ED409288805102BCD7B3060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				884177FCC81D32A36F80E5AD4D895FD3 /* OICommons.xcframework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F048464CCCF62C152DFB43DA44F156E7 /* FaceCaptcha */ = {
-			isa = PBXGroup;
-			children = (
-				DC2C74AFF82055D1E9F5F79FD8AB8EBD /* Frameworks */,
-				02C957875BF72145B2146890FFA8641D /* Support Files */,
-			);
-			name = FaceCaptcha;
-			path = FaceCaptcha;
-			sourceTree = "<group>";
-		};
-		F26A9BB7EAB1EFA99FDAFA27A25E8196 /* OILiveness3D_FT */ = {
-			isa = PBXGroup;
-			children = (
-				D72EB01B412D897F5200A2E02DA052D9 /* Frameworks */,
-				33AAA3D604E93FD7291EE7C62D2A0B0B /* Support Files */,
-			);
-			name = OILiveness3D_FT;
-			path = OILiveness3D_FT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F6B255DDC9C3821FD107BBC408738041 /* Headers */ = {
+		7C2B7A3F0EBA06F5E52725642A41626C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93EDF6724B0697C05E6E7997A986492E /* Pods-OitiReactNative-umbrella.h in Headers */,
+				3AAD4E66EF7BD96BBB2B8E13F376FB4F /* Pods-OitiReactNative-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,18 +370,20 @@
 /* Begin PBXNativeTarget section */
 		99DF038C62DC12A9DBE1E4ACF8740619 /* Pods-OitiReactNative */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7BF852513FCA3B2BE47E6B066411E4FE /* Build configuration list for PBXNativeTarget "Pods-OitiReactNative" */;
+			buildConfigurationList = 093B7E82F6B575C54CBBFFB836725F1A /* Build configuration list for PBXNativeTarget "Pods-OitiReactNative" */;
 			buildPhases = (
-				F6B255DDC9C3821FD107BBC408738041 /* Headers */,
-				C4CF055A043D036EFFB7EFB996875BD8 /* Sources */,
-				684BB4DEB6BB45D57AD539116FFEC4DA /* Frameworks */,
-				0863C582C2AC28139EDD3A38C8DD9DE3 /* Resources */,
+				7C2B7A3F0EBA06F5E52725642A41626C /* Headers */,
+				F11D138BA71FDE48F699A436E4E41648 /* Sources */,
+				742384BF28B7C48A53CA367E07B4B796 /* Frameworks */,
+				444D74A88ECBD6E214D370C0405F8F62 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				66723FD122D1DB7F681122311703DE50 /* PBXTargetDependency */,
-				822FFF1B7F0B50826206D172617C05ED /* PBXTargetDependency */,
+				0A2F4F8DCC4E69589E5C295E15277532 /* PBXTargetDependency */,
+				FFD0EB12F08D05C4F4349E8EAC696DA4 /* PBXTargetDependency */,
+				FBD3795C80F09380F7693A0CE721408B /* PBXTargetDependency */,
+				D4492D97EEE1391779A592A06108D329 /* PBXTargetDependency */,
 			);
 			name = "Pods-OitiReactNative";
 			productName = Pods_OitiReactNative;
@@ -276,15 +412,17 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B3547F0AB41F319358DA25DED105E5C8 /* FaceCaptcha */,
-				1E2E843BEB5FDC71DDCCF52C06A9113F /* OILiveness3D_FT */,
+				D3F6432D69E9E4C1D6D9CF583693B6F4 /* OICommons */,
+				C803281F06AD29D83614AB8CE6228DD8 /* OIComponents */,
+				6A70B9AE4EAA93546EB8F26CE42953CC /* OILiveness2D */,
+				D2C4ECC520D5BF1EA895F6C928B5373C /* OINetwork */,
 				99DF038C62DC12A9DBE1E4ACF8740619 /* Pods-OitiReactNative */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0863C582C2AC28139EDD3A38C8DD9DE3 /* Resources */ = {
+		444D74A88ECBD6E214D370C0405F8F62 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,105 +432,165 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B82B35593DC42761F31C2CD4A18E8FF /* [CP] Copy XCFrameworks */ = {
+		0E1BA45F8B0FFBB0D770FB0FA1127773 /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/FaceCaptcha/FaceCaptcha-xcframeworks.sh",
-				"${PODS_ROOT}/FaceCaptcha/Framework/FaceCaptcha.xcframework",
+				"${PODS_ROOT}/Target Support Files/OIComponents/OIComponents-xcframeworks.sh",
+				"${PODS_ROOT}/OIComponents/Framework/Output/OIComponents.xcframework",
 			);
 			name = "[CP] Copy XCFrameworks";
 			outputPaths = (
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FaceCaptcha/FaceCaptcha.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OIComponents/OIComponents.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/FaceCaptcha/FaceCaptcha-xcframeworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/OIComponents/OIComponents-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C079C2511CD1E340DA15D4F75F0396B9 /* [CP] Copy XCFrameworks */ = {
+		2582A727080A93DFEAA6B9BE2C59D224 /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/OILiveness3D_FT/OILiveness3D_FT-xcframeworks.sh",
-				"${PODS_ROOT}/OILiveness3D_FT/Framework/FaceTecSDK.xcframework",
+				"${PODS_ROOT}/Target Support Files/OICommons/OICommons-xcframeworks.sh",
+				"${PODS_ROOT}/OICommons/Framework/Output/OICommons.xcframework",
 			);
 			name = "[CP] Copy XCFrameworks";
 			outputPaths = (
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OILiveness3D_FT/FaceTecSDK.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OICommons/OICommons.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/OILiveness3D_FT/OILiveness3D_FT-xcframeworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/OICommons/OICommons-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		893412FA956DA33466AD62DD0E4CD3F2 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/OILiveness2D/OILiveness2D-xcframeworks.sh",
+				"${PODS_ROOT}/OILiveness2D/Framework/Output/OILiveness2D.xcframework",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputPaths = (
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OILiveness2D/OILiveness2D.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/OILiveness2D/OILiveness2D-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C644652F37950100D14C370DF5ED881 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/OINetwork/OINetwork-xcframeworks.sh",
+				"${PODS_ROOT}/OINetwork/Framework/Output/OINetwork.xcframework",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputPaths = (
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OINetwork/OINetwork.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/OINetwork/OINetwork-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C4CF055A043D036EFFB7EFB996875BD8 /* Sources */ = {
+		F11D138BA71FDE48F699A436E4E41648 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1B8422229D38F278C18895D56191CA /* Pods-OitiReactNative-dummy.m in Sources */,
+				632DF1C4D8BE333BAAC534A6F456F38D /* Pods-OitiReactNative-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4FE788C075D7138CB04E75548A5A8D0A /* PBXTargetDependency */ = {
+		0A2F4F8DCC4E69589E5C295E15277532 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = OILiveness3D_FT;
-			target = 1E2E843BEB5FDC71DDCCF52C06A9113F /* OILiveness3D_FT */;
-			targetProxy = 5FD6AE2A633B28EF9AF943E5E37489A8 /* PBXContainerItemProxy */;
+			name = OICommons;
+			target = D3F6432D69E9E4C1D6D9CF583693B6F4 /* OICommons */;
+			targetProxy = AB3B264D40564E3D21087776F381BDCC /* PBXContainerItemProxy */;
 		};
-		66723FD122D1DB7F681122311703DE50 /* PBXTargetDependency */ = {
+		246A0DDB39F14999208ADC63FF864F15 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FaceCaptcha;
-			target = B3547F0AB41F319358DA25DED105E5C8 /* FaceCaptcha */;
-			targetProxy = C42E5AE18D89346D397E0803B87BAB8B /* PBXContainerItemProxy */;
+			name = OICommons;
+			target = D3F6432D69E9E4C1D6D9CF583693B6F4 /* OICommons */;
+			targetProxy = 1A2C1100438B74A51235D965D8078A37 /* PBXContainerItemProxy */;
 		};
-		822FFF1B7F0B50826206D172617C05ED /* PBXTargetDependency */ = {
+		7134919E9DB28725B77AADA08A86D5A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = OILiveness3D_FT;
-			target = 1E2E843BEB5FDC71DDCCF52C06A9113F /* OILiveness3D_FT */;
-			targetProxy = 91490F0784F8813EA4324C65AD68FC6E /* PBXContainerItemProxy */;
+			name = OICommons;
+			target = D3F6432D69E9E4C1D6D9CF583693B6F4 /* OICommons */;
+			targetProxy = A387EBF68B1B72815CABE136C07E3D1C /* PBXContainerItemProxy */;
+		};
+		BA2839384EEB270475C6243F258893C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OICommons;
+			target = D3F6432D69E9E4C1D6D9CF583693B6F4 /* OICommons */;
+			targetProxy = 444A3A78456B97509A35EFD3DB410B85 /* PBXContainerItemProxy */;
+		};
+		BE2833D3CD27625373134ECB73245F1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OINetwork;
+			target = D2C4ECC520D5BF1EA895F6C928B5373C /* OINetwork */;
+			targetProxy = 6E869A63083270869E15EE45EF26373F /* PBXContainerItemProxy */;
+		};
+		D4492D97EEE1391779A592A06108D329 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OINetwork;
+			target = D2C4ECC520D5BF1EA895F6C928B5373C /* OINetwork */;
+			targetProxy = 33A336C7D24BD796D732094F83E4B84A /* PBXContainerItemProxy */;
+		};
+		DD5CBE8DD5701FF142B58F75A8A3A0AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OIComponents;
+			target = C803281F06AD29D83614AB8CE6228DD8 /* OIComponents */;
+			targetProxy = 2E527DB12F3EC8C29F96046FCEFF76A1 /* PBXContainerItemProxy */;
+		};
+		FBD3795C80F09380F7693A0CE721408B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OILiveness2D;
+			target = 6A70B9AE4EAA93546EB8F26CE42953CC /* OILiveness2D */;
+			targetProxy = F2E9725FF94C71F83FAB4EF8B438F525 /* PBXContainerItemProxy */;
+		};
+		FFD0EB12F08D05C4F4349E8EAC696DA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OIComponents;
+			target = C803281F06AD29D83614AB8CE6228DD8 /* OIComponents */;
+			targetProxy = 61194E3313250BB8CC16D7F5FD880BF3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3AF7AA77C61315F6F92645BFFD1D4344 /* Debug */ = {
+		26A063C7B183B9C70D4CF425497EE3D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE16B927156E718E243467C6A4B6349D /* OILiveness3D_FT.debug.xcconfig */;
+			baseConfigurationReference = 33597B0CDAFE65A5208D99E7CD039F63 /* OIComponents.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		5C4F5035EBCDF1BAD37A922DBE2F44D3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA5C895DA4F3AC1A1E581EA10CF5D15F /* OILiveness3D_FT.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
+		6C98B09FF5CCB107837D1A84E8F3A4F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -442,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,26 +652,12 @@
 			};
 			name = Release;
 		};
-		8ED7B8F2D1E54CD3AA68F9F6CE4D2921 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FAD95CDF2CE5BC5437793EFB972ADC3 /* FaceCaptcha.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		AA958FFFCE0418664AF4B73C75D9F8DF /* Release */ = {
+		6EC33FC49B9F9FF7045DC0CB87FEAD90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D90771D2825AAC48B50F7DDC5193781 /* Pods-OitiReactNative.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -485,7 +669,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-OitiReactNative/Pods-OitiReactNative-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-OitiReactNative/Pods-OitiReactNative.modulemap";
@@ -503,7 +687,57 @@
 			};
 			name = Release;
 		};
-		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+		8573882228928ACE940DCE69EEE02367 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F615EE0C3C14615489D6616B4EAA9A6 /* OIComponents.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86FE90074107C71468F8EA46767F3E13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41DA7F1328D78732EAA32556E7C1F20F /* Pods-OitiReactNative.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OitiReactNative/Pods-OitiReactNative-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OitiReactNative/Pods-OitiReactNative.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8E6A8FF58D100B7F9B1943F455C00F02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -556,7 +790,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -569,47 +803,93 @@
 			};
 			name = Debug;
 		};
-		DAAE1DF0280A07AD0AAB71E274694C47 /* Debug */ = {
+		B492DABE2EC59F3CD40C01B1E3BA82CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41DA7F1328D78732EAA32556E7C1F20F /* Pods-OitiReactNative.debug.xcconfig */;
+			baseConfigurationReference = ED95A400A5DF28CE98793D9CA78D93D9 /* OILiveness2D.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-OitiReactNative/Pods-OitiReactNative-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OitiReactNative/Pods-OitiReactNative.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E785D348B7EE6A68288CFEB4B8D546E2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A75789C40D814432AD05F9E4FEF427A /* FaceCaptcha.debug.xcconfig */;
-			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE94B53094D084C4D0DB421045A6E1F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8237F18CADC4432A4DB24D271F2F0688 /* OICommons.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D501B1117389D94C90C45B638A68BEB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8689F270EB4D024AACD2429B9A0A6997 /* OINetwork.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB3E969DF760AB5AA2926E96270FF2AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACB2BE248493EC25F66379710F836D49 /* OINetwork.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E9BCC423935A095FE0257F1994C5734C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D3A416C0018EE9CB73CDCE234D62DAA /* OILiveness2D.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8C5AEC320453F6EB454A6581FA4F6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6FE0F2A7B7AB6A82EB053F4DEE54920 /* OICommons.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -619,11 +899,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1F0CBBFA62864211E7D1BF2F736CB8FA /* Build configuration list for PBXAggregateTarget "OILiveness3D_FT" */ = {
+		093B7E82F6B575C54CBBFFB836725F1A /* Build configuration list for PBXNativeTarget "Pods-OitiReactNative" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AF7AA77C61315F6F92645BFFD1D4344 /* Debug */,
-				5C4F5035EBCDF1BAD37A922DBE2F44D3 /* Release */,
+				86FE90074107C71468F8EA46767F3E13 /* Debug */,
+				6EC33FC49B9F9FF7045DC0CB87FEAD90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1236B211CBE4D183BD5D85F7C51CFBE7 /* Build configuration list for PBXAggregateTarget "OIComponents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A063C7B183B9C70D4CF425497EE3D0 /* Debug */,
+				8573882228928ACE940DCE69EEE02367 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13755BFF4F91A6738D1EA0D65E77E8A3 /* Build configuration list for PBXAggregateTarget "OILiveness2D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9BCC423935A095FE0257F1994C5734C /* Debug */,
+				B492DABE2EC59F3CD40C01B1E3BA82CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B300948C296D2FC21E411AE81315301 /* Build configuration list for PBXAggregateTarget "OINetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB3E969DF760AB5AA2926E96270FF2AC /* Debug */,
+				D501B1117389D94C90C45B638A68BEB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -631,26 +938,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
-				7EE7A78859F657F6BEFC651185B43192 /* Release */,
+				8E6A8FF58D100B7F9B1943F455C00F02 /* Debug */,
+				6C98B09FF5CCB107837D1A84E8F3A4F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A64BBC9827BAE2A859097434F80FBAB /* Build configuration list for PBXAggregateTarget "FaceCaptcha" */ = {
+		AA9DA7DAB4641F57A75D2EF8F498AF5A /* Build configuration list for PBXAggregateTarget "OICommons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E785D348B7EE6A68288CFEB4B8D546E2 /* Debug */,
-				8ED7B8F2D1E54CD3AA68F9F6CE4D2921 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7BF852513FCA3B2BE47E6B066411E4FE /* Build configuration list for PBXNativeTarget "Pods-OitiReactNative" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DAAE1DF0280A07AD0AAB71E274694C47 /* Debug */,
-				AA958FFFCE0418664AF4B73C75D9F8DF /* Release */,
+				F8C5AEC320453F6EB454A6581FA4F6C3 /* Debug */,
+				CE94B53094D084C4D0DB421045A6E1F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

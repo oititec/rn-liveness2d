@@ -10,7 +10,6 @@ import android.content.Intent
 
 import androidx.annotation.NonNull
 
-
 import br.com.oiti.certiface.facecaptcha.FaceCaptchaActivity
 import br.com.oiti.certiface.facecaptcha.UserData
 import br.com.oiti.certiface.documentscopy.DocumentscopyActivity
@@ -59,12 +58,14 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
   }
 
     @ReactMethod
-    fun startdocumentscopy(appKey: String, baseUrl: String, promise: Promise) {
+    fun startdocumentscopy(appKey: String, ticket: String, promise: Promise) {
 
     val intent = Intent(getCurrentActivity(), DocumentscopyActivity::class.java).apply{
-        putExtra(DocumentscopyActivity.PARAM_ENDPOINT, baseUrl)
+        putExtra(DocumentscopyActivity.PARAM_ENDPOINT, ENDPOINT)
         putExtra(DocumentscopyActivity.PARAM_APP_KEY, appKey)
+        putExtra(DocumentscopyActivity.PARAM_TICKET,ticket )
         putExtra(DocumentscopyActivity.PARAM_HYBRID, true)
+      //  putExtra(DocumentscopyActivity.PARAM_CERTIFACE_ENV, CertifaceEnviroment.HML)
         putExtra(
                     DocumentscopyActivity.PARAM_DEBUG_ON,
                     false
