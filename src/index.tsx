@@ -25,15 +25,6 @@ const OitiReactNative = NativeModules.OitiReactNative
       }
     );
 
-/* const ERRORS = Object.freeze({
-  INVALID_APP_KEY: '0',
-  NO_CAMERA_PERMISSION: '1',
-  NO_INTERNET_CONNECTION: '2',
-  LIVENESS_NOT_COMPLETED: '3',
-  LIVENESS_NOT_INITIALIZED: '4',
-  RESULT_OK: 'RESULT_OK',
-} as const); */
-
 const SCREEN = Object.freeze({
   INSTRUCTION_VIEW: 1,
   PERMISSION_VIEW: 2,
@@ -103,31 +94,6 @@ export function GetIntructionView2d({
   callBackView: string;
 }) {
   const [screen, setScreen] = useState(1);
-  /* 
-  function startLiveness() {
-    startFaceCaptcha(options).then((result) => {
-      switch (result) {
-        case ERRORS.INVALID_APP_KEY:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.NO_CAMERA_PERMISSION:
-          navigation.navigate('PermissionView');
-          break;
-        case ERRORS.NO_INTERNET_CONNECTION:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.LIVENESS_NOT_COMPLETED:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.LIVENESS_NOT_INITIALIZED:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.RESULT_OK:
-          navigation.navigate('InstructionsView');
-          break;
-      }
-    });
-  } */
 
   function onBack() {
     switch (screen) {
@@ -294,31 +260,6 @@ export function GetIntructionViewDoc({
   callBackView: string;
 }) {
   const [screen, setScreen] = useState(1);
-  /* 
-  function startLiveness() {
-    startFaceCaptcha(options).then((result) => {
-      switch (result) {
-        case ERRORS.INVALID_APP_KEY:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.NO_CAMERA_PERMISSION:
-          navigation.navigate('PermissionView');
-          break;
-        case ERRORS.NO_INTERNET_CONNECTION:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.LIVENESS_NOT_COMPLETED:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.LIVENESS_NOT_INITIALIZED:
-          navigation.navigate('InstructionsView');
-          break;
-        case ERRORS.RESULT_OK:
-          navigation.navigate('InstructionsView');
-          break;
-      }
-    });
-  } */
 
   function onBack() {
     switch (screen) {
