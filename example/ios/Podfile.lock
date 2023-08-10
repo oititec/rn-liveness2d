@@ -75,11 +75,11 @@ PODS:
   - glog (0.3.5)
   - hermes-engine (0.70.6)
   - libevent (2.1.12)
-  - OICommons (1.1.0)
+  - OICommons (1.1.1)
   - OIComponents (1.2.1):
     - OICommons (~> 1.1.0)
   - OILiveness2D (1.1.0):
-    - OICommons (~> 1.1.0)
+    - OICommons (~> 1.1.1)
     - OIComponents (~> 1.2.1)
     - OINetwork (~> 1.2.1)
   - OINetwork (1.2.1):
@@ -391,7 +391,7 @@ PODS:
   - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
-  - SocketRocket (0.6.0)
+  - SocketRocket (0.6.1)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -582,9 +582,9 @@ SPEC CHECKSUMS:
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 2af7b7a59128f250adfd86f15aa1d5a2ecd39995
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  OICommons: c304a4f3aa3f0fe9282eae013a45fde717ad42bf
+  OICommons: b92a165581d7c3cadc67433b76261e01813e0abe
   OIComponents: 8cf47c0dc9b3477e8e4d5513c99b0c83283da3ce
-  OILiveness2D: 749e5536e263d56eaca30e91ef193dac37bfd776
+  OILiveness2D: 32c9be73af72346e18dc4e29993a58056c6e7cfe
   OINetwork: 8660d3a489ab299db3295c9be287fad51ff32dcb
   oiti-oiti-react-native: 89e82078f316961872d2a6e3d5bad323453133fa
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
@@ -618,7 +618,7 @@ SPEC CHECKSUMS:
   ReactCommon: 349be31adeecffc7986a0de875d7fb0dcf4e251c
   RNPermissions: 06845210af313594dc3fe5e8ae6afc820d791409
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
-  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 99caf8d5ab45e9d637ee6e0174ec16fbbb01bcfc
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

@@ -37,6 +37,7 @@ export default function Home({ navigation }: { navigation: any }) {
         />
       </View>
       <View style={styles.button}>
+        <Text>AppKey</Text>
         <TextInput
           style={styles.input}
           onChangeText={(text) => setOptions({ ...options, appkey: text })}
@@ -45,6 +46,7 @@ export default function Home({ navigation }: { navigation: any }) {
         />
       </View>
       <View style={styles.button}>
+        <Text>Ticket</Text>
         <TextInput
           style={styles.input}
           onChangeText={(text) => setOptions({ ...options, ticket: text })}

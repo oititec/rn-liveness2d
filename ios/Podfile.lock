@@ -1,9 +1,9 @@
 PODS:
-  - OICommons (1.1.0)
+  - OICommons (1.1.1)
   - OIComponents (1.2.1):
     - OICommons (~> 1.1.0)
   - OILiveness2D (1.1.0):
-    - OICommons (~> 1.1.0)
+    - OICommons (~> 1.1.1)
     - OIComponents (~> 1.2.1)
     - OINetwork (~> 1.2.1)
   - OINetwork (1.2.1):
@@ -20,9 +20,9 @@ SPEC REPOS:
     - OINetwork
 
 SPEC CHECKSUMS:
-  OICommons: c304a4f3aa3f0fe9282eae013a45fde717ad42bf
+  OICommons: b92a165581d7c3cadc67433b76261e01813e0abe
   OIComponents: 8cf47c0dc9b3477e8e4d5513c99b0c83283da3ce
-  OILiveness2D: 749e5536e263d56eaca30e91ef193dac37bfd776
+  OILiveness2D: 32c9be73af72346e18dc4e29993a58056c6e7cfe
   OINetwork: 8660d3a489ab299db3295c9be287fad51ff32dcb
 
 PODFILE CHECKSUM: 76bb582119db45f3a6538d386e7acc1b819decbd

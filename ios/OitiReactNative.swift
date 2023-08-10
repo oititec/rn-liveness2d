@@ -70,7 +70,6 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         DispatchQueue.main.async {
         
             let vc = HybridDocumentscopyViewController(ticket: ticket, appKey: appKey, environment: Environment.HML, delegate: self)
-            vc.delegate = self
             vc.modalPresentationStyle = .fullScreen
             RCTPresentedViewController()?.present(vc, animated: true)
         }
@@ -86,7 +85,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         
         
         DispatchQueue.main.async {
-            let vc = FaceCaptchaViewController(appKey: appKey, environment: Environment.HML, delegate: self)
+            let vc = HybridFaceCaptchaViewController(appKey: appKey, environment: Environment.HML, delegate: self)
             vc.modalPresentationStyle = .fullScreen
             RCTPresentedViewController()?.present(vc, animated: true)
         }
