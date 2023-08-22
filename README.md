@@ -36,10 +36,20 @@ yarn add @oiti/rn-liveness2d
 
 ## 3.2. iOS Configuração
 
-Adicionar o Pod do FaceCaptcha no seu Podfile que está localizado dentro da pasta `ios`
+Adicionar o Pod do Liveness2D no seu Podfile que está localizado dentro da pasta `ios`
 
 ```objectivec
-pod 'FaceCaptcha', '~> 4.10.0', :source => '<https://github.com/oititec/liveness-ios-specs.git>'
+pod 'OILiveness2D', '1.1.0', :source => 'https://github.com/oititec/ios-artifactory.git'
+```
+
+## 3.3. Android Configuração
+
+Adicionar o repositório do SDK Liveness2D no seu build.gradle que está localizado dentro da pasta `android` em allprojects ->repositories
+
+```gradle
+maven {
+    url 'https://raw.githubusercontent.com/oititec/android-oiti-versions/master'
+}
 ```
 
 # 4. Uso no Javascript (PASSO 2)
