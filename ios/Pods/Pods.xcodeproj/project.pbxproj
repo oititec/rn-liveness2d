@@ -11,7 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 13755BFF4F91A6738D1EA0D65E77E8A3 /* Build configuration list for PBXAggregateTarget "OILiveness2D" */;
 			buildPhases = (
-				893412FA956DA33466AD62DD0E4CD3F2 /* [CP] Copy XCFrameworks */,
+				473CF81FC48A2B43E145EFFB73EA10A6 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 				7134919E9DB28725B77AADA08A86D5A1 /* PBXTargetDependency */,
@@ -24,7 +24,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 1236B211CBE4D183BD5D85F7C51CFBE7 /* Build configuration list for PBXAggregateTarget "OIComponents" */;
 			buildPhases = (
-				0E1BA45F8B0FFBB0D770FB0FA1127773 /* [CP] Copy XCFrameworks */,
+				C6FCE2DE6A3E8C2EA7D81D041B283993 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 				246A0DDB39F14999208ADC63FF864F15 /* PBXTargetDependency */,
@@ -35,7 +35,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 2B300948C296D2FC21E411AE81315301 /* Build configuration list for PBXAggregateTarget "OINetwork" */;
 			buildPhases = (
-				8C644652F37950100D14C370DF5ED881 /* [CP] Copy XCFrameworks */,
+				679611EEC03CD9036E1BE11451270842 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 				BA2839384EEB270475C6243F258893C4 /* PBXTargetDependency */,
@@ -46,7 +46,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = AA9DA7DAB4641F57A75D2EF8F498AF5A /* Build configuration list for PBXAggregateTarget "OICommons" */;
 			buildPhases = (
-				2582A727080A93DFEAA6B9BE2C59D224 /* [CP] Copy XCFrameworks */,
+				9945FF39CEBBCCDB55188F600BA289E1 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
@@ -138,21 +138,21 @@
 		3D3A416C0018EE9CB73CDCE234D62DAA /* OILiveness2D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OILiveness2D.debug.xcconfig; sourceTree = "<group>"; };
 		41DA7F1328D78732EAA32556E7C1F20F /* Pods-OitiReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OitiReactNative.debug.xcconfig"; sourceTree = "<group>"; };
 		43B79AA28382E573B2FC4B0572AC28A9 /* OILiveness2D-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OILiveness2D-xcframeworks.sh"; sourceTree = "<group>"; };
+		6750E298649BED4D464B5D90981843EB /* OICommons.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OICommons.xcframework; path = Frameworks/OICommons.xcframework; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		81F8F3AE44FE4D95D8876FA1DDD22D83 /* OICommons-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OICommons-xcframeworks.sh"; sourceTree = "<group>"; };
 		8237F18CADC4432A4DB24D271F2F0688 /* OICommons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OICommons.release.xcconfig; sourceTree = "<group>"; };
 		8689F270EB4D024AACD2429B9A0A6997 /* OINetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OINetwork.release.xcconfig; sourceTree = "<group>"; };
-		884177FCC81D32A36F80E5AD4D895FD3 /* OICommons.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OICommons.xcframework; path = Framework/Output/OICommons.xcframework; sourceTree = "<group>"; };
 		8B60BB01D50764F048B92CEE400727A8 /* Pods-OitiReactNative.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OitiReactNative.modulemap"; sourceTree = "<group>"; };
 		9D90771D2825AAC48B50F7DDC5193781 /* Pods-OitiReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OitiReactNative.release.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A991D9C48D5B2CA86C409C1485017C67 /* OIComponents.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OIComponents.xcframework; path = Frameworks/OIComponents.xcframework; sourceTree = "<group>"; };
 		ACB2BE248493EC25F66379710F836D49 /* OINetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OINetwork.debug.xcconfig; sourceTree = "<group>"; };
-		B1197160F27F74B269ADAEB0DC67B3FE /* OIComponents.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OIComponents.xcframework; path = Framework/Output/OIComponents.xcframework; sourceTree = "<group>"; };
+		B425526027D2F27EFE00C4935561D346 /* OILiveness2D.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OILiveness2D.xcframework; path = Framework/OILiveness2D.xcframework; sourceTree = "<group>"; };
 		B835D4D774DC99DAC5259B96C79DBA1F /* Pods-OitiReactNative-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OitiReactNative-acknowledgements.plist"; sourceTree = "<group>"; };
 		C44C2BAF18EF2F455F5B16CFD7F8BAE6 /* Pods-OitiReactNative-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OitiReactNative-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C6FE0F2A7B7AB6A82EB053F4DEE54920 /* OICommons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OICommons.debug.xcconfig; sourceTree = "<group>"; };
-		D6384850CA4F7BAA9DB623C23018779B /* OINetwork.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OINetwork.xcframework; path = Framework/Output/OINetwork.xcframework; sourceTree = "<group>"; };
-		DD69E863E68BC8BA05B8A09DA9E0BF6E /* OILiveness2D.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OILiveness2D.xcframework; path = Framework/Output/OILiveness2D.xcframework; sourceTree = "<group>"; };
+		DBFA55610E0A6C0E4E9CD72B73318A15 /* OINetwork.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OINetwork.xcframework; path = Frameworks/OINetwork.xcframework; sourceTree = "<group>"; };
 		ED95A400A5DF28CE98793D9CA78D93D9 /* OILiveness2D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OILiveness2D.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,14 +179,6 @@
 			path = "../Target Support Files/OINetwork";
 			sourceTree = "<group>";
 		};
-		2DCA2A1D5230B71BEA34A439D31F24ED /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DD69E863E68BC8BA05B8A09DA9E0BF6E /* OILiveness2D.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +190,7 @@
 		5FC94C00A8D59F2B01ED3F74A41B893C /* OIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				6A44E077A040A73E9C2177FE49E05FF1 /* Frameworks */,
+				6E2CD6B4ABD7713DDDA6664F1ED3B80D /* Frameworks */,
 				D07AD4442EBBC1A4473335863F0B04EB /* Support Files */,
 			);
 			name = OIComponents;
@@ -221,6 +213,14 @@
 			path = "Target Support Files/Pods-OitiReactNative";
 			sourceTree = "<group>";
 		};
+		6824CE36F7E4C940ABBED37D008EA6EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBFA55610E0A6C0E4E9CD72B73318A15 /* OINetwork.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		697FFB7C18B3A9877A615388D6234EA6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,10 +229,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6A44E077A040A73E9C2177FE49E05FF1 /* Frameworks */ = {
+		6E2CD6B4ABD7713DDDA6664F1ED3B80D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B1197160F27F74B269ADAEB0DC67B3FE /* OIComponents.xcframework */,
+				A991D9C48D5B2CA86C409C1485017C67 /* OIComponents.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -248,10 +248,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7C11A84A005273069024B7BAA7BE5E3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6750E298649BED4D464B5D90981843EB /* OICommons.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9131792C908F391422F1F5FAD7760DB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B425526027D2F27EFE00C4935561D346 /* OILiveness2D.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A8D06997376502CC7E5A0D1F91AC883B /* OILiveness2D */ = {
 			isa = PBXGroup;
 			children = (
-				2DCA2A1D5230B71BEA34A439D31F24ED /* Frameworks */,
+				9131792C908F391422F1F5FAD7760DB3 /* Frameworks */,
 				ABE2B8842B34488B9FEDD0A479442F97 /* Support Files */,
 			);
 			name = OILiveness2D;
@@ -280,7 +296,7 @@
 		CD22D7DC196384E7473BA43429D2997D /* OICommons */ = {
 			isa = PBXGroup;
 			children = (
-				EA8EE4B43ED409288805102BCD7B3060 /* Frameworks */,
+				7C11A84A005273069024B7BAA7BE5E3A /* Frameworks */,
 				E2D081F31489314EF347FD03B8907592 /* Support Files */,
 			);
 			name = OICommons;
@@ -290,7 +306,7 @@
 		CEC875783ED73C03A1C01CDE3FFEFED0 /* OINetwork */ = {
 			isa = PBXGroup;
 			children = (
-				DBEDA32A7A1CE038383E9507B39A298E /* Frameworks */,
+				6824CE36F7E4C940ABBED37D008EA6EA /* Frameworks */,
 				18212970D20CBFCD67952272AE986FE1 /* Support Files */,
 			);
 			name = OINetwork;
@@ -327,14 +343,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DBEDA32A7A1CE038383E9507B39A298E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D6384850CA4F7BAA9DB623C23018779B /* OINetwork.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E2D081F31489314EF347FD03B8907592 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,14 +352,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/OICommons";
-			sourceTree = "<group>";
-		};
-		EA8EE4B43ED409288805102BCD7B3060 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				884177FCC81D32A36F80E5AD4D895FD3 /* OICommons.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,50 +432,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E1BA45F8B0FFBB0D770FB0FA1127773 /* [CP] Copy XCFrameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/OIComponents/OIComponents-xcframeworks.sh",
-				"${PODS_ROOT}/OIComponents/Framework/Output/OIComponents.xcframework",
-			);
-			name = "[CP] Copy XCFrameworks";
-			outputPaths = (
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OIComponents/OIComponents.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/OIComponents/OIComponents-xcframeworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2582A727080A93DFEAA6B9BE2C59D224 /* [CP] Copy XCFrameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/OICommons/OICommons-xcframeworks.sh",
-				"${PODS_ROOT}/OICommons/Framework/Output/OICommons.xcframework",
-			);
-			name = "[CP] Copy XCFrameworks";
-			outputPaths = (
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OICommons/OICommons.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/OICommons/OICommons-xcframeworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		893412FA956DA33466AD62DD0E4CD3F2 /* [CP] Copy XCFrameworks */ = {
+		473CF81FC48A2B43E145EFFB73EA10A6 /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/OILiveness2D/OILiveness2D-xcframeworks.sh",
-				"${PODS_ROOT}/OILiveness2D/Framework/Output/OILiveness2D.xcframework",
+				"${PODS_ROOT}/OILiveness2D/Framework/OILiveness2D.xcframework",
 			);
 			name = "[CP] Copy XCFrameworks";
 			outputPaths = (
@@ -486,14 +450,14 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/OILiveness2D/OILiveness2D-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8C644652F37950100D14C370DF5ED881 /* [CP] Copy XCFrameworks */ = {
+		679611EEC03CD9036E1BE11451270842 /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/OINetwork/OINetwork-xcframeworks.sh",
-				"${PODS_ROOT}/OINetwork/Framework/Output/OINetwork.xcframework",
+				"${PODS_ROOT}/OINetwork/Frameworks/OINetwork.xcframework",
 			);
 			name = "[CP] Copy XCFrameworks";
 			outputPaths = (
@@ -502,6 +466,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/OINetwork/OINetwork-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9945FF39CEBBCCDB55188F600BA289E1 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/OICommons/OICommons-xcframeworks.sh",
+				"${PODS_ROOT}/OICommons/Frameworks/OICommons.xcframework",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputPaths = (
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OICommons/OICommons.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/OICommons/OICommons-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FCE2DE6A3E8C2EA7D81D041B283993 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/OIComponents/OIComponents-xcframeworks.sh",
+				"${PODS_ROOT}/OIComponents/Frameworks/OIComponents.xcframework",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputPaths = (
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OIComponents/OIComponents.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/OIComponents/OIComponents-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

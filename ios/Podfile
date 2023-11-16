@@ -7,6 +7,6 @@ target 'OitiReactNative' do
     use_frameworks!
     
     # Pods for sampleUsageLivenessSDK
-    pod 'OILiveness2D', '1.2.2', :source => 'https://github.com/oititec/ios-artifactory-beta.git'
+    pod 'OILiveness2D', '~> 1.2', :source => 'https://github.com/oititec/ios-artifactory.git'
   
   end
