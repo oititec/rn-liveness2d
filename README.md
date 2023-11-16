@@ -39,7 +39,7 @@ yarn add @oiti/rn-liveness2d
 Adicionar o Pod do Liveness2D no seu Podfile que está localizado dentro da pasta `ios`
 
 ```objectivec
-pod 'OILiveness2D', '1.1.0', :source => 'https://github.com/oititec/ios-artifactory.git'
+pod 'OILiveness2D', '1.2.2', :source => 'https://github.com/oititec/ios-artifactory.git'
 ```
 
 ## 3.3. Android Configuração
