@@ -46,9 +46,6 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
         resolve("RESUL_CANCELED")
     }
-    
-    
-    
    
     private let certifaceURL = "https://comercial.certiface.com.br:8443/"
     
@@ -67,11 +64,22 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         let backgroundColor = apparence?["backgroundColor"] as? String ?? ""
         let loadingColor = apparence?["loadingColor"] as? String ?? ""
         
-        DispatchQueue.main.async {
-        
-            let vc = HybridDocumentscopyViewController(ticket: ticket, appKey: appKey, environment: Environment.HML, delegate: self)
-            vc.modalPresentationStyle = .fullScreen
-            RCTPresentedViewController()?.present(vc, animated: true)
+        let custom = args?["custom"] as? Dictionary<String,Any> ?? nil
+        print("CUSTOM ->")
+        print(custom)
+        var builder = DocumentscopyCustomizationBuilder.builder()
+        DispatchQueue.main.async { [self] in
+            
+                let vc = HybridDocumentscopyViewController(
+                    ticket: ticket,
+                    appKey: appKey,
+                    environment: Environment.HML,
+                    delegate: self,
+                    customizationTheme: createCustomization(builder: builder, custom: custom).build()
+                )
+                vc.modalPresentationStyle = .fullScreen
+                RCTPresentedViewController()?.present(vc, animated: true)
+            
         }
         
     }
@@ -85,11 +93,36 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         
         
         DispatchQueue.main.async {
-            let vc = HybridFaceCaptchaViewController(appKey: appKey, environment: Environment.HML, delegate: self)
+            let vc = HybridFaceCaptchaViewController(
+                appKey: appKey,
+                environment: Environment.HML,
+                delegate: self
+            )
             vc.modalPresentationStyle = .fullScreen
             RCTPresentedViewController()?.present(vc, animated: true)
         }
         
+    }
+    
+    private func createCustomization(
+        builder: DocumentscopyCustomizationBuilder,
+        custom: Dictionary<String,Any>?
+    ) -> DocumentscopyCustomizationBuilder {
+        builder
+            .setLoadingBackgroundColor(.init(hex: custom?["setLoadingBackgroundColor"] as? String ?? ""))
+            .setCaptureBackgroundColor(.init(hex: custom?["setCaptureBackgroundColor"] as? String ?? ""))
+            .setCaptureFrontIndicatorText(custom?["setTextFront"] as? String ?? "")
+            .setCaptureBackIndicatorText(custom?["setTextBack"] as? String ?? "")
+            .setCaptureInstructionGuideText(custom?["setCaptureInstructionGuideText"] as? String ?? "")
+            .setCaptureInstructionConfirmationText(custom?["setTextOk"] as? String ?? "")
+            .setCaptureTakeNewPictureButton(withText: custom?["setTextRedo"] as? String ?? "")
+            .setCaptureInstructionTextColor(.init(hex: custom?["setCaptureInstructionGuideTextColor"] as? String ?? ""))
+            .setCaptureConfirmationMessage(
+                withText: custom?["setTextConfirmation"] as? String ?? "",
+                color: .init(hex:  custom?["setBackgroundOkColor"] as? String ?? "")
+            )
+        
+        return builder
     }
     
 }
