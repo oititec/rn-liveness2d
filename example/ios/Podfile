@@ -40,7 +40,7 @@ target 'OitiReactNativeExample' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
-  pod 'OILiveness2D', '1.2.1', :source => 'https://github.com/oititec/ios-artifactory-beta.git'
+  pod 'OILiveness2D', '1.2.2', :source => 'https://github.com/oititec/ios-artifactory-beta.git'
   
   
   target 'OitiReactNativeExampleTests' do
