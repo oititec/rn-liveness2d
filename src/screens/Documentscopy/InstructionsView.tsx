@@ -41,8 +41,8 @@ export default function InstructionsView({
       </View>
 
       <View style={styles.boxBtn}>
-        <Text style={styles.title}>Reconhecimento Facial</Text>
-        <Text style={styles.subtitle}>Isso garante que você é você mesmo.</Text>
+        <Text style={styles.title}>Documentos</Text>
+        <Text style={styles.subtitle}>Selecione uma opção</Text>
 
         <View style={styles.intructions}>
           <TouchableOpacity

@@ -71,6 +71,7 @@ export function startDocumentscopy(options?: ArgsType): Promise<string> {
           ? '#05D758'
           : options?.apparence?.loadingColor,
     },
+    custom: options?.custom === undefined ? null : options?.custom
   };
 
   if (Platform.OS === 'android') {

@@ -41,7 +41,9 @@ target 'OitiReactNativeExample' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+
   pod 'OILiveness2D', '~> 1.2', :source => 'https://github.com/oititec/ios-artifactory.git'
+
   
   target 'OitiReactNativeExampleTests' do
     inherit! :complete
