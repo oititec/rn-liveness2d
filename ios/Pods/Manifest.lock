@@ -10,21 +10,22 @@ PODS:
     - OICommons (~> 1.1)
 
 DEPENDENCIES:
-  - OILiveness2D (= 1.2.2)
+
+  - OILiveness2D (~> 1.2)
 
 SPEC REPOS:
-  https://github.com/oititec/ios-artifactory-beta.git:
+  https://github.com/oititec/ios-artifactory.git:
     - OICommons
     - OIComponents
     - OILiveness2D
     - OINetwork
 
 SPEC CHECKSUMS:
-  OICommons: e156b4108fc178409a77850d60009e14fce6f641
-  OIComponents: 989cb77ab9145e2241a38b0ad812fd309fccb05f
-  OILiveness2D: 548b3d3d9cb0f7869c2a18176bc562180a111a7a
-  OINetwork: 1b9d5c31e3704b78c1c909eaf6c049f33f28e8f0
+  OICommons: c46002bc48a3c700796a740445ca72ac462c53c1
+  OIComponents: 9f4da45038924ef583a9269df05f1b0efb7af4cd
+  OILiveness2D: 5896c9d18138417436770d2e14e55b067285e1c9
+  OINetwork: 35d74266149b8e04a51706633552b508955e8e47
 
-PODFILE CHECKSUM: d56e7095b3e459f2c71c6148f9bd9454ed04ab92
+PODFILE CHECKSUM: 460c05fbdaf99d9805d7d8518879492465db325b
 
 COCOAPODS: 1.13.0

@@ -18,8 +18,7 @@ Pod::Spec.new do |s|
 
   s.dependency "React-Core"
 
-  s.ios.dependency 'OILiveness2D', '1.2.2'
-  s.source       = { :git => "https://github.com/oititec/ios-artifactory.git" }
+  s.ios.dependency 'OILiveness2D', '~> 1.2'
 
   # Don't install the dependencies when we run `pod install` in the old architecture.
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
