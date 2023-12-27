@@ -1,6 +1,6 @@
 {
   "name": "@oiti/rn-liveness2d",
-  "version": "2.0.0",
+  "version": "1.2.1",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -90,7 +90,7 @@
   "engines": {
     "node": ">= 16.0.0"
   },
-  "packageManager": "^yarn@1.22.15",
+  "packageManager": "^yarn@1.22.21",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
