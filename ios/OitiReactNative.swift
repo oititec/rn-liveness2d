@@ -114,10 +114,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
             .setCaptureBackgroundColor(.init(hex: custom?["setCaptureBackgroundColor"] as! String))
             .setCaptureFrontIndicatorText(custom?["setTextFront"] as! String)
             .setCaptureBackIndicatorText(custom?["setTextBack"] as! String)
-            .setCaptureInstructionGuideText(
-                forFront: custom?["setCaptureInstructionGuideTextFront"] as? String ?? "Frente",
-                back: custom?["setCaptureInstructionGuideTextBack"] as? String ?? "Verso"
-            )
+            .setCaptureInstructionGuideText(forFront: custom?["setCaptureInstructionGuideTextFront"] as? String, back: custom?["setCaptureInstructionGuideTextBack"] as? String)
             .setCaptureInstructionConfirmationText(custom?["setTextOk"] as! String)
             .setCaptureTakeNewPictureButton(withText: custom?["setCaptureTakeNewPictureButtonText"] as? String)
             .setCaptureInstructionTextColor(.init(hex: custom?["setCaptureInstructionGuideTextColor"] as! String))
