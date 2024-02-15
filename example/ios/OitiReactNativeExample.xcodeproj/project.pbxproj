@@ -493,6 +493,7 @@
 				DEVELOPMENT_TEAM = KRCZ6X7U8S;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OitiReactNativeExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,6 +520,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KRCZ6X7U8S;
 				INFOPLIST_FILE = OitiReactNativeExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

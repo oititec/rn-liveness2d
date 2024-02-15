@@ -1,34 +1,21 @@
+import { OitiBackButton, OitiPermissionButton } from '@oiti/rn-liveness2d';
 import * as React from 'react';
 
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
-export default function PermissionView({
-  onVerify,
-  onBack,
-  navigation,
-}: {
-  onVerify(): void;
-  onBack(): void;
-  navigation: any;
-}) {
+export default function PermissionView() {
   return (
     <View style={styles.container}>
       <View style={styles.navigationBar}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={styles.navigationBar}
-        >
-          <Image
-            source={require('../assets/images/left-arrow-b.png')}
-            style={styles.leftArrow}
-          />
-        </TouchableOpacity>
+        <OitiBackButton style={styles.backBtn}>
+          <Text style={styles.nextText}>Voltar</Text>
+        </OitiBackButton>
       </View>
 
       <View style={styles.containerPerm}>
         <View style={styles.imgContainer}>
           <Image
-            source={require('../assets/images/camera_alt.png')}
+            source={require('../assets/images/camera.png')}
             style={styles.imgFace}
           />
           <View style={styles.intructions}>
@@ -36,9 +23,9 @@ export default function PermissionView({
             <Text style={styles.subtitle}>
               Habilitar as configurações do seu aparelho.
             </Text>
-            <TouchableOpacity onPress={() => onVerify()} style={styles.nextBtn}>
+            <OitiPermissionButton style={styles.nextBtn}>
               <Text style={styles.nextText}>Verificar</Text>
-            </TouchableOpacity>
+            </OitiPermissionButton>
           </View>
         </View>
       </View>
@@ -118,11 +105,19 @@ const styles = StyleSheet.create({
   },
   nextBtn: {
     width: '100%',
-    backgroundColor: '#05D758',
+    backgroundColor: 'red',
     alignItems: 'center',
     fontWeight: 900,
     borderRadius: 50,
     marginTop: 0,
+  },
+  backBtn: {
+    width: '100%',
+    backgroundColor: 'red',
+    alignItems: 'center',
+    fontWeight: 900,
+    borderRadius: 50,
+    marginTop: 90,
   },
   nextText: {
     /* fontFamily: 'Ubuntu-Medium', */
@@ -158,11 +153,14 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
   },
-  imgFace: {},
+  imgFace: {
+    height: 200,
+    aspectRatio: 4 / 4.4,
+  },
   waveTop: {
     flex: 1,
     width: '100%',
-    height: 400,
+    height: 200,
   },
   box: {
     width: 60,

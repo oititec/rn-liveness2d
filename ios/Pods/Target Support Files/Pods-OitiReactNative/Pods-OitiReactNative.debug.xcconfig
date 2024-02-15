@@ -1,9 +1,9 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/OICommons/Frameworks" "${PODS_ROOT}/OIComponents/Frameworks" "${PODS_ROOT}/OILiveness2D/Framework" "${PODS_ROOT}/OINetwork/Frameworks" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OICommons" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OIComponents" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OILiveness2D" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OINetwork"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/OIComponents/Frameworks" "${PODS_ROOT}/OILiveness2D/Framework" "${PODS_ROOT}/OISecurity/Frameworks" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OIComponents" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OILiveness2D" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OISecurity"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift '@executable_path/Frameworks' '@loader_path/Frameworks' '@executable_path/../../Frameworks'
 LIBRARY_SEARCH_PATHS = $(inherited) "${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
-OTHER_LDFLAGS = $(inherited) -framework "OICommons" -framework "OIComponents" -framework "OILiveness2D" -framework "OINetwork"
+OTHER_LDFLAGS = $(inherited) -framework "OIComponents" -framework "OILiveness2D" -framework "OISecurity"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

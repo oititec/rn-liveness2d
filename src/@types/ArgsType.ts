@@ -1,9 +1,10 @@
 export type ArgsType = {
   appkey: string;
   ticket: string;
-  environment: '.HML' | '.PRD';
+  environment: 'HML' | 'PRD';
   apparence: ApparenceType;
-  custom?: DocCustomType | null;
+  nativeCustom?: boolean;
+  theme?: DocCustomType | null;
 };
 
 export type ApparenceType = {
@@ -39,4 +40,18 @@ export type DocCustomType = {
   setTextOk?: string | undefined;
   setTextConfirmation?: string | undefined;
   setTextRedo?: string | undefined;
+};
+
+export type onSuccessType = {
+  valid: boolean;
+  cause: string;
+  codId: string;
+  protocol: string;
+  scanResultBlob: string;
+};
+
+export type onErrorType = {
+  code: string;
+  message: string;
+  error?: Error;
 };

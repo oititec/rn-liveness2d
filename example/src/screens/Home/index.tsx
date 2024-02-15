@@ -1,12 +1,13 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
+import type { ArgsType } from 'src/@types/ArgsType';
 
 export default function Home({ navigation }: { navigation: any }) {
-  const [options, setOptions] = React.useState({
+  const [options, setOptions] = React.useState<ArgsType>({
     appkey:
-      'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiNDQwNTVBMzVCQjM5MjUxMzkwQUJDNTg3N0I5RjVFQjd8aW50LmV2b2x1dGlvbi5obWwiLCJlbXBDb2QiOiIwMDAwMDAwNjczIiwiZmlsQ29kIjoiMDAwMDAwMjczOSIsImNwZiI6IjA4NjcwODMzOTU2Iiwibm9tZSI6IjVENzAxRjgzMjE3NDVFRjg0RkQ4MTc2NzZDMDlFRDczN0Y3MzM0RTMxNkQ2MTg5ODhGNDQ5MTQyOEY1NTg4QUZFREY2OTIwMDc5RTNCMjNGOEJCQjM5QTRENDc4Q0QyRUQ0RkVCMUUzNjAyN0RDOEYwQ0Q0MUREN0RDNzBDOTlCRUIxNjh8TU9CSUxFIFRFU1RFIEhNTCIsIm5hc2NpbWVudG8iOiIwMS8wMS8yMDAwIiwiZWFzeS1pbmRleCI6IkFBQUFFa2tSYzVOc1JmK0hRUlRuNkgxbGY3a3NCSUNab0hKRUVxRzFoWWJ3OFU0bmE3cTdDby9CbGJwRWxRPT0iLCJrZXkiOiJUWFZqYUNCbGRtbHNJSE52YjI0Z2FHbG5hQ0JwYmlCb2IzQmxJR1J2SUhacFpYYz0iLCJleHAiOjE3MDIwMDQyODksImlhdCI6MTcwMjAwMzk4OX0.BBXprgkx_8GJRXh2fc-5IHaZhe9lKqzkMAAEKutBs9I',
-    ticket: '8f7965a8-c0d9-4742-92e6-22c01b47c574',
+      'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZXJ0aWZhY2UiLCJ1c2VyIjoiM0JFQzZGNUYyRDQ1RTQ5Qzc0MDMwQTZGMDdBQ0VDNTE1fG1vYmlsZS5hcGlnbG9iYWwiLCJlbXBDb2QiOiIwMDAwMDAwNjc5IiwiZmlsQ29kIjoiMDAwMDAwMjc3NCIsImNwZiI6IjA4NjcwODMzOTU2Iiwibm9tZSI6IjBBNjU1RDA1MUE5RjEzRjk3MUM4M0U0NUUwM0M5QTA3NDlBMjgzODNGM0QyNjU2MDNCNkRCNjFFRUQ5MURBQTBBNDAwRTNFQzM4RERFQ0IwREEzNTA2NjMwOEM2RDg4NTUyMzE1QzE3RTA3MDQwNDdDM0NFREMwQTQ2MTZFfElHQUJSSUVMIENBVEVMTEkgR09VTEFSVCIsIm5hc2NpbWVudG8iOiIwOC8xMC8xOTk2IiwiZWFzeS1pbmRleCI6IkFBQUFFbTlwNlgyRnFNUFhiM1BORGR5SCtOVEhKc3dPWjRTNVVtSHpMU1lUQnByZnlMK3N2bnlFaVJ6QnZBPT0iLCJrZXkiOiJRMjl1YzJsa1pYSWdjM0JsWVd0cGJtY2diV1VnY0hKdmMzQmxZM1FnZDJoaGRHVT0iLCJleHAiOjE3MDc5ODczMDAsImlhdCI6MTcwNzk4NzAwMH0.IdN0R_33Y8tNnaBRxyGbr2ts7HhQyatvQfsVikPtFco',
+    ticket: '',
     environment: 'HML',
     apparence: {
       backgroundColor: '#025951',
@@ -27,7 +28,6 @@ export default function Home({ navigation }: { navigation: any }) {
       cnhTitleText: 'title CNH',
       cnhTitleColor: '#FFFFFF',
       cnhCaptionText: 'cnh lorem ipsummm',
-      cnhCaptionColor: '#FFFFFF',
       setCaptureBackgroundColor: '#A5CD39',
       textOkColor: '#FFFFFF',
       setBackgroundDismissColor: '#DD0101',

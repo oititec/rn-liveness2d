@@ -34,7 +34,7 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright © 2022 Oiti. All rights reserved.</string>
+			<string>Copyright © 2024 Oiti. All rights reserved.</string>
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
@@ -49,6 +49,16 @@
 			<string>Copyright</string>
 			<key>Title</key>
 			<string>OINetwork</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright © 2024 Oiti. All rights reserved.</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>OISecurity</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
