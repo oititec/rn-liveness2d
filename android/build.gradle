@@ -142,7 +142,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     // From node_modules
 
-    implementation 'br.com.oiti:liveness2d-sdk:6.0.1-snapshot-9'
+    implementation 'br.com.oiti:liveness2d-sdk:6.0.1-snapshot-13'
 }
 
 if (isNewArchitectureEnabled()) {

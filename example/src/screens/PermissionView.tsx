@@ -1,7 +1,7 @@
 import { OitiBackButton, OitiPermissionButton } from '@oiti/rn-liveness2d';
 import * as React from 'react';
 
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 export default function PermissionView() {
   return (

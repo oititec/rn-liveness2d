@@ -1,11 +1,10 @@
 import * as React from 'react';
 
 import { DocumentsCopyView } from '@oiti/rn-liveness2d';
-import type { onErrorType, onSuccessType } from 'src/@types/ArgsType';
+import type { onErrorType } from 'src/@types/ArgsType';
 import { Alert } from 'react-native';
-import InstructionsView from '../InstructionsView';
-import PermissionView from '../PermissionView';
 //import InstructionsView from '../InstructionsView';
+//import PermissionView from '../PermissionView';
 
 export default function Documentscopy({
   route,
@@ -14,7 +13,7 @@ export default function Documentscopy({
   route: any;
   navigation: any;
 }) {
-  const { options } = route.params;
+  const { options, theme } = route.params;
 
   const onResultSuccess = (result: string) => {
     console.log(result);
@@ -22,19 +21,21 @@ export default function Documentscopy({
   };
 
   const onResultError = (error: onErrorType) => {
-    console.log(typeof error);
+    console.log(error);
     alertBox(error.message.toString(), true);
   };
 
   const alertBox = (message: string, error: boolean) => {
     Alert.alert(error ? 'Erro' : 'Sucesso', `${message}`, [{ text: 'OK' }]);
   };
-
+  console.log({ ...options, theme });
   return (
     <DocumentsCopyView
-      options={options}
+      options={{ ...options, theme }}
       navigation={navigation}
-      callbackView="Home"
+      callbackView="Home" /* 
+      CustomInstructionView={<InstructionsView />}
+      CustomPermissionView={<PermissionView />} */
       onSuccess={onResultSuccess}
       onError={onResultError}
     />

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { NativeModules, Platform, TouchableOpacity } from 'react-native';
 import type { ArgsType, onErrorType, onSuccessType } from './@types/ArgsType';
 
@@ -38,16 +38,6 @@ export function startFaceCaptcha(options: ArgsType): Promise<any> {
     ticket: options?.appkey === undefined ? '' : options?.ticket,
     environment:
       options?.environment === undefined ? 'HML' : options?.environment,
-    apparence: {
-      backgroundColor:
-        options?.apparence?.backgroundColor === ''
-          ? '#1E1E1E'
-          : options?.apparence?.backgroundColor,
-      loadingColor:
-        options?.apparence?.loadingColor === ''
-          ? '#05D758'
-          : options?.apparence?.loadingColor,
-    },
   };
 
   if (Platform.OS === 'android') {
@@ -65,23 +55,19 @@ export function startDocumentscopy(
     ticket: options?.appkey === undefined ? '' : options?.ticket,
     environment:
       options?.environment === undefined ? 'HML' : options?.environment,
-    apparence: {
-      backgroundColor:
-        options?.apparence?.backgroundColor === ''
-          ? '#1E1E1E'
-          : options?.apparence?.backgroundColor,
-      loadingColor:
-        options?.apparence?.loadingColor === ''
-          ? '#05D758'
-          : options?.apparence?.loadingColor,
-    },
     nativeCustom:
       options?.nativeCustom === false ? false : options?.nativeCustom,
     theme: options?.theme === undefined ? null : options?.theme,
   };
-
+  console.log(args);
   if (Platform.OS === 'android') {
-    return OitiReactNative.startdocumentscopy(args.appkey, args.ticket);
+    return OitiReactNative.startdocumentscopy(
+      args.appkey,
+      args.ticket,
+      args.theme,
+      args.nativeCustom,
+      args.environment
+    );
   }
 
   return OitiReactNative.startdocumentscopy(args);
@@ -264,29 +250,12 @@ export const continueButton = async (): Promise<boolean> => {
 export function GetIntructionViewDoc({
   CustomInstructionView,
   CustomPermissionView,
-  options,
-  navigation,
-  callBackView,
-  onError,
 }: {
   CustomInstructionView?: Element | null;
   CustomPermissionView?: Element | null;
-  options: ArgsType;
-  navigation: any;
-  callBackView: string;
-  onSuccess: (result: string) => void;
-  onError: (error: onErrorType) => void;
 }) {
-  const {
-    screen,
-    setScreen,
-    setNavigation,
-    setOptions,
-    startDocCore,
-    onBack,
-    onAskPermission,
-    setCallbackView,
-  } = useDocCoreContext();
+  const { screen, options, setScreen, startDocCore, onBack, onAskPermission } =
+    useDocCoreContext();
 
   function onContinue() {
     continueButton().then((result) => {
@@ -294,6 +263,54 @@ export function GetIntructionViewDoc({
       result === false && setScreen(2);
     });
   }
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      options?.nativeCustom && startDocCore();
+    }, 1);
+  }, [options, startDocCore]);
+
+  return (
+    <>
+      {options?.nativeCustom ? (
+        <></>
+      ) : (
+        <>
+          {screen === 1 &&
+            (!CustomInstructionView ? (
+              <InstructionsView onContinue={onContinue} onBack={onBack} />
+            ) : (
+              CustomInstructionView
+            ))}
+          {screen === 2 &&
+            (!CustomPermissionView ? (
+              <PermissionView
+                onVerify={() => onAskPermission()}
+                onBack={onBack}
+              />
+            ) : (
+              CustomPermissionView
+            ))}
+        </>
+      )}
+    </>
+  );
+}
+
+interface DocCoreHelperInterfae {
+  options: ArgsType;
+  navigation: any;
+  callBackView: string;
+  onError: (error: onErrorType) => void;
+}
+
+const DocCoreHelper: FC<DocCoreHelperInterfae> = ({
+  children,
+  options,
+  navigation,
+  callBackView,
+  onError,
+}) => {
+  const { setNavigation, setOptions, setCallbackView } = useDocCoreContext();
 
   useEffect(() => {
     if (
@@ -304,29 +321,22 @@ export function GetIntructionViewDoc({
       navigation.navigate(callBackView);
       onError({ code: '0', message: 'invalidAppKey' });
     }
+
     setNavigation(navigation);
     setCallbackView(callBackView);
     setOptions(options);
-  }, []);
+  }, [
+    options,
+    navigation,
+    callBackView,
+    onError,
+    setNavigation,
+    setOptions,
+    setCallbackView,
+  ]);
 
-  return (
-    <>
-      {screen === 1 &&
-        (!CustomInstructionView ? (
-          <InstructionsView onContinue={onContinue} onBack={onBack} />
-        ) : (
-          CustomInstructionView
-        ))}
-
-      {screen === 2 &&
-        (!CustomPermissionView ? (
-          <PermissionView onVerify={() => onAskPermission()} onBack={onBack} />
-        ) : (
-          CustomPermissionView
-        ))}
-    </>
-  );
-}
+  return <>{children}</>;
+};
 
 export function Liveness2dView({
   CustomInstructionView,
@@ -363,7 +373,7 @@ export function DocumentsCopyView({
 }: {
   CustomInstructionView?: Element | null;
   CustomPermissionView?: Element | null;
-  options: any;
+  options: ArgsType;
   navigation: any;
   callbackView: string;
   onSuccess: (result: string) => void;
@@ -371,15 +381,17 @@ export function DocumentsCopyView({
 }) {
   return (
     <DocCoreProvider onSuccess={onSuccess} onError={onError}>
-      <GetIntructionViewDoc
-        CustomInstructionView={CustomInstructionView}
-        CustomPermissionView={CustomPermissionView}
+      <DocCoreHelper
         options={options}
         navigation={navigation}
         callBackView={callbackView}
-        onSuccess={onSuccess}
         onError={onError}
-      />
+      >
+        <GetIntructionViewDoc
+          CustomInstructionView={CustomInstructionView}
+          CustomPermissionView={CustomPermissionView}
+        />
+      </DocCoreHelper>
     </DocCoreProvider>
   );
 }

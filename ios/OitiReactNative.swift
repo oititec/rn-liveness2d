@@ -55,7 +55,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         let ticket = args?["ticket"] as? String ?? nil
         let appKey = args?["appkey"] as? String ?? ""
         let environment = args?["environment"] as? String ?? "HML"
-        let nativeCustom = args?["useNativeCustom"] as? Bool ?? false
+        let nativeCustom = args?["nativeCustom"] as? Bool ?? false
         let custom = args?["theme"] as? Dictionary<String,Any> ?? nil
         let builder = DocumentscopyCustomizationBuilder.builder()
         
@@ -132,6 +132,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         custom: Dictionary<String,Any>?
     ) -> DocumentscopyCustomizationBuilder {
         builder
+            .setInstructionBackgroundColor(.init(hex: custom?["setInstructionBackgroundColor"] as? String ?? ""))
             .setInstructionBackButtonColors(
                 forIcon: .init(hex: custom?["setInstructionBackButtonColorsIcon"] as? String ?? ""),
                 background: .init(hex: custom?["setInstructionBackButtonColorsBackground"] as? String ?? ""),
@@ -152,7 +153,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
                 color: .init(hex: custom?["setInstructionCaptionColor"] as? String ?? ""),
                 font: UIFont(name: custom?["setInstructionCaptionFont"] as? String ?? "", size: 14)
             )
-            .setInstructionDocOptionBackgroundColor(.init(hex: custom?["setInstructionDocOptionBackgroundColor"] as? String ?? ""))
+            .setInstructionDocOptionBackgroundColor(.init(hex: custom?["setInstructionBottomSheetColor"] as? String ?? ""))
             .setInstructionDocOptionTitle(
                 withText: custom?["setInstructionDocOptionTitleText"] as? String ?? nil,
                 color: .init(hex: custom?["setInstructionDocOptionTitleColor"] as? String ?? ""),
@@ -163,7 +164,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
                 width: custom?["setInstructionDocOptionBorderWidth"] as? CGFloat ?? 4,
                 radius: custom?["setInstructionDocOptionBorderRadius"] as? CGFloat ?? 4
             )
-            .setInstructionEnvOptionBackgroundColor(.init(hex: custom?["setInstructionEnvOptionBackgroundColor"] as? String ?? ""))
+            .setInstructionEnvOptionBackgroundColor(.init(hex: custom?["setInstructionBottomSheetColor"] as? String ?? ""))
             .setInstructionEnvOptionTitle(
                 withText: custom?["setInstructionEnvOptionTitleText"] as? String ?? nil,
                 color: .init(hex: custom?["setInstructionEnvOptionTitleColor"] as? String ?? ""),
@@ -186,12 +187,14 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
                 
             )
         
-            .setLoadingBackgroundColor(.init(hex: custom?["setLoadingBackgroundColor"] as! String))
+            .setLoadingBackgroundColor(.init(hex: custom?["setLoadingBackgroundColor"] as? String ?? "#000000"))
             .setLoadingSpinner(
-                withColor: .init(hex: custom?["setLoadingSpinnerColor"] as! String),
-                width: CGFloat(custom?["setLoadingSpinerWidth"] as? Int ?? 1),
+                withColor: .init(hex: custom?["setLoadingSpinnerColor"] as? String ?? "#FFFFFF"),
+                width: custom?["setLoadingSpinerWidth"] as? CGFloat ?? 1,
                 scaleFactor: custom?["setLoadingSpinnerScale"] as? Int ?? 1
             )
+        
+            .setCaptureBackButtonIcon(OitiReactNative.downloadImage(from: custom?["setCaptureBackButtonIcon"] as? String ?? ""))
         
             .setCaptureBackgroundColor(.init(hex: custom?["setCaptureBackgroundColor"] as! String))
             .setCaptureFrontIndicatorText(custom?["setTextFront"] as! String)
@@ -317,6 +320,37 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
             )
         
         return builder
+    }
+    
+    static func downloadImage(from url: String) -> UIImage? {
+        guard let imageURL = URL(string: url),
+              let data = try? Data(contentsOf: imageURL),
+              let image = UIImage(data: data) else {
+            return nil
+        }
+        let imageName = "downloadedImage"
+        
+        if let path = saveImageToAssets(image, withName: imageName) {
+            return UIImage(named: path)
+        }
+        
+        return nil
+    }
+    
+    static func saveImageToAssets(_ image: UIImage, withName name: String) -> String? {
+        guard let data = image.pngData(),
+              let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        
+        let fileURL = documentsDirectory.appendingPathComponent("\(name).png")
+        
+        do {
+            try data.write(to: fileURL)
+            return fileURL.lastPathComponent
+        } catch {
+            return nil
+        }
     }
     
 }

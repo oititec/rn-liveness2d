@@ -1,17 +1,16 @@
 import * as React from 'react';
 
 import {
-  StyleSheet,
-  View,
-  ImageBackground,
-  Text,
-  Image,
-  TouchableOpacity,
   Dimensions,
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
 
-import { normalize } from '../utils/normalize';
 import { OitiBackButton, OitiContinueButton } from '@oiti/rn-liveness2d';
+import { normalize } from '../utils/normalize';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 

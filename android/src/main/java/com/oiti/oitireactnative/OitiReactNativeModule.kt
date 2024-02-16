@@ -22,32 +22,61 @@ import br.com.oiti.certiface.data.util.Environment
 
 import com.facebook.react.bridge.*
 import com.facebook.react.modules.core.PermissionAwareActivity
-import com.facebook.react.modules.core.PermissionListener
+import com.oiti.oitireactnative.doccore.DocTheme
 
 class OitiReactNativeModule(reactContext: ReactApplicationContext) :
   ReactContextBaseJavaModule(reactContext) {
 
-    private val DOCUMENTSCOPY_RESULT_REQUEST = 1
-    private val FACECAPTCHA_RESULT_REQUEST = 2
+  private var mDocCorePromisse: Promise? = null
+  private var mFaceCaptchaPromisse: Promise? = null
 
-    private val E_ACTIVITY_DOES_NOT_EXIST = "E_ACTIVITY_DOES_NOT_EXIST"
+  private val mActivityEventListener: ActivityEventListener = object : BaseActivityEventListener() {
+    override fun onActivityResult(
+      activity: Activity,
+      requestCode: Int,
+      resultCode: Int,
+      data: Intent?
+    ) {
+      super.onActivityResult(requestCode, resultCode, data)
 
+      when (requestCode) {
+        DOCUMENTSCOPY_RESULT_REQUEST -> {
+          mDocCorePromisse?.let {
+            when (resultCode) {
+              Activity.RESULT_CANCELED -> it.reject(RESULT_CANCELED, RESULT_CANCELED)
+              Activity.RESULT_OK -> it.resolve(RESULT_OK)
+            }
+            mDocCorePromisse = null
+          }
+        }
+
+        FACECAPTCHA_RESULT_REQUEST -> {
+          mFaceCaptchaPromisse?.let {
+            when (resultCode) {
+              Activity.RESULT_CANCELED -> it.reject(RESULT_CANCELED, RESULT_CANCELED)
+              Activity.RESULT_OK -> it.resolve(RESULT_OK)
+            }
+            mFaceCaptchaPromisse = null
+          }
+        }
+      }
+    }
+  }
   override fun getName(): String {
     return NAME
+  }
+  init {
+    reactContext.addActivityEventListener(mActivityEventListener)
   }
 
   @NonNull
   @ReactMethod
   fun startfacecaptcha(appKey: String, promise: Promise) {
-
-  val currentActivity = currentActivity
-
-  if (currentActivity == null) {
-    promise.reject(E_ACTIVITY_DOES_NOT_EXIST, "Activity doesn't exist")
-    return;
-  }
-
-  try {
+    mFaceCaptchaPromisse = promise
+    if (currentActivity == null) {
+      promise.reject(E_ACTIVITY_DOES_NOT_EXIST, "Activity doesn't exist")
+      return;
+    }
 
     val userData = UserData(appKey = appKey)
     val intent =  Intent(getCurrentActivity(), FaceCaptchaActivity::class.java).apply{
@@ -55,23 +84,44 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
       putExtra(FaceCaptchaActivity.PARAM_SHOW_INSTRUCTIONS, false)
       putExtra(FaceCaptchaActivity.PARAM_ENVIRONMENT, Environment.HML)
     }
-    getCurrentActivity()?.startActivityForResult(intent, FACECAPTCHA_RESULT_REQUEST)
+    currentActivity?.startActivityForResult(intent, FACECAPTCHA_RESULT_REQUEST)
 
-    } catch (e: Exception) {
-    }
   }
 
   @ReactMethod
-  fun startdocumentscopy(appKey: String, ticket: String, promise: Promise) {
+  fun startdocumentscopy(
+    appKey: String,
+    ticket: String,
+    themeJson: ReadableMap?,
+    nativeCustom: Boolean,
+    environment: String,
+    promise: Promise
+  ) {
+    mDocCorePromisse = promise
+    val env: Environment = if (environment.equals("PRD")) Environment.PRD else Environment.HML
+    val themeBuilder = themeJson?.let { DocTheme(it).getNewTheme() }
+    val loadingSize: Int = themeJson?.getInt("setLoadingSpinnerScale")?.times(100) ?: 100
 
-    val intent = Intent(currentActivity, DocumentscopyActivity::class.java).apply{
-        putExtra(DocumentscopyActivity.PARAM_APP_KEY, appKey)
-        if(ticket?.isNotEmpty() == true) {
-          putExtra(DocumentscopyActivity.PARAM_TICKET, ticket)
-        }
-       // putExtra(DocumentscopyActivity.PARAM_HYBRID, true)
-        putExtra(DocumentscopyActivity.PARAM_ENVIRONMENT, Environment.HML)
-        putExtra(DocumentscopyActivity.PARAM_DEBUG_ON,false)
+    val intent = Intent(currentActivity, DocumentscopyActivity::class.java).apply {
+      putExtra(DocumentscopyActivity.PARAM_APP_KEY, appKey)
+      if (ticket?.isNotEmpty() == true) {
+        putExtra(DocumentscopyActivity.PARAM_TICKET, ticket)
+      }
+      putExtra(DocumentscopyActivity.PARAM_HYBRID, !nativeCustom)
+      putExtra(DocumentscopyActivity.PARAM_ENVIRONMENT, env)
+
+      themeBuilder?.let { putExtra(DocumentscopyActivity.PARAM_THEME, it) }
+
+      putExtra(DocumentscopyActivity.PARAM_DEBUG_ON, false)
+      putExtra(
+        DocumentscopyActivity.PARAM_CUSTOM_LOADING_BACKGROUND,
+        themeJson?.getString("setLoadingBackgroundColor") ?: "#FFFFFF"
+      )
+      putExtra(
+        DocumentscopyActivity.PARAM_CUSTOM_LOADING_SPINNER_COLOR,
+        themeJson?.getString("setLoadingSpinnerColor") ?: "#000000"
+      )
+      putExtra(DocumentscopyActivity.PARAM_CUSTOM_LOADING_SIZE, loadingSize)
     }
     currentActivity?.startActivityForResult(intent, DOCUMENTSCOPY_RESULT_REQUEST)
   }
@@ -121,5 +171,10 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
     const val NAME = "OitiReactNative"
     const val CAMERA_PERMISSION_REQUEST_CODE = 1111
     const val CAMERA_PERMISSION_ASK_CODE = 1222
+    const val DOCUMENTSCOPY_RESULT_REQUEST = 1
+    const val FACECAPTCHA_RESULT_REQUEST = 2
+    const val E_ACTIVITY_DOES_NOT_EXIST = "E_ACTIVITY_DOES_NOT_EXIST"
+    const val RESULT_CANCELED = "RESULT_CANCELED"
+    const val RESULT_OK = "RESULT_OK"
   }
 }
