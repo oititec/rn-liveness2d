@@ -9,8 +9,8 @@ import {
   View,
 } from 'react-native';
 
-import { OitiBackButton, OitiContinueButton } from '@oiti/rn-liveness2d';
-import { normalize } from '../utils/normalize';
+import { DocCoreBackButton, DocCoreContinueButton } from '@oiti/rn-liveness2d';
+import { normalize } from '../../../utils/normalize';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -21,16 +21,16 @@ export default function InstructionsView() {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../assets/images/wave_bg.png')}
+        source={require('../../../assets/images/wave_bg.png')}
         resizeMode="cover"
         style={styles.waveTop}
       >
-        <OitiBackButton>
+        <DocCoreBackButton>
           <Image
-            source={require('../assets/images/left-arrow.png')}
+            source={require('../../../assets/images/left-arrow.png')}
             style={styles.leftArrow}
           />
-        </OitiBackButton>
+        </DocCoreBackButton>
         <Text style={styles.title}>Reconhecimento Facial</Text>
         <Text style={styles.subtitle}>Isso garante que você é você mesmo.</Text>
         <View style={styles.instruction_one}>
@@ -38,7 +38,7 @@ export default function InstructionsView() {
             <>
               <ImageBackground
                 style={styles.imgInstructions}
-                source={require('../assets/images/illumination.png')}
+                source={require('../../../assets/images/illumination.png')}
                 resizeMode="cover"
               />
               <View style={styles.boxInfo}>
@@ -50,9 +50,9 @@ export default function InstructionsView() {
           </View>
         </View>
         <View style={styles.boxBtn}>
-          <OitiContinueButton style={styles.nextBtn}>
+          <DocCoreContinueButton style={styles.nextBtn}>
             <Text style={styles.nextText}>Continuar</Text>
-          </OitiContinueButton>
+          </DocCoreContinueButton>
         </View>
       </ImageBackground>
     </View>

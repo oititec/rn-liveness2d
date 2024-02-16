@@ -87,9 +87,6 @@ PODS:
     - OICommons (~> 1.1)
   - OISecurity (2.0.0):
     - OINetwork (~> 1.3)
-  - oiti-oiti-react-native (1.2.4):
-    - OILiveness2D (~> 2.0)
-    - React-Core
   - OpenSSL-Universal (1.1.1100)
   - RCT-Folly (2021.07.22.00):
     - boost
@@ -389,9 +386,10 @@ PODS:
     - React-jsi (= 0.70.6)
     - React-logger (= 0.70.6)
     - React-perflogger (= 0.70.6)
-  - RNPermissions (3.8.0):
+  - rn-liveness2d (2.0.0):
+    - OILiveness2D (~> 2.0)
     - React-Core
-  - RNScreens (3.20.0):
+  - RNScreens (3.29.0):
     - React-Core
     - React-RCTImage
   - SocketRocket (0.6.1)
@@ -429,7 +427,6 @@ DEPENDENCIES:
   - hermes-engine (from `../node_modules/react-native/sdks/hermes/hermes-engine.podspec`)
   - libevent (~> 2.1.12)
   - OILiveness2D (~> 2.0)
-  - oiti-oiti-react-native (from `../..`)
   - OpenSSL-Universal (= 1.1.1100)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
@@ -461,7 +458,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - RNPermissions (from `../node_modules/react-native-permissions`)
+  - rn-liveness2d (from `../..`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -502,8 +499,6 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes/hermes-engine.podspec"
-  oiti-oiti-react-native:
-    :path: "../.."
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTRequired:
@@ -560,8 +555,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
-  RNPermissions:
-    :path: "../node_modules/react-native-permissions"
+  rn-liveness2d:
+    :path: "../.."
   RNScreens:
     :path: "../node_modules/react-native-screens"
   Yoga:
@@ -591,7 +586,6 @@ SPEC CHECKSUMS:
   OILiveness2D: 83e02f9c4ac76c042140748b71b6d51eee36f2ba
   OINetwork: 35d74266149b8e04a51706633552b508955e8e47
   OISecurity: e2ebfd88e8ea4231fdd256cb32a9e86e236da8f8
-  oiti-oiti-react-native: 019e02a200dffbb9906c1aadc3cbcfe5792fed51
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: e1866f61af7049eb3d8e08e8b133abd38bc1ca7a
@@ -621,8 +615,8 @@ SPEC CHECKSUMS:
   React-RCTVibration: c75ceef7aa60a33b2d5731ebe5800ddde40cefc4
   React-runtimeexecutor: 15437b576139df27635400de0599d9844f1ab817
   ReactCommon: 349be31adeecffc7986a0de875d7fb0dcf4e251c
-  RNPermissions: 06845210af313594dc3fe5e8ae6afc820d791409
-  RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
+  rn-liveness2d: b5775a059bee311d24f1e07682ebfa6a54ca8b64
+  RNScreens: fa9b582d85ae5d62c91c66003b5278458fed7aaa
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 99caf8d5ab45e9d637ee6e0174ec16fbbb01bcfc
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

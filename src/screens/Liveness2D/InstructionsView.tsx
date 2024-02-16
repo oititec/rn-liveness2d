@@ -17,10 +17,10 @@ const scaleW = SCREEN_WIDTH / 320;
 const scaleH = SCREEN_HEIGHT / 920;
 
 export default function InstructionsView({
-  onVerify,
+  onContinue,
   onBack,
 }: {
-  onVerify(): void;
+  onContinue(): void;
   onBack(): void;
 }) {
   return (
@@ -65,7 +65,7 @@ export default function InstructionsView({
           </View>
         </View>
         <View style={styles.viewBtn}>
-          <TouchableOpacity onPress={() => onVerify()} style={styles.nextBtn}>
+          <TouchableOpacity onPress={() => onContinue()} style={styles.nextBtn}>
             <Text style={styles.nextText}>Continuar</Text>
           </TouchableOpacity>
         </View>

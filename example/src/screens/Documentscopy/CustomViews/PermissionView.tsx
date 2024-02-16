@@ -1,4 +1,7 @@
-import { OitiBackButton, OitiPermissionButton } from '@oiti/rn-liveness2d';
+import {
+  DocCoreBackButton,
+  DocCorePermissionButton,
+} from '@oiti/rn-liveness2d';
 import * as React from 'react';
 
 import { Image, StyleSheet, Text, View } from 'react-native';
@@ -7,15 +10,15 @@ export default function PermissionView() {
   return (
     <View style={styles.container}>
       <View style={styles.navigationBar}>
-        <OitiBackButton style={styles.backBtn}>
+        <DocCoreBackButton style={styles.backBtn}>
           <Text style={styles.nextText}>Voltar</Text>
-        </OitiBackButton>
+        </DocCoreBackButton>
       </View>
 
       <View style={styles.containerPerm}>
         <View style={styles.imgContainer}>
           <Image
-            source={require('../assets/images/camera.png')}
+            source={require('../../../assets/images/camera.png')}
             style={styles.imgFace}
           />
           <View style={styles.intructions}>
@@ -23,9 +26,9 @@ export default function PermissionView() {
             <Text style={styles.subtitle}>
               Habilitar as configurações do seu aparelho.
             </Text>
-            <OitiPermissionButton style={styles.nextBtn}>
+            <DocCorePermissionButton style={styles.nextBtn}>
               <Text style={styles.nextText}>Verificar</Text>
-            </OitiPermissionButton>
+            </DocCorePermissionButton>
           </View>
         </View>
       </View>

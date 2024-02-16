@@ -3,8 +3,8 @@ import * as React from 'react';
 import { DocumentsCopyView } from '@oiti/rn-liveness2d';
 import type { onErrorType } from 'src/@types/ArgsType';
 import { Alert } from 'react-native';
-//import InstructionsView from '../InstructionsView';
-//import PermissionView from '../PermissionView';
+//import PermissionView from './CustomViews/PermissionView';
+//import InstructionsView from './CustomViews/InstructionsView';
 
 export default function Documentscopy({
   route,
@@ -33,7 +33,8 @@ export default function Documentscopy({
     <DocumentsCopyView
       options={{ ...options, theme }}
       navigation={navigation}
-      callbackView="Home" /* 
+      callbackView="Home"
+      /*
       CustomInstructionView={<InstructionsView />}
       CustomPermissionView={<PermissionView />} */
       onSuccess={onResultSuccess}

@@ -71,18 +71,20 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
 
   @NonNull
   @ReactMethod
-  fun startfacecaptcha(appKey: String, promise: Promise) {
+  fun startfacecaptcha(appKey: String, environment: String, promise: Promise) {
     mFaceCaptchaPromisse = promise
+    val env: Environment = if (environment.equals("PRD")) Environment.PRD else Environment.HML
+
     if (currentActivity == null) {
       promise.reject(E_ACTIVITY_DOES_NOT_EXIST, "Activity doesn't exist")
       return;
     }
 
     val userData = UserData(appKey = appKey)
-    val intent =  Intent(getCurrentActivity(), FaceCaptchaActivity::class.java).apply{
+    val intent =  Intent(currentActivity, FaceCaptchaActivity::class.java).apply{
       putExtra(FaceCaptchaActivity.PARAM_USER_DATA, userData)
       putExtra(FaceCaptchaActivity.PARAM_SHOW_INSTRUCTIONS, false)
-      putExtra(FaceCaptchaActivity.PARAM_ENVIRONMENT, Environment.HML)
+      putExtra(FaceCaptchaActivity.PARAM_ENVIRONMENT, env)
     }
     currentActivity?.startActivityForResult(intent, FACECAPTCHA_RESULT_REQUEST)
 
