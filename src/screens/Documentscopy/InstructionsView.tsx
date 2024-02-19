@@ -227,8 +227,11 @@ const styles = StyleSheet.create({
     marginTop: normalize(70, scaleH),
     marginLeft: 20,
     marginBottom: 10,
-    width: normalize(20, scaleW),
-    height: normalize(20, scaleH),
+    aspectRatio: 4 / 4.6,
+    width:
+      Platform.OS === 'ios' ? normalize(20, scaleW) : normalize(30, scaleW),
+    height:
+      Platform.OS === 'ios' ? normalize(20, scaleH) : normalize(30, scaleH),
   },
   rigthArrow: {
     width: 25,

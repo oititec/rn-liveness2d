@@ -14,7 +14,7 @@ import {
 import type { ArgsType, DocCustomType } from 'src/@types/ArgsType';
 
 export default function Home({ navigation }: { navigation: any; route?: any }) {
-  const theme = React.useState<DocCustomType>({
+  const [theme, setTheme] = React.useState<DocCustomType>({
     setInstructionLoadingColor: '#333333',
     setLoadingBackgroundColor: '#FFFFFF',
     setLoadingSpinnerColor: '#00FF00',
@@ -143,6 +143,7 @@ export default function Home({ navigation }: { navigation: any; route?: any }) {
   const toggleEnvironment = (value: boolean) =>
     setOptions({ ...options, environment: value ? 'PRD' : 'HML' });
 
+  React.useEffect(() => {}, [setTheme]);
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
