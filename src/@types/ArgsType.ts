@@ -42,6 +42,7 @@ export type DocCustomType = {
   setInstructionContinueButtonHighlightedContentColor?: string | undefined;
   setInstructionContinueButtonTextColor?: string | undefined;
   setInstructionContinueButtonFont?: string | undefined;
+  setCaptureInstructionGuideReviewText?: string | undefined;
   setLoadingBackgroundColor?: string | undefined;
   setLoadingSpinnerColor?: string | undefined;
   setLoadingSpinerWidth?: number;

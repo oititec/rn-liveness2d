@@ -11,15 +11,19 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import type { ArgsType } from 'src/@types/ArgsType';
+import type { ArgsType, DocCustomType } from 'src/@types/ArgsType';
 
-export default function Home({ navigation }: { navigation: any }) {
-  const theme = {
+export default function Home({ navigation }: { navigation: any; route?: any }) {
+  const theme = React.useState<DocCustomType>({
+    setInstructionLoadingColor: '#333333',
+    setLoadingBackgroundColor: '#FFFFFF',
+    setLoadingSpinnerColor: '#00FF00',
+    setLoadingSpinnerScale: 1,
     setInstructionBackgroundColor: '#000000',
+    setCaptureInstructionGuideReviewText: 'Review?',
     setInstructionBackButtonColorsIcon: '#FFFFFF',
     setInstructionBackButtonColorsBackground: '#000000',
     setInstructionBackButtonColorsBorder: '#333333',
-    setInstructionLoadingColor: '#00FF00',
     setInstructionBottomSheetColor: '#FF0000',
     setInstructionBottomSheetRadius: 8,
     setInstructionTitleText: 'Example Title',
@@ -49,22 +53,14 @@ export default function Home({ navigation }: { navigation: any }) {
     setInstructionContinueButtonContentColor: '#FFFFFF',
     setInstructionContinueButtonHighlightedContentColor: '#CCCCCC',
     setInstructionContinueButtonTextColor: '#000000',
-
     //   setInstructionContinueButtonFont: '',
-    setLoadingBackgroundColor: '#FFFFFF',
-    setLoadingSpinnerColor: '#0CF25D',
-
-    setLoadingSpinerWidth: 1,
-    setLoadingSpinnerScale: 2,
     setCaptureBackgroundColor: '#C0C0C0',
     setTextFront: 'Front',
     setTextBack: 'Back',
     setCaptureInstructionGuideTextFront: 'Front Guide',
     setCaptureInstructionGuideTextBack: 'Back Guide',
-    setTextOk: 'OK',
-    setCaptureTakeNewPictureButtonText: 'Take New Picture',
     setCaptureInstructionGuideTextColor: '#555555',
-    setTextConfirmation: 'Confirmation',
+    setTextConfirmation: 'Pergunta?',
     setBackgroundOkColor: '#00CC00',
     setCaptureBackButtonIcon:
       'https://static.vecteezy.com/system/resources/previews/019/858/315/non_2x/back-flat-color-outline-icon-free-png.png',
@@ -103,8 +99,9 @@ export default function Home({ navigation }: { navigation: any }) {
     setCaptureTakeNewPictureButtonDisabledStateColorsText: '#CCCCCC',
     setCaptureTakeNewPictureButtonDisabledStateColorsBackground: '#666666',
     setCaptureTakeNewPictureButtonDisabledStateColorsBorder: '#333333',
-    setCaptureUsePictureButtonText: 'Use Picture',
+    setCaptureUsePictureButtonText: 'Retry',
     setCaptureUsePictureButtonConfirmationText: 'Confirm Use',
+    setCaptureTakeNewPictureButtonText: 'Take New Picture',
     setCaptureUsePictureButtonHighlightedStateColorsText: '#FFFFFF',
     setCaptureUsePictureButtonHighlightedStateColorsBackground: '#FF9900',
     setCaptureUsePictureButtonHighlightedStateColorsBorder: '#FF6600',
@@ -130,7 +127,7 @@ export default function Home({ navigation }: { navigation: any }) {
     setResultTryAgainButtonNormalStateColorsText: '#333333',
     setResultTryAgainButtonNormalStateColorsBackground: '#FFFFFF',
     setResultTryAgainButtonNormalStateColorsBorder: '#444444',
-  };
+  });
 
   const [options, setOptions] = React.useState<ArgsType>({
     appkey:
@@ -169,6 +166,7 @@ export default function Home({ navigation }: { navigation: any }) {
               <Text style={styles.textBtn}>FaceCaptcha</Text>
             </Pressable>
           </View>
+
           <View style={styles.spacae}></View>
           <View style={styles.divider}></View>
           <View style={styles.spacae}></View>
@@ -181,9 +179,10 @@ export default function Home({ navigation }: { navigation: any }) {
               }
               style={styles.buttonDefault}
             >
-              <Text style={styles.textBtn}>DocCore</Text>
+              <Text style={styles.textBtn}>Doc Core</Text>
             </Pressable>
           </View>
+          <View style={styles.spacae}></View>
           <View style={styles.button}>
             <Pressable
               onPress={() =>
@@ -194,7 +193,19 @@ export default function Home({ navigation }: { navigation: any }) {
               }
               style={styles.buttonDefault}
             >
-              <Text style={styles.textBtn}>DocCore Custom</Text>
+              <Text style={styles.textBtn}>Doc Core Customizado</Text>
+            </Pressable>
+          </View>
+          <View style={styles.button}>
+            <Pressable
+              onPress={() =>
+                navigation.navigate('DocCoreCustom', {
+                  theme: theme,
+                })
+              }
+              style={styles.buttonCustom}
+            >
+              <Text style={styles.textBtn}>Customizar Doc Core 🎨</Text>
             </Pressable>
           </View>
           <View style={styles.spacae}></View>
@@ -273,12 +284,14 @@ const styles = StyleSheet.create({
   },
   containerScroll: {
     flex: 1,
+    backgroundColor: '#FFF',
   },
   input: {
     width: '100%',
     height: 40,
     borderWidth: 1,
     padding: 10,
+    borderRadius: 4,
   },
   box: {
     marginVertical: 20,
@@ -338,6 +351,17 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     elevation: 3,
     backgroundColor: '#0CF25D',
+  },
+
+  buttonCustom: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 3,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    borderColor: '#0CF25D',
+    borderWidth: 2,
   },
   textBtn: {
     color: 'black',

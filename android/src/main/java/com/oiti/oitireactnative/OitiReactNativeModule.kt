@@ -102,7 +102,7 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
     mDocCorePromisse = promise
     val env: Environment = if (environment.equals("PRD")) Environment.PRD else Environment.HML
     val themeBuilder = themeJson?.let { DocTheme(it).getNewTheme() }
-    val loadingSize: Int = themeJson?.getInt("setLoadingSpinnerScale")?.times(100) ?: 100
+    val loadingSize: Int =  themeJson?.getInt("setLoadingSpinnerScale")?.times(100) ?: 100
 
     val intent = Intent(currentActivity, DocumentscopyActivity::class.java).apply {
       putExtra(DocumentscopyActivity.PARAM_APP_KEY, appKey)
@@ -123,7 +123,7 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
         DocumentscopyActivity.PARAM_CUSTOM_LOADING_SPINNER_COLOR,
         themeJson?.getString("setLoadingSpinnerColor") ?: "#000000"
       )
-      putExtra(DocumentscopyActivity.PARAM_CUSTOM_LOADING_SIZE, loadingSize)
+      putExtra(DocumentscopyActivity.PARAM_CUSTOM_LOADING_SIZE, loadingSize ?: 100)
     }
     currentActivity?.startActivityForResult(intent, DOCUMENTSCOPY_RESULT_REQUEST)
   }
