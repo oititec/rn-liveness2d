@@ -1,6 +1,6 @@
 {
   "name": "@oiti/rn-liveness2d",
-  "version": "1.2.4",
+  "version": "2.0.0",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -34,8 +34,7 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install && yarn example pods",
-    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build",
-    "postinstall": "react-native setup-ios-permissions && pod-install"
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
   },
   "keywords": [
     "react-native",
@@ -55,9 +54,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "reactNativePermissionsIOS": [
-    "Camera"
-  ],
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.7",
     "@commitlint/config-conventional": "^17.0.2",
@@ -739,7 +735,6 @@
     "react-is": "^18.2.0",
     "react-native-codegen": "^0.70.6",
     "react-native-gradle-plugin": "^0.70.3",
-    "react-native-permissions": "^3.8.0",
     "react-refresh": "^0.4.3",
     "react-shallow-renderer": "^16.15.0",
     "read-pkg": "^3.0.0",

@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
-import { NativeModules, Platform } from 'react-native';
-import type { ArgsType } from './@types/ArgsType';
+import React, { useLayoutEffect, useRef } from 'react';
+import { NativeModules, Platform, TouchableOpacity } from 'react-native';
+import type { ArgsType, onErrorType, onSuccessType } from './@types/ArgsType';
 
 import InstructionsView from './screens/Documentscopy/InstructionsView';
 import InstructionsView2D from './screens/Liveness2D/InstructionsView';
 import PermissionView from './screens/PermissionView';
 
-import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
+import { DocCoreProvider, useDocCoreContext } from './contexts/DocCoreContext';
+import {
+  FaceCaptchaProvider,
+  useFaceCaptchaContext,
+} from './contexts/FaceCaptchaContext';
+
+import type { OitiBackButtonInterface } from './interfaces/OitiBackButtonInterface';
+import type { OitiPermissionButtonInterface } from './interfaces/OitiBackButtonInterface copy';
+import type { OitiContinueButtonInterface } from './interfaces/OitiContinueButton';
+
+import { DocCoreHelper } from './helpers/DocCoreHelper';
+import { FaceCaptchaHelper } from './helpers/FaceCaptchaHelper';
+import { continueButton } from './utils/continueButton';
 
 const LINKING_ERROR =
   `The package '@oiti/rn-liveness2d' doesn't seem to be linked. Make sure: \n\n` +
@@ -25,57 +37,40 @@ const OitiReactNative = NativeModules.OitiReactNative
       }
     );
 
-const SCREEN = Object.freeze({
-  INSTRUCTION_VIEW: 1,
-  PERMISSION_VIEW: 2,
-} as const);
-
-export function startFaceCaptcha(options: ArgsType): Promise<any> {
+export function startFaceCaptcha(options?: ArgsType): Promise<any> {
   let args: ArgsType = {
     appkey: options?.appkey === undefined ? '' : options?.appkey,
     ticket: options?.appkey === undefined ? '' : options?.ticket,
     environment:
-      options?.environment === undefined ? '.HML' : options?.environment,
-    apparence: {
-      backgroundColor:
-        options?.apparence?.backgroundColor === ''
-          ? '#1E1E1E'
-          : options?.apparence?.backgroundColor,
-      loadingColor:
-        options?.apparence?.loadingColor === ''
-          ? '#05D758'
-          : options?.apparence?.loadingColor,
-    },
+      options?.environment === undefined ? 'HML' : options?.environment,
   };
-
   if (Platform.OS === 'android') {
-    return OitiReactNative.startfacecaptcha(args.appkey);
+    return OitiReactNative.startfacecaptcha(args.appkey, args.environment);
   }
-
   return OitiReactNative.startfacecaptcha(args);
 }
 
-export function startDocumentscopy(options?: ArgsType): Promise<string> {
+export function startDocumentscopy(
+  options?: ArgsType
+): Promise<onSuccessType | string> {
   const args: ArgsType = {
     appkey: options?.appkey === undefined ? '' : options?.appkey,
     ticket: options?.appkey === undefined ? '' : options?.ticket,
     environment:
-      options?.environment === undefined ? '.HML' : options?.environment,
-    apparence: {
-      backgroundColor:
-        options?.apparence?.backgroundColor === ''
-          ? '#1E1E1E'
-          : options?.apparence?.backgroundColor,
-      loadingColor:
-        options?.apparence?.loadingColor === ''
-          ? '#05D758'
-          : options?.apparence?.loadingColor,
-    },
-    custom: options?.custom === undefined ? null : options?.custom
+      options?.environment === undefined ? 'HML' : options?.environment,
+    nativeCustom:
+      options?.nativeCustom === false ? false : options?.nativeCustom,
+    theme: options?.theme === undefined ? null : options?.theme,
   };
-
+  console.log(args);
   if (Platform.OS === 'android') {
-    return OitiReactNative.startdocumentscopy(args.appkey, args.ticket);
+    return OitiReactNative.startdocumentscopy(
+      args.appkey,
+      args.ticket,
+      args.theme,
+      args.nativeCustom,
+      args.environment
+    );
   }
 
   return OitiReactNative.startdocumentscopy(args);
@@ -84,162 +79,42 @@ export function startDocumentscopy(options?: ArgsType): Promise<string> {
 export function GetIntructionView2d({
   CustomInstructionView,
   CustomPermissionView,
-  options,
-  navigation,
-  callBackView,
 }: {
   CustomInstructionView?: any | null;
   CustomPermissionView?: any | null;
-  options: ArgsType;
-  navigation: any;
-  callBackView: string;
 }) {
-  const [screen, setScreen] = useState(1);
+  const {
+    screen,
+    options,
+    setScreen,
+    startLiveness2d,
+    onBack,
+    onAskPermission,
+  } = useFaceCaptchaContext();
 
-  function onBack() {
-    switch (screen) {
-      case SCREEN.INSTRUCTION_VIEW:
-        navigation.goBack(null);
-        break;
-      case SCREEN.PERMISSION_VIEW:
-        setScreen(1);
-        break;
-    }
+  function onContinue() {
+    continueButton().then((result) => {
+      result === true && startLiveness2d();
+      result === false && setScreen(2);
+    });
   }
-
-  function verifyPermission() {
-    Platform.OS === 'ios'
-      ? check(PERMISSIONS.IOS.CAMERA)
-          .then((result) => {
-            switch (result) {
-              case RESULTS.UNAVAILABLE:
-                console.log(
-                  'This feature is not available (on this device / in this context)'
-                );
-                break;
-              case RESULTS.DENIED:
-                console.log(
-                  'The permission has not been requested / is denied but requestable'
-                );
-                if (screen === 1) {
-                  setScreen(2);
-                } else {
-                  request(PERMISSIONS.IOS.CAMERA).then(() => {
-                    startFaceCaptcha(options).then(
-                      (result: string) => {
-                        console.log(result);
-                        navigation.navigate(callBackView);
-                      },
-                      (error: string) => {
-                        console.log(error);
-                        navigation.navigate(callBackView);
-                      }
-                    );
-                  });
-                }
-                break;
-              case RESULTS.LIMITED:
-                console.log(
-                  'The permission is limited: some actions are possible'
-                );
-                break;
-              case RESULTS.GRANTED:
-                startFaceCaptcha(options).then(
-                  (result: string) => {
-                    console.log(result);
-                    navigation.navigate(callBackView);
-                  },
-                  (error: string) => {
-                    console.log(error);
-                    navigation.navigate(callBackView);
-                  }
-                );
-                break;
-              case RESULTS.BLOCKED:
-                console.log(
-                  'The permission is denied and not requestable anymore'
-                );
-                setScreen(2);
-                break;
-            }
-          })
-          .catch((error) => {
-            console.log('Error: ' + error);
-          })
-      : check(PERMISSIONS.ANDROID.CAMERA)
-          .then((result) => {
-            switch (result) {
-              case RESULTS.UNAVAILABLE:
-                console.log(
-                  'This feature is not available (on this device / in this context)'
-                );
-                break;
-              case RESULTS.DENIED:
-                console.log(
-                  'The permission has not been requested / is denied but requestable'
-                );
-                if (screen === 1) {
-                  setScreen(2);
-                } else {
-                  request(PERMISSIONS.ANDROID.CAMERA).then(() => {
-                    startFaceCaptcha(options).then(
-                      (result: string) => {
-                        console.log(result);
-                        navigation.navigate(callBackView);
-                      },
-                      (error: string) => {
-                        console.log(error);
-                        navigation.navigate(callBackView);
-                      }
-                    );
-                  });
-                }
-                /* request(PERMISSIONS.IOS.CAMERA).then(() => {
-              'The permission has enabled' + options?.appkey;
-            }); */
-                break;
-              case RESULTS.LIMITED:
-                console.log(
-                  'The permission is limited: some actions are possible'
-                );
-                break;
-              case RESULTS.GRANTED:
-                startFaceCaptcha(options).then(
-                  (result: string) => {
-                    console.log(result);
-                    navigation.navigate(callBackView);
-                  },
-                  (error: string) => {
-                    console.log(error);
-                    navigation.navigate(callBackView);
-                  }
-                );
-                break;
-              case RESULTS.BLOCKED:
-                console.log(
-                  'The permission is denied and not requestable anymore'
-                );
-                setScreen(2);
-                break;
-            }
-          })
-          .catch((error) => {
-            console.log('Error: ' + error);
-          });
-  }
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      options?.nativeCustom && startLiveness2d();
+    }, 1);
+  }, [options, startLiveness2d]);
 
   return (
     <>
       {screen === 1 &&
         (!CustomInstructionView ? (
-          <InstructionsView2D onVerify={verifyPermission} onBack={onBack} />
+          <InstructionsView2D onContinue={onContinue} onBack={onBack} />
         ) : (
           CustomInstructionView
         ))}
-
       {screen === 2 &&
         (!CustomPermissionView ? (
-          <PermissionView onVerify={verifyPermission} onBack={onBack} />
+          <PermissionView onVerify={() => onAskPermission()} onBack={onBack} />
         ) : (
           CustomPermissionView
         ))}
@@ -250,158 +125,48 @@ export function GetIntructionView2d({
 export function GetIntructionViewDoc({
   CustomInstructionView,
   CustomPermissionView,
-  options,
-  navigation,
-  callBackView,
 }: {
-  CustomInstructionView?: any | null;
-  CustomPermissionView?: any | null;
-  options: ArgsType;
-  navigation: any;
-  callBackView: string;
+  CustomInstructionView?: Element | null;
+  CustomPermissionView?: Element | null;
 }) {
-  const [screen, setScreen] = useState(1);
+  const { screen, options, setScreen, startDocCore, onBack, onAskPermission } =
+    useDocCoreContext();
 
-  function onBack() {
-    switch (screen) {
-      case SCREEN.INSTRUCTION_VIEW:
-        navigation.goBack(null);
-        break;
-      case SCREEN.PERMISSION_VIEW:
-        setScreen(1);
-        break;
-    }
+  function onContinue() {
+    continueButton().then((result) => {
+      result === true && startDocCore();
+      result === false && setScreen(2);
+    });
   }
-
-  function verifyPermission() {
-    Platform.OS === 'ios'
-      ? check(PERMISSIONS.IOS.CAMERA)
-          .then((result) => {
-            switch (result) {
-              case RESULTS.UNAVAILABLE:
-                console.log(
-                  'This 22 feature is not available (on this device / in this context)'
-                );
-                break;
-              case RESULTS.DENIED:
-                console.log(
-                  'The permission has not been requested / is denied but requestable'
-                );
-                if (screen === 1) {
-                  setScreen(2);
-                } else {
-                  request(PERMISSIONS.IOS.CAMERA).then(() => {
-                    startDocumentscopy(options).then(
-                      (result: string) => {
-                        console.log(result);
-                        navigation.navigate(callBackView);
-                      },
-                      (error: string) => {
-                        console.log(error);
-                      }
-                    );
-                  });
-                }
-                break;
-              case RESULTS.LIMITED:
-                console.log(
-                  'The permission is limited: some actions are possible'
-                );
-                break;
-              case RESULTS.GRANTED:
-                startDocumentscopy(options).then(
-                  (result: string) => {
-                    console.log(result);
-                    navigation.navigate(callBackView);
-                  },
-                  (error: string) => {
-                    console.log(error);
-                  }
-                );
-                break;
-              case RESULTS.BLOCKED:
-                console.log(
-                  'The permission is denied and not requestable anymore'
-                );
-                setScreen(2);
-                break;
-            }
-          })
-          .catch((error) => {
-            console.log('Error: ' + error);
-          })
-      : check(PERMISSIONS.ANDROID.CAMERA)
-          .then((result) => {
-            switch (result) {
-              case RESULTS.UNAVAILABLE:
-                console.log(
-                  'This is not available (on this device / in this context)'
-                );
-                break;
-              case RESULTS.DENIED:
-                console.log(
-                  'The permission has not been requested / is denied but requestable'
-                );
-                if (screen === 1) {
-                  setScreen(2);
-                } else {
-                  request(PERMISSIONS.ANDROID.CAMERA).then(() => {
-                    startDocumentscopy(options).then(
-                      (result: string) => {
-                        console.log(result);
-                        navigation.navigate(callBackView);
-                      },
-                      (error: string) => {
-                        console.log(error);
-                      }
-                    );
-                  });
-                }
-                break;
-              case RESULTS.LIMITED:
-                console.log(
-                  'The permission is limited: some actions are possible'
-                );
-                break;
-              case RESULTS.GRANTED:
-                startDocumentscopy(options).then(
-                  (result: string) => {
-                    console.log(result);
-                    navigation.navigate(callBackView);
-                  },
-                  (error: string) => {
-                    console.log(error);
-                  }
-                );
-                break;
-              case RESULTS.BLOCKED:
-                console.log(
-                  'The permission is denied and not requestable anymore'
-                );
-                setScreen(2);
-                break;
-            }
-          })
-          .catch((error) => {
-            console.log('Error: ' + error);
-          });
-  }
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      options?.nativeCustom && startDocCore();
+    }, 1);
+  }, [options, startDocCore]);
 
   return (
     <>
-      {screen === 1 &&
-        (!CustomInstructionView ? (
-          <InstructionsView onVerify={verifyPermission} onBack={onBack} />
-        ) : (
-          CustomInstructionView
-        ))}
-
-      {screen === 2 &&
-        (!CustomPermissionView ? (
-          <PermissionView onVerify={verifyPermission} onBack={onBack} />
-        ) : (
-          CustomPermissionView
-        ))}
+      {options?.nativeCustom ? (
+        <></>
+      ) : (
+        <>
+          {screen === 1 &&
+            (!CustomInstructionView ? (
+              <InstructionsView onContinue={onContinue} onBack={onBack} />
+            ) : (
+              CustomInstructionView
+            ))}
+          {screen === 2 &&
+            (!CustomPermissionView ? (
+              <PermissionView
+                onVerify={() => onAskPermission()}
+                onBack={onBack}
+              />
+            ) : (
+              CustomPermissionView
+            ))}
+        </>
+      )}
     </>
   );
 }
@@ -412,21 +177,31 @@ export function Liveness2dView({
   options,
   navigation,
   callbackView,
+  onSuccess,
+  onError,
 }: {
   CustomInstructionView?: any | null;
   CustomPermissionView?: any | null;
   options: any;
   navigation: any;
   callbackView: string;
+  onSuccess: (result: string) => void;
+  onError: (error: onErrorType) => void;
 }) {
   return (
-    <GetIntructionView2d
-      CustomInstructionView={CustomInstructionView}
-      CustomPermissionView={CustomPermissionView}
-      options={options}
-      navigation={navigation}
-      callBackView={callbackView}
-    />
+    <FaceCaptchaProvider onSuccess={onSuccess} onError={onError}>
+      <FaceCaptchaHelper
+        options={options}
+        navigation={navigation}
+        callBackView={callbackView}
+        onError={onError}
+      >
+        <GetIntructionView2d
+          CustomInstructionView={CustomInstructionView}
+          CustomPermissionView={CustomPermissionView}
+        />
+      </FaceCaptchaHelper>
+    </FaceCaptchaProvider>
   );
 }
 
@@ -436,20 +211,173 @@ export function DocumentsCopyView({
   options,
   navigation,
   callbackView,
+  onSuccess,
+  onError,
 }: {
-  CustomInstructionView?: any | null;
-  CustomPermissionView?: any | null;
-  options: any;
+  CustomInstructionView?: Element | null;
+  CustomPermissionView?: Element | null;
+  options: ArgsType;
   navigation: any;
   callbackView: string;
+  onSuccess: (result: string) => void;
+  onError: (error: onErrorType) => void;
 }) {
   return (
-    <GetIntructionViewDoc
-      CustomInstructionView={CustomInstructionView}
-      CustomPermissionView={CustomPermissionView}
-      options={options}
-      navigation={navigation}
-      callBackView={callbackView}
-    />
+    <DocCoreProvider onSuccess={onSuccess} onError={onError}>
+      <DocCoreHelper
+        options={options}
+        navigation={navigation}
+        callBackView={callbackView}
+        onError={onError}
+      >
+        <GetIntructionViewDoc
+          CustomInstructionView={CustomInstructionView}
+          CustomPermissionView={CustomPermissionView}
+        />
+      </DocCoreHelper>
+    </DocCoreProvider>
   );
 }
+
+export const DocCoreContinueButton: React.FC<OitiContinueButtonInterface> = ({
+  children,
+  ...props
+}) => {
+  const touchableOpacityRef = useRef(null);
+  const { setScreen, startDocCore } = useDocCoreContext();
+
+  function onContinue() {
+    continueButton().then((result) => {
+      result === true && startDocCore();
+      result === false && setScreen(2);
+    });
+  }
+
+  const handlePress = () => {
+    onContinue();
+  };
+
+  return (
+    <TouchableOpacity
+      ref={touchableOpacityRef}
+      onPress={handlePress}
+      {...props}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};
+
+export const DocCoreBackButton: React.FC<OitiBackButtonInterface> = ({
+  children,
+  ...props
+}) => {
+  const touchableOpacityRef = useRef(null);
+  const { onBack } = useDocCoreContext();
+
+  const handlePress = () => {
+    onBack();
+  };
+
+  return (
+    <TouchableOpacity
+      ref={touchableOpacityRef}
+      onPress={handlePress}
+      {...props}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};
+
+export const DocCorePermissionButton: React.FC<
+  OitiPermissionButtonInterface
+> = ({ children, ...props }) => {
+  const touchableOpacityRef = useRef(null);
+  const { onAskPermission } = useDocCoreContext();
+
+  const handlePress = () => {
+    onAskPermission();
+  };
+
+  return (
+    <TouchableOpacity
+      ref={touchableOpacityRef}
+      onPress={handlePress}
+      {...props}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};
+
+export const FaceCaptchaContinueButton: React.FC<
+  OitiContinueButtonInterface
+> = ({ children, ...props }) => {
+  const touchableOpacityRef = useRef(null);
+  const { setScreen, startLiveness2d } = useFaceCaptchaContext();
+
+  function onContinue() {
+    continueButton().then((result) => {
+      result === true && startLiveness2d();
+      result === false && setScreen(2);
+    });
+  }
+
+  const handlePress = () => {
+    onContinue();
+  };
+
+  return (
+    <TouchableOpacity
+      ref={touchableOpacityRef}
+      onPress={handlePress}
+      {...props}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};
+
+export const FaceCaptchaBackButton: React.FC<OitiBackButtonInterface> = ({
+  children,
+  ...props
+}) => {
+  const touchableOpacityRef = useRef(null);
+  const { onBack } = useFaceCaptchaContext();
+
+  const handlePress = () => {
+    onBack();
+  };
+
+  return (
+    <TouchableOpacity
+      ref={touchableOpacityRef}
+      onPress={handlePress}
+      {...props}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};
+
+export const FaceCaptchaPermissionButton: React.FC<
+  OitiPermissionButtonInterface
+> = ({ children, ...props }) => {
+  const touchableOpacityRef = useRef(null);
+  const { onAskPermission } = useFaceCaptchaContext();
+
+  const handlePress = () => {
+    onAskPermission();
+  };
+
+  return (
+    <TouchableOpacity
+      ref={touchableOpacityRef}
+      onPress={handlePress}
+      {...props}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};

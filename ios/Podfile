@@ -8,6 +8,6 @@ target 'OitiReactNative' do
     
     # Pods for sampleUsageLivenessSDK
 
-    pod 'OILiveness2D', '~> 1.2', :source => 'https://github.com/oititec/ios-artifactory.git'
+    pod 'OILiveness2D', '~> 2.0', :source => 'https://github.com/oititec/ios-artifactory.git'
   
   end

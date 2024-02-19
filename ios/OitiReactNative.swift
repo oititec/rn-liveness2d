@@ -4,6 +4,7 @@ import UIKit
 import OILiveness2D
 import OICommons
 import OIComponents
+import AVFoundation
 
 @objc(OitiReactNative)
 class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
@@ -22,10 +23,9 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         reject("0", "\(error)", error)
     }
     
-    /// Método que lida com o cancelamento do fluxo de reconhecimento facial por parte do usuário.
     public func handleCanceled() {
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
-        resolve("RESUL_CANCELED")
+        reject("0", "RESULT_CANCELED", "result" as? Error)
     }
     
     func handleDocumentscopyCompleted(){
@@ -33,17 +33,14 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         resolve("RESULT_OK")
     }
     
-    /// Lidar com o erro que ocorreu durante o processo de Documentoscopia.
-    /// - Parameter error: Erro capturado no processo.
     func handleDocumentscopyError(error: DocumentscopyError){
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
         reject("0", "\(error)", error)
     }
     
-    /// Lidar com o processo de Documentoscopia que foi cancelado.
     func handleDocumentscopyCanceled(){
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true)
-        resolve("RESUL_CANCELED")
+        reject("0", "RESULT_CANCELED", "result" as? Error)
     }
     
     @objc(startdocumentscopy:withResolver:withRejecter:)
@@ -55,22 +52,28 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         self.resolve = resolve
         self.reject = reject
         
-        let ticket = args?["ticket"] as? String ?? ""
+        let ticket = args?["ticket"] as? String ?? nil
         let appKey = args?["appkey"] as? String ?? ""
         let environment = args?["environment"] as? String ?? "HML"
-        _ = args?["apparence"] as? Dictionary<String,Any> ?? nil
+        let nativeCustom = args?["nativeCustom"] as? Bool ?? false
         let custom = args?["theme"] as? Dictionary<String,Any> ?? nil
-        
         let builder = DocumentscopyCustomizationBuilder.builder()
         
         DispatchQueue.main.async {
-            let vc = HybridDocumentscopyViewController(
+            let vc = nativeCustom == false ? HybridDocumentscopyViewController(
+                ticket: ticket == "" ? nil : ticket,
+                appKey: appKey,
+                environment: environment == "PRD" ? Environment.PRD : Environment.HML,
+                delegate: self,
+                customizationTheme: (custom != nil) ? self.createCustomization(builder: builder, custom: custom).build() : nil
+            ) : DocumentscopyViewController(
                 ticket: ticket == "" ? nil : ticket,
                 appKey: appKey,
                 environment: environment == "PRD" ? Environment.PRD : Environment.HML,
                 delegate: self,
                 customizationTheme: (custom != nil) ? self.createCustomization(builder: builder, custom: custom).build() : nil
             )
+            
             vc.modalPresentationStyle = .fullScreen
             RCTPresentedViewController()?.present(vc, animated: true)
         }
@@ -99,23 +102,105 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
         }
     }
     
+    @objc(askcamerapermission:withResolver:withRejecter:)
+    func askCameraPermission(args: ObjCBool, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
+        AVCaptureDevice.requestAccess(for: .video) { granted in
+            DispatchQueue.main.async {
+                if granted {
+                    resolve(true)
+                } else {
+                    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(settingsURL, options: [:]) { _ in }
+                    }
+                    resolve(false)
+                }
+            }
+        }
+    }
+    
+    @objc(checkcamerapermission:withResolver:withRejecter:)
+    func checkcamerapermission(args: ObjCBool, resolve:@escaping RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock) -> Void {
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) ==  AVAuthorizationStatus.authorized {
+            resolve(true)
+        } else {
+            resolve(false)
+        }
+    }
+    
     func createCustomization(
         builder: DocumentscopyCustomizationBuilder,
         custom: Dictionary<String,Any>?
     ) -> DocumentscopyCustomizationBuilder {
         builder
-            .setLoadingBackgroundColor(.init(hex: custom?["setLoadingBackgroundColor"] as! String))
+            .setInstructionBackgroundColor(.init(hex: custom?["setInstructionBackgroundColor"] as? String ?? ""))
+            .setInstructionBackButtonColors(
+                forIcon: .init(hex: custom?["setInstructionBackButtonColorsIcon"] as? String ?? ""),
+                background: .init(hex: custom?["setInstructionBackButtonColorsBackground"] as? String ?? ""),
+                border: .init(hex: custom?["setInstructionBackButtonColorsBorder"] as? String ?? "")
+            )
+            .setInstructionLoadingColor(.init(hex: custom?["setInstructionLoadingColor"] as? String ?? ""))
+            .setInstructionBottomSheet(
+                withColor: .init(hex: custom?["setInstructionBottomSheetColor"] as? String ?? ""),
+                radius: custom?["setInstructionBottomSheetRadius"] as? CGFloat ?? nil
+            )
+            .setInstructionTitle(
+                withText: custom?["setInstructionTitleText"] as? String ?? nil,
+                color: .init(hex: custom?["setInstructionTitleColor"] as? String ?? ""),
+                font: UIFont(name: custom?["setInstructionTitleFont"] as? String ?? "", size: 14)
+            )
+            .setInstructionCaption(
+                withText: custom?["setInstructionCaptionText"] as? String ?? nil,
+                color: .init(hex: custom?["setInstructionCaptionColor"] as? String ?? ""),
+                font: UIFont(name: custom?["setInstructionCaptionFont"] as? String ?? "", size: 14)
+            )
+            .setInstructionDocOptionBackgroundColor(.init(hex: custom?["setInstructionBottomSheetColor"] as? String ?? ""))
+            .setInstructionDocOptionTitle(
+                withText: custom?["setInstructionDocOptionTitleText"] as? String ?? nil,
+                color: .init(hex: custom?["setInstructionDocOptionTitleColor"] as? String ?? ""),
+                font: UIFont(name: custom?["setInstructionDocOptionTitleFont"] as? String ?? "", size: 14)
+            )
+            .setInstructionDocOptionBorder(
+                withColor: .init(hex: custom?["setInstructionDocOptionBorderColor"] as? String ?? ""),
+                width: custom?["setInstructionDocOptionBorderWidth"] as? CGFloat ?? 4,
+                radius: custom?["setInstructionDocOptionBorderRadius"] as? CGFloat ?? 4
+            )
+            .setInstructionEnvOptionBackgroundColor(.init(hex: custom?["setInstructionBottomSheetColor"] as? String ?? ""))
+            .setInstructionEnvOptionTitle(
+                withText: custom?["setInstructionEnvOptionTitleText"] as? String ?? nil,
+                color: .init(hex: custom?["setInstructionEnvOptionTitleColor"] as? String ?? ""),
+                font: UIFont(name: custom?["setInstructionEnvOptionTitleFont"] as? String ?? "", size: 14)
+            )
+            .setInstructionEnvOptionBorder(
+                withColor: .init(hex: custom?["setInstructionEnvOptionBorderColor"] as? String ?? ""),
+                width: custom?["setInstructionEnvOptionBorderWidth"] as? CGFloat ?? 4,
+                radius: custom?["setInstructionEnvOptionBorderRadius"] as? CGFloat ?? 4
+            )
+            .setInstructionContinueButton(
+                backgroundColor:.init(hex: custom?["setInstructionContinueButtonBackgroundColor"] as? String ?? ""),
+                highlightedBackgroundColor:.init(hex: custom?["setInstructionContinueButtonHighlightedBackgroundColor"] as? String ?? ""),
+                borderColor:.init(hex: custom?["setInstructionContinueButtonBorderColor"] as? String ?? ""),
+                highlightedBorderColor:.init(hex: custom?["setInstructionContinueButtonHighlightedBorderColor"] as? String ?? ""),
+                contentColor:.init(hex: custom?["setInstructionContinueButtonContentColor"] as? String ?? ""),
+                highlightedContentColor:.init(hex: custom?["setInstructionContinueButtonHighlightedContentColor"] as? String ?? ""),
+                textColor:.init(hex: custom?["setInstructionContinueButtonTextColor"] as? String ?? ""),
+                font: UIFont(name: custom?["setInstructionContinueButtonFont"] as? String ?? "", size: 14)
+                
+            )
+        
+            .setLoadingBackgroundColor(.init(hex: custom?["setLoadingBackgroundColor"] as? String ?? "#000000"))
             .setLoadingSpinner(
-                withColor: .init(hex: custom?["setLoadingSpinnerColor"] as! String),
-                width: CGFloat(custom?["setLoadingSpinerWidth"] as? Int ?? 1),
+                withColor: .init(hex: custom?["setLoadingSpinnerColor"] as? String ?? "#FFFFFF"),
+                width: custom?["setLoadingSpinerWidth"] as? CGFloat ?? 1,
                 scaleFactor: custom?["setLoadingSpinnerScale"] as? Int ?? 1
             )
+        
+            .setCaptureBackButtonIcon(OitiReactNative.downloadImage(from: custom?["setCaptureBackButtonIcon"] as? String ?? ""))
         
             .setCaptureBackgroundColor(.init(hex: custom?["setCaptureBackgroundColor"] as! String))
             .setCaptureFrontIndicatorText(custom?["setTextFront"] as! String)
             .setCaptureBackIndicatorText(custom?["setTextBack"] as! String)
             .setCaptureInstructionGuideText(forFront: custom?["setCaptureInstructionGuideTextFront"] as? String, back: custom?["setCaptureInstructionGuideTextBack"] as? String)
-            .setCaptureInstructionConfirmationText(custom?["setTextOk"] as! String)
+            .setCaptureInstructionConfirmationText(custom?["setCaptureInstructionGuideReviewText"] as! String)
             .setCaptureTakeNewPictureButton(withText: custom?["setCaptureTakeNewPictureButtonText"] as? String)
             .setCaptureInstructionTextColor(.init(hex: custom?["setCaptureInstructionGuideTextColor"] as! String))
             .setCaptureConfirmationMessage(
@@ -124,13 +209,13 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
             )
             .setCaptureBackButtonColors(
                 forIcon: .init(hex: custom?["setCaptureBackButtonColorsIcon"] as! String),
-                background: .init(hex: custom?["setCaptureBackButtonColorsBackground"] as! String),
-                border: .init(hex: custom?["setCaptureBackButtonColorsBorder"] as! String)
+                background: .init(hex: custom?["setCaptureBackgroundColor"] as! String),
+                border: .init(hex: custom?["setCaptureBackgroundColor"] as! String)
             )
             .setCaptureCloseButtonColors(
                 forIcon: .init(hex: custom?["setCaptureCloseButtonColorsIcon"] as! String),
-                background: .init(hex: custom?["setCaptureCloseButtonColorsBackground"] as! String),
-                border: .init(hex: custom?["setCaptureCloseButtonColorsBorder"] as! String)
+                background: .init(hex: custom?["setCaptureBackgroundColor"] as! String),
+                border: .init(hex: custom?["setCaptureBackgroundColor"] as! String)
             )
             .setCaptureFrontIndicatorColor(.init(hex: custom?["setCaptureFrontIndicatorColor"] as! String))
         
@@ -154,7 +239,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
             .setCaptureInstructionTextColor(.init(hex: custom?["setCaptureInstructionTextColor"] as! String))
             .setCapturePreviewBorderColor(
                 forCaptured: .init(hex: custom?["setCapturePreviewBorderColorForCapture"] as! String),
-                uncapturedState: .init(hex: custom?["setCapturePreviewBorderColorForUncapturedState"] as! String)
+                uncapturedState: .init(hex: custom?["setCapturePreviewBorderColorForCapture"] as! String)
             )
             .setCaptureCaptureButtonHighlightedStateColors(
                 forIcon: .init(hex: custom?["setCaptureCaptureButtonHighlightedStateColorsIcon"] as! String),
@@ -191,8 +276,8 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
                 border: .init(hex: custom?["setCaptureTakeNewPictureButtonDisabledStateColorsBorder"] as! String)
             )
             .setCaptureUsePictureButton(
-                withText: custom?["setCaptureUsePictureButtonText"] as? String,
-                confirmationText: custom?["setCaptureUsePictureButtonConfirmationText"] as? String
+                withText: custom?["setCaptureUsePictureButtonConfirmationText"] as? String,
+                confirmationText: custom?["setCaptureInstructionGuideReviewText"] as? String
             )
             .setCaptureUsePictureButtonHighlightedStateColors(
                 forText: .init(hex: custom?["setCaptureUsePictureButtonHighlightedStateColorsText"] as! String),
@@ -201,7 +286,7 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
             )
             .setCaptureUsePictureButtonNormalStateColors(
                 forText: .init(hex: custom?["setCaptureUsePictureButtonHighlightedStateColorsText"] as! String),
-                background: .init(hex: custom?["setCaptureUsePictureButtonHighlightedStateColorsBackground"] as! String),
+                background: .init(hex: custom?["setCaptureUsePictureButtonNormalStateColorsBackground"] as! String),
                 border: .init(hex: custom?["setCaptureUsePictureButtonHighlightedStateColorsBorder"] as! String)
             )
             .setCaptureUsePictureButtonDisabledStateColors(
@@ -235,6 +320,37 @@ class OitiReactNative: NSObject, FaceCaptchaDelegate, DocumentscopyDelegate{
             )
         
         return builder
+    }
+    
+    static func downloadImage(from url: String) -> UIImage? {
+        guard let imageURL = URL(string: url),
+              let data = try? Data(contentsOf: imageURL),
+              let image = UIImage(data: data) else {
+            return nil
+        }
+        let imageName = "downloadedImage"
+        
+        if let path = saveImageToAssets(image, withName: imageName) {
+            return UIImage(named: path)
+        }
+        
+        return nil
+    }
+    
+    static func saveImageToAssets(_ image: UIImage, withName name: String) -> String? {
+        guard let data = image.pngData(),
+              let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        
+        let fileURL = documentsDirectory.appendingPathComponent("\(name).png")
+        
+        do {
+            try data.write(to: fileURL)
+            return fileURL.lastPathComponent
+        } catch {
+            return nil
+        }
     }
     
 }
