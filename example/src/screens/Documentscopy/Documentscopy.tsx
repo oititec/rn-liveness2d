@@ -28,7 +28,6 @@ export default function Documentscopy({
   const alertBox = (message: string, error: boolean) => {
     Alert.alert(error ? 'Erro' : 'Sucesso', `${message}`, [{ text: 'OK' }]);
   };
-  console.log({ ...options, theme });
   return (
     <DocumentsCopyView
       options={{ ...options, theme }}
