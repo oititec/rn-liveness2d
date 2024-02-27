@@ -62,7 +62,7 @@ export function startDocumentscopy(
       options?.nativeCustom === false ? false : options?.nativeCustom,
     theme: options?.theme === undefined ? null : options?.theme,
   };
-  console.log(args);
+
   if (Platform.OS === 'android') {
     return OitiReactNative.startdocumentscopy(
       args.appkey,

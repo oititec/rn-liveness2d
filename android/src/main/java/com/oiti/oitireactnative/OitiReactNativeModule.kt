@@ -163,6 +163,7 @@ class OitiReactNativeModule(reactContext: ReactApplicationContext) :
         } else {
           promise.resolve(false)
         }
+        promise.resolve(false)
       }
     } else {
       promise.resolve(true)
