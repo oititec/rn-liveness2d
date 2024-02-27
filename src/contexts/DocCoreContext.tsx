@@ -73,7 +73,6 @@ export const DocCoreProvider: FC<ResultDocType> = ({
   function onAskPermission() {
     askPermission()
       .then((result) => {
-        console.log(result);
         result === true ? startDocCore() : setScreen(1);
       })
       .finally(() => {
