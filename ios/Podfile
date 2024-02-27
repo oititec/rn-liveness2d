@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
-platform :ios, '12.4'
+platform :ios, '11'
 
 target 'OitiReactNative' do
     # Comment the next line if you don't want to use dynamic frameworks
@@ -8,6 +8,6 @@ target 'OitiReactNative' do
     
     # Pods for sampleUsageLivenessSDK
 
-    pod 'OILiveness2D', '~> 1.2', :source => 'https://github.com/oititec/ios-artifactory.git'
+    pod 'OILiveness2D', '~> 2.0', :source => 'https://github.com/oititec/ios-artifactory.git'
   
   end

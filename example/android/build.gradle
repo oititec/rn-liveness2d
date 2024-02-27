@@ -4,8 +4,8 @@ buildscript {
     ext {
         buildToolsVersion = "31.0.0"
         minSdkVersion = 21
-        compileSdkVersion = 32
-        targetSdkVersion = 32
+        compileSdkVersion = 33
+        targetSdkVersion = 33
 
         if (System.properties['os.arch'] == "aarch64") {
             // For M1 Users we need to use the NDK 24 which added support for aarch64
@@ -40,7 +40,7 @@ allprojects {
         }
  
         maven {
-            url 'https://raw.githubusercontent.com/oititec/android-oiti-versions-beta/master'
+            url 'https://raw.githubusercontent.com/oititec/android-oiti-versions/master'
         }
         mavenCentral {
             // We don't want to fetch react-native from Maven Central as there are

@@ -10,6 +10,15 @@ RCT_EXTERN_METHOD(startfacecaptcha:(NSDictionary)args
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
+RCT_EXTERN_METHOD(askcamerapermission:(BOOL)try
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
+
+RCT_EXTERN_METHOD(checkcamerapermission:(BOOL)try
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
 + (BOOL)requiresMainQueueSetup
 {
   return NO;

@@ -17,10 +17,10 @@ const scaleW = SCREEN_WIDTH / 320;
 const scaleH = SCREEN_HEIGHT / 920;
 
 export default function InstructionsView({
-  onVerify,
+  onContinue,
   onBack,
 }: {
-  onVerify(): void;
+  onContinue(): void;
   onBack(): void;
 }) {
   return (
@@ -34,7 +34,7 @@ export default function InstructionsView({
         </TouchableOpacity>
         <View style={styles.imgContainer}>
           <Image
-            source={require('../../assets/images/img_face.png')}
+            source={require('../../assets/images/img_documento.png')}
             style={styles.imgFace}
           />
         </View>
@@ -46,7 +46,7 @@ export default function InstructionsView({
 
         <View style={styles.intructions}>
           <TouchableOpacity
-            onPress={() => onVerify()}
+            onPress={() => onContinue()}
             style={styles.rowInstructions}
           >
             <View style={styles.boxIcon}>
@@ -66,7 +66,7 @@ export default function InstructionsView({
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => onVerify()}
+            onPress={() => onContinue()}
             style={styles.rowInstructions}
           >
             <View style={styles.boxIcon}>
@@ -226,8 +226,12 @@ const styles = StyleSheet.create({
   leftArrow: {
     marginTop: normalize(70, scaleH),
     marginLeft: 20,
-    width: 25,
-    height: 25,
+    marginBottom: 10,
+    aspectRatio: 4 / 4.6,
+    width:
+      Platform.OS === 'ios' ? normalize(20, scaleW) : normalize(30, scaleW),
+    height:
+      Platform.OS === 'ios' ? normalize(20, scaleH) : normalize(30, scaleH),
   },
   rigthArrow: {
     width: 25,
@@ -237,7 +241,7 @@ const styles = StyleSheet.create({
   imgFace: {
     height: '100%',
     flex: 1,
-    aspectRatio: 4 / 4.4,
+    aspectRatio: 4 / 4.6,
   },
   waveTop: {
     flex: 1,
