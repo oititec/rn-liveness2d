@@ -17,10 +17,10 @@ Aqui, você pode instalar e utilizar funções como `startLiveness2d()` e `start
 
 Simplificamos nossos guias de integração e de customização do React Native:
 
-- [Guias de Instalação](https://dash.readme.com/project/certifaceid/v2.0/docs/guia-de-instalacao-react-native)
-- [Guia de Uso e Integração](https://dash.readme.com/project/certifaceid/v2.0/docs/guia-de-uso-e-integracao-react-native)
-- [Guia de Tratamento de Retorno](https://dash.readme.com/project/certifaceid/v2.0/docs/guia-de-tratamento-de-retornos-react-native)
-- [Guias de Customização](https://dash.readme.com/project/certifaceid/v2.0/docs/customizacao-rn)
+- [Guias de Instalação](https://devcenter.certiface.io/docs/guia-de-instalacao-react-native)
+- [Guia de Uso e Integração](https://devcenter.certiface.io/docs/guia-de-uso-e-integracao-react-native)
+- [Guia de Tratamento de Retorno](https://devcenter.certiface.io/docs/guia-de-tratamento-de-retornos-react-native)
+- [Guias de Customização](https://devcenter.certiface.io/docs/customizacao-rn)
 
 ## Changelog
 
