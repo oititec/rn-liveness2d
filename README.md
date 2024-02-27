@@ -11,7 +11,7 @@ Aqui, você pode instalar e utilizar funções como `startLiveness2d()` e `start
 **Requisitos mínimos**
 | Android | iOS|
 |--|--|
-|Gradle: 6.8 | iOS: 12.4|
+|Gradle: 6.8 | iOS: 11|
 
 ## Summary
 
